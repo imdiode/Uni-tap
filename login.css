@@ -1,0 +1,25 @@
+body{
+    background-color: deepskyblue;
+}
+
+.login-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 90vh;
+}
+
+.login-box{
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 10px dimgray;
+}
+
+.login-title{
+    color: #05a1da;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
