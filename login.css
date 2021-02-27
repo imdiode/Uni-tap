@@ -23,3 +23,47 @@ body{
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#login-form {
+    margin: 0 auto;
+    display: grid;
+    align-content: center;
+}
+
+.login-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.cred-input{
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #788692;
+    color: #1a3754;
+}
+
+.login-btn {
+    margin-top: 40px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 40px;
+    background-color: #0097e3;
+    color: white;
+    font-size: 15px;
+    padding: 8px 20px 8px 20px;
+}
+
+.forgot {
+    display: inline-block;
+    text-align: right;
+    font-size: 11px;
+}
+
+.forgot a {
+    color: #0097e3;
+    font-weight: 600;
+}
