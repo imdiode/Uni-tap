@@ -16,7 +16,7 @@ body {
 
 .navigation a {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 .navigation ul {
@@ -28,6 +28,11 @@ body {
     display: inline;
     line-height: 70px;
     margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li:hover {
+    color: black;
 }
 
 .profile
@@ -52,6 +57,7 @@ body {
     background-color: #023c7e;
     height: Calc(100vh - 70px);
     position: relative;
+    display: inline-block;
 }
 
 .options {
@@ -59,4 +65,37 @@ body {
     color: white;
     text-align: center;
     line-height: 50px;
+    transition: all .7s ease-out;
+}
+
+.options:hover {
+    background-color: #002d61;
+    cursor: pointer;
+}
+
+.bstick {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.sidebar-main-right {
+    background-color: white;
+    width: 80%;
+    height: Calc(100vh - 70px);
+    position: absolute;
+    display: inline-block;
+}
+
+.content-main {
+    margin-left: 5%;
+    color: #0097e3;
+}
+
+.ads {
+    float: right;
+    margin-right: 5%;
+    height: 60vh;
+    width: 10%;
+    border: 2px dotted black;
 }
