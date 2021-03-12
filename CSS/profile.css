@@ -94,6 +94,8 @@ body {
 
 .info {
     display: inline-block;
+    height: 500px;
+    width: 300px;
 }
 
 .info table {
@@ -109,4 +111,19 @@ body {
 .info a {
     color: #0097e3;
     text-decoration: none;
+}
+
+.profilepic {
+    display: inline-block;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 10%;
+}
+
+.profilepic img {
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    vertical-align: top;
+    border-radius: 50%;
 }
