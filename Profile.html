@@ -5,6 +5,7 @@
             CCAS | Profile
         </title>
         <link rel="stylesheet" href="./CSS/profile.css">
+        <script rel="text/javascript" src="./Backend/JS/ProfileUI.js"></script>
     </head>
 
     <body>
@@ -59,23 +60,52 @@
                 <div>
                     <div class="info">
                         <table>
+                            <th colspan="3">Basic Information</th>
                             <tr>
                                 <td class="fields">Semester:</td>
                                 <td>4</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="fields">Email:</td>
                                 <td>nandan@dicot.in</td>
+                                <td><a href="#">change</a></td>
                             </tr>
                             <tr>
                                 <td class="fields">Mobile:</td>
                                 <td>+91 93280 06290</td>
+                                <td><a href="#">change</a></td>
                             </tr>
                             <tr>
                                 <td class="fields">Address:</td>
                                 <td>28, Earth Bunglows<br/><a href="#"> read more...</a></td>
+                                <td><a href="#" style="vertical-align: top;">change</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fields">Enrollment No.:</td>
+                                <td>191310132139</td>
                             </tr>
                         </table>
+                        <div class="expander">
+                            <div class="expansion" onclick="disp()">Change password</div>
+                            <div id="1exp" class="exp">
+                                <form>
+                                    <table>
+                                        <tr>
+                                            <td class="fields">Old password:</td>
+                                            <td><input type="password" placeholder="Old..."></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fields">New password:</td>
+                                            <td><input type="password" placeholder="New..."></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><input type="button" value="save" class="save-btn"></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="profilepic">
                         <img src="./Backend/Images/logo_2_dicot_Dark.svg">
