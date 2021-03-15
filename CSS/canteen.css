@@ -129,19 +129,44 @@ body {
     margin-left: 2.5%;
     height: 70vh;
     margin-top: 10px;
-    background-color: cadetblue;
-    overflow: scroll;
+    /*background-color: deepskyblue;*/
+    overflow-y: scroll !important;
 }
 
 .active-sub {
-    display: block;
+    display: inline-block;
+}
+
+.content-sub h3 {
+    text-align: center;
+}
+
+.table-pending {
+    width: 90%;
+    margin-left: 5%;
+    border: 2px solid black;
+}
+
+.table-pending th {
+    border: 1px solid black;
+    border-top: none;
+}
+
+.table-pending td {
+    border: 1px solid black;
+}
+
+.price {
+    text-align: center;
 }
 
 .ads {
     display: inline-block;
+    margin-top: 5%;
     margin-right: 5%;
     margin-left: auto;
     height: 60vh;
     width: 10%;
     border: 2px dotted black;
+    position: absolute;
 }
