@@ -13,6 +13,11 @@
     height: 70px;
     background-color: white;
     display: flex;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 .navigation {
@@ -57,7 +62,7 @@
     vertical-align: middle;
 }
 
-.contact_us{
+.contactus{
     width: 500px;
     height: 300px;
     border-radius: 15px;
@@ -66,10 +71,11 @@
 	align-content: center;
 	align-items: center;
 	align-self: center;
+	display: none;
 }
 
 
-.FAQ{
+.faq{
     width: 500px;
     height: 300px;
     border-radius: 15px;
@@ -78,4 +84,14 @@
 	align-content: center;
 	align-items: center;
 	align-self: center;
+	display: none;
 }
+
+
+
+
+
+.faqexp {
+    margin-top: 50px;
+}
+

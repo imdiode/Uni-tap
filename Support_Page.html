@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>CCAS Support</title>
 	<link rel="stylesheet" href="./CSS/support.css">
+	<script rel="text/javascript" src="Backend/JS/supportandfaq.js"></script>
 </head>
 
 <body>
@@ -21,22 +22,24 @@
              Hi! Nandan
 		</div>
 	</div>
-	<div class="top2">
-		<h2 style="color: #0097e3"> &nbsp; &nbsp; FAQ</h2>
-	</div>
-	<div class="FAQ">
-		<p><b> What is CCAS? </b></p>
-		<p>CCAS is a Central College Administration System</p>
-		<p><b> What is use of CCAS? </b></p>
-		<p>It can be used for administration of college centrally</p>
-		<p><b> Who will use CCAS? </b></p>
-		<p>All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
+	<div class="faqexp">
+		<div class="top2" onClick="dispfaq()">
+			<h2 style="color: #0097e3"> &nbsp; &nbsp; FAQ</h2>
+		</div>
+		<div class="faq" id="faq">
+			<p><b> What is CCAS? </b></p>
+			<p>CCAS is a Central College Administration System</p>
+			<p><b> What is use of CCAS? </b></p>
+			<p>It can be used for administration of college centrally</p>
+			<p><b> Who will use CCAS? </b></p>
+			<p>All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
 		
+		</div>
 	</div>
-	<div class="top2">
-			<h2 style="color: #0097e3"> &nbsp; &nbsp; Query</h2>
+	<div class="top2" onClick="dispcontactus()">
+			<h2 style="color: #0097e3"> &nbsp; &nbsp; Additional Query</h2>
 	</div>
-	<div class="contact_us">
+	<div class="contactus" id="contactus">
 		<b>SEND US YOUR QUERY AND WE WILL GET BACK TO YOU ASAP!!</b>
 		<form id="support">
 			<input class="email-id" name="Email" autocomplete="off" placeholder="Email" autofocus="">
