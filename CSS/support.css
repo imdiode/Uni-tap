@@ -12,7 +12,7 @@ body {
 }
 
 .top2 {
-    width: 100%;
+    width: 80%;
     height: 70px;
     background-color: white;
     display: block;
@@ -20,9 +20,8 @@ body {
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
-	align-self: center;
-	align-content: center;
-	align-items: center;
+	margin-left: 10%;
+	margin-right: 10%
 
 }
 
@@ -69,24 +68,30 @@ body {
 }
 
 .contactus{
-    width: 500px;
+    width: 700px;
     height: auto;
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 0 10px dimgray;
-	margin-left: 33%;
+	margin-left: 25%;
 	display: none;
+	padding-left: 5%;
+	padding-bottom: 2px;
+	padding-top: 2px
 }
 
 
 .faq{
-    width: 500px;
+    width: 700px;
 	height: auto;
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 0 10px dimgray;
 	display: none;
-	margin-left: 33%;
+	margin-left: 25%;
+	padding-left: 5%;
+	padding-bottom: 5px;
+	padding-top: 2px;
 }
 
 .ans{
@@ -99,7 +104,22 @@ body {
     margin-top: 50px;
 }
 
-.que{
+.que {
 	cursor: pointer;
 }
 
+.ads2 {
+	float: right;
+    margin-right: 5%;
+    height: 70vh;
+    width: 10%;
+	border: 2px dotted black;
+}
+
+.ads1 {
+    float: left;
+    margin-left: 5%;
+    height: 70vh;
+    width: 10%;
+    border: 2px dotted black;
+}
