@@ -27,12 +27,12 @@
 			<h2 style="color: #0097e3"> &nbsp; &nbsp; FAQ</h2>
 		</div>
 		<div class="faq" id="faq">
-			<p><b> What is CCAS? </b></p>
-			<p>CCAS is a Central College Administration System</p>
-			<p><b> What is use of CCAS? </b></p>
-			<p>It can be used for administration of college centrally</p>
-			<p><b> Who will use CCAS? </b></p>
-			<p>All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
+			<p onClick="dispans1()" class="que"><b> What is CCAS? </b></p>
+			<p id="ans1" class="ans">CCAS is a Central College Administration System</p>
+			<p onClick="dispans2()" class="que"><b> What is use of CCAS? </b></p>
+			<p id="ans2" class="ans">It can be used for administration of college centrally</p>
+			<p onClick="dispans3()" class="que"><b> Who will use CCAS? </b></p>
+			<p id="ans3" class="ans">All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
 		
 		</div>
 	</div>
@@ -42,10 +42,8 @@
 	<div class="contactus" id="contactus">
 		<b>SEND US YOUR QUERY AND WE WILL GET BACK TO YOU ASAP!!</b>
 		<form id="support">
-			<input class="email-id" name="Email" autocomplete="off" placeholder="Email" autofocus="">
 			<br>
-			<textarea name="support" rows="10" cols="30">
-				Write your Query Here
+			<textarea name="support" rows="10" cols="50">Write your Query Here!!
 			</textarea>
 			<br>
 			<input type="submit" value="Submit" onClick="Query Submitted Successfully">
