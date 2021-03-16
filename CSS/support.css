@@ -68,36 +68,42 @@ body {
 }
 
 .contactus{
-    width: 700px;
+    width: 30%;
     height: auto;
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 0 10px dimgray;
-	margin-left: 22%;
+	margin-left: 30%;
 	display: none;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	padding-left: 5%;
 	padding-right: 5%;
+    color: #0097e3;
 }
 
 
 .faq{
-    width: 700px;
+    width: 30%;
 	height: auto;
     border-radius: 15px;
     background-color: white;
+    color: #0097e3;
     box-shadow: 0 0 10px dimgray;
 	display: none;
-	margin-left: 22%;
+	margin-left: 30%;
 	padding-left: 5%;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	padding-right: 5%;
+    margin-bottom: 10px;
+    max-height: 25vh;
+    overflow-y: scroll;
 }
 
 .ans{
 	display: none;
+    padding-left: 2%;
 }
 
 
@@ -124,4 +130,12 @@ body {
     height: 70vh;
     width: 10%;
     border: 2px dotted black;
+}
+
+.submit-btn {
+    border-radius: 20px;
+    background-color: #0097e3;
+    color: white;
+    border-style: none;
+    cursor: pointer;
 }
