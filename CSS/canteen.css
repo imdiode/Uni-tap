@@ -129,7 +129,6 @@ body {
     margin-left: 2.5%;
     height: 70vh;
     margin-top: 10px;
-    /*background-color: deepskyblue;*/
     overflow-y: scroll !important;
 }
 
@@ -139,6 +138,22 @@ body {
 
 .content-sub h3 {
     text-align: center;
+}
+
+.new-order-sign {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    background-color: #0097e3;
+    color: white;
+    border-radius: 50%;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.new-order {
+    display: inline-block;
+    cursor: pointer;
 }
 
 .table-pending {
