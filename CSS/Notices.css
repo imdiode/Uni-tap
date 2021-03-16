@@ -55,12 +55,13 @@ body {
 .NoticeBoardBG {
 	width: 70%;
 	height: 70vh;
-	background-color: pink;
+	background-color: white;
 	display: block;
+    color: #0097e3;
 	margin-left: 15%;
 	padding-top: 5px;
 	margin-top: 2%;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .ads2 {
