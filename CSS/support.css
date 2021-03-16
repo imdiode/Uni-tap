@@ -73,11 +73,12 @@ body {
     border-radius: 15px;
     background-color: white;
     box-shadow: 0 0 10px dimgray;
-	margin-left: 25%;
+	margin-left: 22%;
 	display: none;
+	padding-bottom: 5px;
+	padding-top: 5px;
 	padding-left: 5%;
-	padding-bottom: 2px;
-	padding-top: 2px
+	padding-right: 5%;
 }
 
 
@@ -88,10 +89,11 @@ body {
     background-color: white;
     box-shadow: 0 0 10px dimgray;
 	display: none;
-	margin-left: 25%;
+	margin-left: 22%;
 	padding-left: 5%;
 	padding-bottom: 5px;
-	padding-top: 2px;
+	padding-top: 5px;
+	padding-right: 5%;
 }
 
 .ans{
