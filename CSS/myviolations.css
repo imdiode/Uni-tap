@@ -37,8 +37,7 @@ body {
     color: black;
 }
 
-.profile
-{
+.profile {
     margin-right: 10px;
     color: white;
     margin-left: auto;
@@ -54,12 +53,12 @@ body {
 }
 
 .ads2 {
-	float: right;
+    float: right;
     margin-right: 2%;
     height: 70vh;
     width: 10%;
-	border: 2px dotted black;
-	margin-top: 2%;
+    border: 2px dotted black;
+    margin-top: 2%;
 }
 
 .ads1 {
@@ -68,16 +67,44 @@ body {
     height: 70vh;
     width: 10%;
     border: 2px dotted black;
-	margin-top: 2%;
+    margin-top: 2%;
 }
 
 .ViolationsBG {
-	width: 70%;
-	height: 70vh;
-	background-color: pink;
-	display: block;
-	margin-left: 15%;
-	padding-top: 5px;
-	margin-top: 2%;
-	overflow: scroll;
+    width: 70%;
+    height: 70vh;
+    background-color: white;
+    display: block;
+    margin-left: 15%;
+    padding-top: 5px;
+    margin-top: 2%;
+    overflow: scroll;
+}
+
+.violation {
+    border-top: 2px solid dimgray;
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5%;
+    height: 40px;
+    padding-top: 5%;
+}
+
+.violationshead {
+    border: 2px solid black;
+    border-style: double;
+    border-radius: 50%;
+    float: left;
+    background-color: #0097e3;
+    font-size: xx-large;
+    
+}
+
+.violations {
+    float: left;
+    margin-left: 5%;
+    font-size: larger;
+
+
 }
