@@ -51,3 +51,10 @@ body {
     background-color: black;
     vertical-align: middle;
 }
+
+.NoticeBoardBG {
+	width: 70%;
+	height: 70vh;
+	background-color: pink;
+	align-self: center;
+}
