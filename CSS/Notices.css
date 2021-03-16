@@ -1,0 +1,92 @@
+/* CSS Document */
+body {
+    margin: 0;
+}
+
+.top {
+    width: 100%;
+    height: 70px;
+    background-color: deepskyblue;
+    display: flex;
+}
+
+.navigation {
+    color: white;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0%;
+}
+
+.navigation li {
+    display: inline;
+    line-height: 70px;
+    margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li:hover {
+    color: black;
+}
+
+.profile
+{
+    margin-right: 10px;
+    color: white;
+    margin-left: auto;
+    line-height: 70px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    vertical-align: middle;
+}
+
+.NoticeBoardBG {
+	width: 70%;
+	height: 70vh;
+	background-color: white;
+	display: block;
+    color: #0097e3;
+	margin-left: 15%;
+	padding-top: 5px;
+	margin-top: 2%;
+	overflow-y: scroll;
+}
+
+.ads2 {
+	float: right;
+    margin-right: 2%;
+    height: 70vh;
+    width: 10%;
+	border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.ads1 {
+    float: left;
+    margin-left: 2%;
+    height: 70vh;
+    width: 10%;
+    border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.notice {
+    float: left;
+    margin-left: 3.5%;
+    height: 20vh;
+    width: 20%;
+    border: 2px dotted black;
+	margin-top: 2%;
+}
