@@ -59,4 +59,33 @@ body {
 	display: block;
 	margin-left: 15%;
 	padding-top: 5px;
+	margin-top: 2%;
+	overflow: scroll;
+}
+
+.ads2 {
+	float: right;
+    margin-right: 2%;
+    height: 70vh;
+    width: 10%;
+	border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.ads1 {
+    float: left;
+    margin-left: 2%;
+    height: 70vh;
+    width: 10%;
+    border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.notice {
+    float: left;
+    margin-left: 3.5%;
+    height: 20vh;
+    width: 20%;
+    border: 2px dotted black;
+	margin-top: 2%;
 }
