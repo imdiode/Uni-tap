@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            CCAS | Student Dashboard
+        </title>
+        <link rel="stylesheet" href="./CSS/canteen.css">
+        <script rel="text/javascript" src="./Backend/JS/canteen.js"></script>
+    </head>
+
+    <body>
+        <div class="top">
+            <div class="navigation">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Notice Board</a></li>
+                    <li><a href="#">My Violations</a></li>
+                    <li><a href="#">CCAS Support</a></li>
+                </ul>
+            </div>
+            <div class="profile">
+                <img src="./Backend/Images/logo_2_dicot_Dark.svg">
+                Hi! Nandan
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="options">
+                Profile
+            </div>
+            <div class="options">
+                Student Information Center
+            </div>
+            <div class="options">
+                Help desk
+            </div>
+            <div class="options">
+                Academic record
+            </div>
+            <div class="options">
+                Library
+            </div>
+            <div class="options">
+                Sports equipment
+            </div>
+            <div class="options">
+                Canteen
+            </div>
+            <div class="options bstick">
+                Logout
+            </div>
+        </div>
+        <div class="sidebar-main-right">
+            <div class="content-main">
+                <div class="nav-2">
+                    <div class="menu active" id="menu-item-1" onclick="po_click()">
+                        Place Order
+                    </div>
+                    <div class="menu" id="menu-item-2" onclick="oh_click()">
+                        Order History
+                    </div>
+                    <div class="menu" id="menu-item-3" onclick="tm_click()">
+                        Today's Menu
+                    </div>
+                </div>
+                <div class="content-sub active-sub" id="sub-1">
+                    <center>
+                        <div class="new-order-sign" onclick="">
+                            +
+                        </div>
+                        <div class="new-order" onclick="">
+                            place  new order
+                        </div>
+                    </center>
+                    <h3>Pending orders</h3>
+                    <table class="table-pending">
+                        <th>
+                            Sr.
+                        </th>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Price (Rs.)
+                        </th>
+                        <tr>
+                            <td>
+                                1.
+                            </td>
+                            <td>
+                                Samosa (2 nos.)
+                            </td>
+                            <td class="price">
+                                40
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content-sub" id="sub-2">
+                
+                </div>
+                <div class="content-sub" id="sub-3">
+                
+                </div>
+            </div>
+            <div class="ads">
+                <center>ads go here</center>
+            </div>
+        </div>
+    </body>
+</html>
