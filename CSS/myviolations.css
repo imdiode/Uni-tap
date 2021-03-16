@@ -53,17 +53,6 @@ body {
     vertical-align: middle;
 }
 
-.NoticeBoardBG {
-	width: 70%;
-	height: 70vh;
-	background-color: pink;
-	display: block;
-	margin-left: 15%;
-	padding-top: 5px;
-	margin-top: 2%;
-	overflow: scroll;
-}
-
 .ads2 {
 	float: right;
     margin-right: 2%;
@@ -80,4 +69,15 @@ body {
     width: 10%;
     border: 2px dotted black;
 	margin-top: 2%;
+}
+
+.ViolationsBG {
+	width: 70%;
+	height: 70vh;
+	background-color: pink;
+	display: block;
+	margin-left: 15%;
+	padding-top: 5px;
+	margin-top: 2%;
+	overflow: scroll;
 }
