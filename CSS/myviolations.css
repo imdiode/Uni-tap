@@ -78,7 +78,7 @@ body {
     margin-left: 15%;
     padding-top: 5px;
     margin-top: 2%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .violation {
@@ -89,16 +89,21 @@ body {
     padding-bottom: 5%;
     height: 40px;
     padding-top: 5%;
+    cursor: pointer;
 }
 
 .violationshead {
-    border: 2px solid black;
+    border: 2px solid #0097e3;
+    width: 40px;
+    height: 35px;
+    padding-top: 5px;
     border-style: double;
     border-radius: 50%;
     float: left;
     background-color: #0097e3;
-    font-size: xx-large;
-    
+    font-size: x-large;
+    color: white;
+    text-align: center;
 }
 
 .violations {
