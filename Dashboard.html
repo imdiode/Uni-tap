@@ -5,6 +5,8 @@
             CCAS | Student Dashboard
         </title>
         <link rel="stylesheet" href="./CSS/Dashboard.css">
+        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+
     </head>
 
     <body>
@@ -23,7 +25,7 @@
             </div>
         </div>
         <div class="sidebar">
-            <div class="options">
+            <div class="options" onclick="profile_click()">
                 Profile
             </div>
             <div class="options">
@@ -38,10 +40,10 @@
             <div class="options">
                 Library
             </div>
-            <div class="options">
+            <div class="options" onclick="sports_click()">
                 Sports equipment
             </div>
-            <div class="options">
+            <div class="options" onclick="canteen_click()">
                 Canteen
             </div>
             <div class="options bstick">
