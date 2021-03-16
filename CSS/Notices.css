@@ -1,0 +1,53 @@
+/* CSS Document */
+body {
+    margin: 0;
+}
+
+.top {
+    width: 100%;
+    height: 70px;
+    background-color: deepskyblue;
+    display: flex;
+}
+
+.navigation {
+    color: white;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0%;
+}
+
+.navigation li {
+    display: inline;
+    line-height: 70px;
+    margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li:hover {
+    color: black;
+}
+
+.profile
+{
+    margin-right: 10px;
+    color: white;
+    margin-left: auto;
+    line-height: 70px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    vertical-align: middle;
+}
