@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+}
+
+.top {
+    width: 100%;
+    height: 70px;
+    background-color: deepskyblue;
+    display: flex;
+}
+
+.navigation {
+    color: white;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0%;
+}
+
+.navigation li {
+    display: inline;
+    line-height: 70px;
+    margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li:hover {
+    color: black;
+}
+
+.profile
+{
+    margin-right: 10px;
+    color: white;
+    margin-left: auto;
+    line-height: 70px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    vertical-align: middle;
+}
+
+.center{
+	width: 70%;
+	height: 70vh;
+	background-color: white;
+	display: block;
+    color: #0097e3;
+	margin-left: 14%;
+	padding-top: 1px;
+	margin-top: 1%;
+	overflow-y: scroll;
+    font-size: 7mm;
+}
+
+.ads1 {
+	float: right;
+    margin-right: 2%;
+    height: 70vh;
+    width: 10%;
+	border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.ads2 {
+    float: left;
+    margin-left: 2%;
+    height: 70vh;
+    width: 10%;
+    border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.ads3{
+    float:unset;
+    margin-right: 2%;
+    margin-left: 60mm;
+    height: 20vh;
+    width: 65%;
+	border: 2px dotted black;
+	margin-top: 2%;
+}
+
+.sem {
+    float: left;
+    color: tomato;
+    margin-left: 3.5%;
+    height: 20vh;
+    width: 20%;
+    border: 2px dotted black;
+	margin-top: 3%;
+    font-size:7mm;
+}
+
+.button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 5mm;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+  }
+  
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+  }
+  
+  .button2:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+  
