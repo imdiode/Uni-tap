@@ -86,7 +86,7 @@ body {
     height: Calc(100vh - 70px);
     position: absolute;
     display: inline-block;
-    overflow-y: auto;
+    overflow-y:scroll;
 }
 
 .content-main {
@@ -110,6 +110,8 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin-top: 1mm;
+    margin-right: 5mm;
+    
   }
   
 .darker {
@@ -148,9 +150,10 @@ body {
   }
 
 .textbox {
-    margin-top: 5mm;
-    margin-left: 80mm;
-    width:100mm;
+    
+    margin-top:35mm;
+    margin-left: 0mm;
+    width: 240mm;
     height: 10mm;
     background-color:white;
 
@@ -158,7 +161,7 @@ body {
 
 .send {
     margin-left: 3mm;
-    width: 20mm;
+    width: 25mm;
     height: 10mm;
     background-color: green;
 }

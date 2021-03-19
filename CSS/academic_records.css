@@ -86,8 +86,8 @@ body {
 .ads3{
     float:unset;
     margin-right: 2%;
-    margin-left: 60mm;
-    height: 20vh;
+    margin-left: 70mm;
+    height: 10vh;
     width: 65%;
 	border: 2px dotted black;
 	margin-top: 2%;
@@ -111,7 +111,6 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 5mm;
     transition-duration: 0.4s;
     cursor: pointer;
   }
@@ -120,6 +119,7 @@ body {
     background-color: white;
     color: black;
     border: 2px solid #4CAF50;
+    margin-left: 8mm;
   }
   
   .button1:hover {
@@ -131,6 +131,8 @@ body {
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
+    margin-right: 4mm;
+
   }
   
   .button2:hover {
