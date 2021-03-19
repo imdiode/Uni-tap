@@ -93,9 +93,21 @@ body {
 }
 
 .ads {
-    float: right;
-    margin-right: 5%;
+    margin-left: 65%;
+    top: 5vh;
+    position: absolute;
     height: 60vh;
-    width: 10%;
+    width: 20%;
     border: 2px dotted black;
+}
+
+.submit-btn {
+    border-radius: 20px;
+    background-color: #0097e3;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translate(-50%, 50%);
+    width: 50%;
 }

@@ -53,8 +53,42 @@
         <div class="sidebar-main-right">
             <div class="content-main">
                 <h1>
-                    The college weekly
+                    Send your grievance
                 </h1>
+                <form class="grievance" action="#">
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Send to:</label>
+                            </td>
+                            <td>
+                                <select id="person" name="reciever">
+                                    <option selected>Select a Recipient</option>
+                                    <option>Dr. Hitesh C.</option>
+                                    <option>Dr. H. R. Varia</option>
+                                    <option>Dr. Kiran P.</option>
+                                    <option>Dr. V.M. Patel</option>
+                                    <option>Dr. A.V. Thomas</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top;">
+                                <label>Message: </label>
+                            </td>
+                            <td>
+                                <textarea name="message" maxlength="300" cols="60" rows="5">
+                                    Enter your message here in less than 300 characters
+                                </textarea> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Send" onClick="" class="submit-btn">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
             <div class="ads">
                 <center>ads go here</center>
