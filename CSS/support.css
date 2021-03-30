@@ -198,7 +198,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     width: 68%;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-left: 16%;
 }
 
@@ -291,8 +291,8 @@ body {
 .accordion1-content {
     background-color: #f7f7f7;
     color: #7f8787;
-    height: 280px; 
-    margin-bottom: -280px;
+    height: 80px; 
+    margin-bottom: -80px;
     margin-right: 0;
     padding: 30px;
     width: 100%;
