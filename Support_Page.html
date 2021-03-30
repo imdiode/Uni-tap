@@ -25,11 +25,14 @@
 	<div class="faqsupport">
 		<div class="ads1"><center>Ads go here</center></div>
 		<div class="ads2"><center>Ads go here</center></div>
-	<div class="faqexp">
-		<div class="top2" onclick="dispfaq()">
-			<h2 style="color: #0097e3"> &nbsp; &nbsp; FAQ</h2>
+	<div class="accordion">
+		<input type="radio" name="select" class="accordion-select"/>
+    	<div class="accordion-title">
+			<span>
+				<h2 style="color: #0097e3">FAQ</h2>
+			</span>
 		</div>
-		<div class="faq" id="faq">
+		<div class="accordion-content">
 			<p onclick="dispans1()" class="que"><b> What is CCAS? </b></p>
 			<p id="ans1" class="ans">CCAS is a Central College Administration System</p>
 			<p onclick="dispans2()" class="que"><b> What is use of CCAS? </b></p>
@@ -37,11 +40,13 @@
 			<p onclick="dispans3()" class="que"><b> Who will use CCAS? </b></p>
 			<p id="ans3" class="ans">All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
 		</div>
+	<input type="radio" name="select" class="accordion-select" />
+	<div class="accordion-title">
+		<span>
+			<h2 style="color: #0097e3">Additional Query</h2>
+		</span>
 	</div>
-	<div class="top2" onclick="dispcontactus()">
-			<h2 style="color: #0097e3"> &nbsp; &nbsp; Additional Query</h2>
-	</div>
-	<div class="contactus" id="contactus">
+	<div class="accordion-content">
 		<center>
 		<b>Didn't find your question in FAQ? Send us your quries, we will be glad to answer.</b>
 		<form id="support">
@@ -52,6 +57,7 @@
 			<input type="submit" value="Submit" onclick="" class="submit-btn">
 		</form>
 			</center>
+	</div>
 	</div>
 	</div>
 	
