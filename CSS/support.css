@@ -53,40 +53,6 @@ body {
     vertical-align: middle;
 }
 
-.contactus{
-    width: 30%;
-    height: auto;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: 0 0 10px dimgray;
-	margin-left: 30%;
-	display: none;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	padding-left: 5%;
-	padding-right: 5%;
-    color: #0097e3;
-}
-
-
-.faq{
-    width: 30%;
-	height: auto;
-    border-radius: 15px;
-    background-color: white;
-    color: #0097e3;
-    box-shadow: 0 0 10px dimgray;
-	display: none;
-	margin-left: 30%;
-	padding-left: 5%;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	padding-right: 5%;
-    margin-bottom: 10px;
-    max-height: 25vh;
-    overflow-y: scroll;
-}
-
 .ans{
 	display: none;
     padding-left: 2%;
@@ -186,7 +152,7 @@ body {
 .accordion-select  {
     background-color: #ffffff;
     color: #7f8787;
-    width: 50%;
+    width: 100%;
     height: 65px;
     font-size: 15px;
 }
@@ -219,9 +185,115 @@ body {
 .accordion-content {
     background-color: #f7f7f7;
     color: #7f8787;
-    height: 280px;
+    height: 280px; 
     margin-bottom: -280px;
     margin-right: 0;
     padding: 30px;
-    width: 50%;
+    width: 100%;
+}
+
+.accordion1 {
+    box-sizing: border-box;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    width: 68%;
+    margin-top: 50px;
+    margin-left: 16%;
+}
+
+.accordion1-select {
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.accordion1-title {
+    position: relative;
+}
+
+.accordion1-title:not(:nth-last-child(2))::after {
+    border: 1px solid transparent;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.accordion1-title span {
+    bottom: 0px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.accordion1-content {
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    transition: margin 0.3s ease 0.1s;
+}
+
+.accordion1-select:checked + .accordion1-title + .accordion1-content {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+/* Generated styles starts here */
+
+.accordion1 {
+    border-color: #dedede;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    flex-direction: column;
+    height: auto;
 } 
+
+.accordion1-title,
+.accordion1-select  {
+    background-color: #ffffff;
+    color: #7f8787;
+    width: 100%;
+    height: 65px;
+    font-size: 15px;
+}
+
+.accordion1-select {
+    margin-bottom: -65px;
+    margin-right: 0;
+}
+
+.accordion1-title:not(:nth-last-child(2))::after {
+    border-bottom-color: rgb(234, 234, 234);
+    border-right-color: transparent;
+} 
+
+.accordion1-select:hover + .accordion1-title,
+.accordion1-select:checked + .accordion1-title {
+    background-color: #ffffff;
+} 
+
+ .accordion1-title span  {	
+    transform: rotate(0deg);
+    -ms-writing-mode: lr-tb;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    padding-left: 33px;
+    padding-right: 33px;
+    line-height: 65px;
+    align-content: center;
+} 
+
+.accordion1-content {
+    background-color: #f7f7f7;
+    color: #7f8787;
+    height: 280px; 
+    margin-bottom: -280px;
+    margin-right: 0;
+    padding: 30px;
+    width: 100%;
+}
