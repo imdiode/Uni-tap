@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>CCAS | Support</title>
 	<link rel="stylesheet" href="./CSS/support.css">
-	<script rel="text/javascript" src="Backend/JS/supportandfaq.js"></script>
 </head>
 
 <body>
@@ -25,23 +24,35 @@
 	<div class="faqsupport">
 		<div class="ads1"><center>Ads go here</center></div>
 		<div class="ads2"><center>Ads go here</center></div>
-	<div class="faqexp">
-		<div class="top2" onClick="dispfaq()">
-			<h2 style="color: #0097e3"> &nbsp; &nbsp; FAQ</h2>
+	<div class="accordion">
+		<input type="radio" name="select" class="accordion-select"/>
+    	<div class="accordion-title">
+			<span>
+				<h2 style="color: #0097e3">FAQ</h2>
+			</span>
 		</div>
-		<div class="faq" id="faq">
-			<p onClick="dispans1()" class="que"><b> What is CCAS? </b></p>
-			<p id="ans1" class="ans">CCAS is a Central College Administration System</p>
-			<p onClick="dispans2()" class="que"><b> What is use of CCAS? </b></p>
-			<p id="ans2" class="ans">It can be used for administration of college centrally</p>
-			<p onClick="dispans3()" class="que"><b> Who will use CCAS? </b></p>
-			<p id="ans3" class="ans">All Colleges and University can use it for their effective administration and interactive notice board et. for the students</p>
+		<div class="accordion-content">
+			<div class="accordion1">
+				<input type="radio" name="select1" class="accordion1-select" />
+				<div class="accordion1-title"><span><b style="color: #0097e3;"> What is CCAS? </b></span></div>
+				<div class="accordion1-content">CCAS is a Central College Administration System</div> 
+				<input type="radio" name="select1" class="accordion1-select" />
+    			<div class="accordion1-title"><span><b style="color: #0097e3;"> What is use of CCAS? </b></span></div>
+    			<div class="accordion1-content">It can be used for administration of college centrally</div>
+				<input type="radio" name="select1" class="accordion1-select" />
+    			<div class="accordion1-title"><span><b style="color: #0097e3;">Who will use CCAS?</b></span></div>
+    			<div class="accordion1-content">
+					All Colleges and University can use it for their effective administration and interactive notice board et. for the students
+				</div>
+			</div>
 		</div>
+	<input type="radio" name="select" class="accordion-select" />
+	<div class="accordion-title">
+		<span>
+			<h2 style="color: #0097e3">Additional Query</h2>
+		</span>
 	</div>
-	<div class="top2" onClick="dispcontactus()">
-			<h2 style="color: #0097e3"> &nbsp; &nbsp; Additional Query</h2>
-	</div>
-	<div class="contactus" id="contactus">
+	<div class="accordion-content">
 		<center>
 		<b>Didn't find your question in FAQ? Send us your quries, we will be glad to answer.</b>
 		<form id="support">
@@ -49,9 +60,10 @@
 			<textarea name="support" rows="10" cols="50">Ask us here!!
 			</textarea>
 			<br>
-			<input type="submit" value="Submit" onClick="" class="submit-btn">
+			<input type="submit" value="Submit" onclick="" class="submit-btn">
 		</form>
 			</center>
+	</div>
 	</div>
 	</div>
 	
