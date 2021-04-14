@@ -1,0 +1,21 @@
+create datatabase 'CCAS';
+
+CREATE TABLE `CCAS`.`User` ( `uid` INT NOT NULL , `name` TEXT NOT NULL , `enrollment` INT NULL DEFAULT NULL , `phone` BIGINT NULL DEFAULT NULL , `address` TEXT NOT NULL , `email` TEXT NOT NULL , `password` VARCHAR(20) NOT NULL COMMENT 'length 8 t0 16 char' , `dob` DATE NOT NULL , `gender` VARCHAR(1) NOT NULL , `semester` INT NOT NULL , `branch` TEXT NOT NULL , `photo` BLOB NOT NULL COMMENT 'max size 60kb' , PRIMARY KEY (`uid`)) ENGINE = InnoDB;
+
+CREATE TABLE `CCAS`.`library_transactions` ( `uid` INT NULL , `name` TEXT NULL , `book_uid` INT NULL , `issue` BOOLEAN NULL , `timestamp` DATETIME NULL ) ENGINE = InnoDB; 
+
+ALTER TABLE `library_transactions` CHANGE `uid` `uid` INT(11) NOT NULL, CHANGE `name` `name` INT(11) NOT NULL, CHANGE `bid` `book_uid` INT(11) NOT NULL, CHANGE `issue` `issue` TINYINT(1) NOT NULL, CHANGE `timestamp` `timestamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP; 
+
+CREATE TABLE `CCAS`.`e_transactions` ( `uid` INT NOT NULL , `e_id` INT NOT NULL , `issue` BOOLEAN NOT NULL , `timestamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ) ENGINE = InnoDB; 
+
+CREATE TABLE `CCAS`.`violations` ( `uid` INT NOT NULL , `vid` INT NOT NULL , `type` INT NOT NULL , `content` TEXT NOT NULL ) ENGINE = InnoDB;
+
+CREATE TABLE `CCAS`.`Notice` ( `nid` INT NOT NULL , `title` TEXT NOT NULL , `subject` TEXT NOT NULL , `content` BLOB NOT NULL , `timestamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`nid`)) ENGINE = InnoDB;
+
+CREATE TABLE `CCAS`.`library_stock` ( `title` VARCHAR(50) NOT NULL , `author` VARCHAR(50) NOT NULL , `publisher` VARCHAR(20) NOT NULL , `subject` VARCHAR(30) NOT NULL , `price` INT NOT NULL , `available` INT NOT NULL , PRIMARY KEY (`title`, `author`, `publisher`)) ENGINE = InnoDB; 
+
+CREATE TABLE `CCAS`.`library_books` ( `bid` INT NOT NULL , `title` TEXT NOT NULL , `author` TEXT NOT NULL , `publisher` TEXT NOT NULL , PRIMARY KEY (`bid`)) ENGINE = InnoDB; 
+
+CREATE TABLE `CCAS`.`Weekly` ( `art_id` INT NOT NULL , `title` TEXT NOT NULL , `abs` TEXT NOT NULL , `image1` BLOB NOT NULL , `image2` BLOB NOT NULL , `image3` BLOB NOT NULL, PRIMARY KEY (`art_id`)) ENGINE = InnoDB; 
+
+CREATE TABLE `CCAS`.`e_stock` ( `e_name` TEXT NOT NULL , `stock` INT NOT NULL ) ENGINE = InnoDB; 
