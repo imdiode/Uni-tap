@@ -19,3 +19,21 @@ CREATE TABLE `CCAS`.`library_books` ( `bid` INT NOT NULL , `title` TEXT NOT NULL
 CREATE TABLE `CCAS`.`Weekly` ( `art_id` INT NOT NULL , `title` TEXT NOT NULL , `abs` TEXT NOT NULL , `image1` BLOB NOT NULL , `image2` BLOB NOT NULL , `image3` BLOB NOT NULL, PRIMARY KEY (`art_id`)) ENGINE = InnoDB; 
 
 CREATE TABLE `CCAS`.`e_stock` ( `e_name` TEXT NOT NULL , `stock` INT NOT NULL ) ENGINE = InnoDB; 
+
+CREATE TABLE `CCAS`.`academic` ( `uid` INT NOT NULL , `sem` INT NOT NULL , `subject` VARCHAR(30) NOT NULL , `overall_grade` VARCHAR(2) NOT NULL , `internal` INT NULL , `practical` INT NULL , `final` INT NULL ) ENGINE = InnoDB; 
+
+ALTER TABLE `library_transactions` ADD PRIMARY KEY( `uid`, `bid`, `timestamp`); 
+
+ALTER TABLE `e_stock` CHANGE `e_name` `e_name` VARCHAR(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL; 
+
+ALTER TABLE `e_stock` ADD PRIMARY KEY( `e_name`); 
+
+ALTER TABLE `e_transactions` ADD PRIMARY KEY( `uid`, `e_id`, `timestamp`); 
+
+ALTER TABLE `violations` ADD `vuid` INT NOT NULL FIRST, ADD PRIMARY KEY (`vuid`); 
+
+ALTER TABLE `academic` ADD PRIMARY KEY( `uid`, `sem`, `subject`); 
+
+ALTER TABLE `violations` ADD UNIQUE( `uid`, `vid`); 
+
+​
