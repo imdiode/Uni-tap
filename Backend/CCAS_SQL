@@ -36,4 +36,4 @@ ALTER TABLE `academic` ADD PRIMARY KEY( `uid`, `sem`, `subject`);
 
 ALTER TABLE `violations` ADD UNIQUE( `uid`, `vid`); 
 
-​
+​CREATE TABLE `CCAS`.`Roles` ( `uid` INT NOT NULL , `role` VARCHAR(1) NOT NULL COMMENT 'Values S and A for student and admin' , PRIMARY KEY (`uid`)) ENGINE = InnoDB; 
