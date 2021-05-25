@@ -1,4 +1,4 @@
-# CCAS
+# Project CCAS
 College ERP
 
 - Central College Administration System
