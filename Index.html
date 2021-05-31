@@ -3,7 +3,13 @@
     <head>
         <title>CCAS | Login to your account</title>
         <link rel="stylesheet" href="./CSS/login.css">
-        <script rel="text/javascript" src="./Backend/JS/login.js"></script>
+
+        <!-- firebase libs -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
     <body>
         <div class="login-container">
@@ -13,15 +19,20 @@
                 </h2>
                 <div class="login-form-container">
                     <form id="login-form">
-                        <input class="cred-input logon" name="Username" autocomplete="off" placeholder="Username..." autofocus="">
-                        <input class="cred-input logon" name="Password" autocomplete="off" type="password" placeholder="Password..." autofocus="">
+                        <input id="userEmail" class="cred-input logon" name="Email" autocomplete="off" placeholder="Email..." autofocus="" type="email">
+                        <input id="password" class="cred-input logon" name="Password" autocomplete="off" type="password" placeholder="Password..." autofocus="">
                         <div>
-                            <div class="login-btn" onclick="red()">Login</div>
+                            <div class="login-btn" onclick="login()">Login</div>
                             <div class="forgot"><a href="#">Forgot Password</a></div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
+
+
+
+        <script rel="text/javascript" src="./Backend/JS/login.js"></script>
     </body>
 </html>
