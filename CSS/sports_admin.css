@@ -90,7 +90,7 @@ body {
     height: Calc(100vh - 70px);
     position: inherit;
     display: inline-block;
-    margin-left: 15%;
+    margin-left: 14%;
 }
 
 .content-main {
@@ -101,45 +101,34 @@ body {
 
 .nav-2 {
     width: 100%;
-    background-color: yellowgreen;
+    background-color:#0097e3;
     height: 40px;
     color: white;
     border-radius: 20px;
+    text-align: center;
 }
 
 .menu {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 7mm;
+    margin-right: 7mm;
     margin-top: 6px;
     background-color: #023c7e;
-    text-align: center;
-    color: yellowgreen;
     padding: 7px;
     padding-bottom: 4px;
     border-radius: 12px;
     transition: all .7s ease-out;
 }
 
-#menu-item-5 {
-    display: inline-block;
-    margin-right: 58mm;
-    margin-top: 6px;
-    background-color: #023c7e;
-    color: yellowgreen;
-    padding: 7px;
-    padding-bottom: 4px;
-    border-radius: 12px;
-    transition: all .7s ease-in-out
-}
 
 .active {
-    color: white;
+    color:greenyellow;
 }
 
 .menu:hover {
     cursor: pointer;
     color: white;
-    background-color: #002d61;
+    background-color: yellowgreen;
 }
 
 .content-sub {
@@ -189,11 +178,14 @@ body {
 .table-pending th {
     border: 1px solid black;
     color: #023c7e;
+    font: bold;
 }
 
 .table-pending td {
     border: 1px solid black;
     text-align: center;
+    color: #0097e3;
+
 }
 
 .price {
@@ -213,6 +205,25 @@ body {
 
 #sub-2 {
     overflow-y: hidden !important;
+    color: #023c7e;
+}
+
+#sub-3 {
+    overflow-y: hidden !important;
+    color: #023c7e;
+}
+
+#sub-5 {
+    text-align: center;
+    color: yellowgreen;
+}
+
+.content-sub h4 {
+    text-align: center;
+    color: yellowgreen;
+    margin-top: 7mm;
+    margin-bottom: 3mm;
+    font-size: 18px;
 }
 
 #issue-form {
@@ -226,6 +237,11 @@ body {
     padding: 10px;
     padding-left: 5px;
     text-align: left;
+    color: #023c7e;
+}
+
+#edit_link {
+    color:gray
 }
 
 .lbl {
@@ -235,3 +251,4 @@ body {
 .btns {
     text-align: center !important;
 }
+
