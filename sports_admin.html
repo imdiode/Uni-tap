@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            CCAS | Sports Admin
+        </title>
+        <link rel="stylesheet" href="./CSS/sports_admin.css">
+        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+        <script rel="text/javascript" src="./Backend/JS/sports_admin.js"></script>
+    </head>
+
+    <body>
+        <div class="top">
+            <div class="navigation">
+                <ul>
+                    <div class="options bstick">
+                    Logout
+                    </div>
+                </ul>
+            </div>
+            
+            <div class="profile">
+                Hello Sir!
+                <img src="./Backend/Images/aiie.png">
+            </div>
+        </div>
+        
+        <div class="center-main">
+            <div class="content-main">
+                <div class="nav-2">
+                    <div class="menu active " id="menu-item-1" onclick="po_click()">
+                        Available
+                    </div>
+                    <div class="menu " id="menu-item-2" onclick="oh_click()">
+                        Issue
+                    </div>
+                    <div class="menu" id="menu-item-3" onclick="tm_click()">
+                         Return
+                    </div>
+                    <div class="menu" id="menu-item-4" onclick="as_click()">
+                        Logs
+                    </div>
+                    <div class="menu" id="menu-item-5" onclick="ds_click()">
+                        Update
+                    </div>
+   
+                </div>
+                <div class="content-sub active-sub" id="sub-1">
+                    <h3>THESE ITEMS ARE CURRENTLY AVAILABLE TO ISSUE</h3>
+                    
+                    <table class="table-pending">
+                        <th>
+                            SR NO.
+                        </th>
+                        <th>
+                            ITEM NAME
+                        </th>
+                        <th>
+                            CONDITION
+                        </th>
+                        <th>
+                            QUANTITY
+                        </th>
+                        <tr>
+                            <td>
+                               1.
+                            </td>
+                            <td>
+                               Nivia Basketball Size 7
+                            </td>
+                            <td>
+                               New and Grippy  
+                            </td>
+                            <td>
+                                2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               2.
+                            </td>
+                            <td>
+                               Table Tennis Racket
+                            </td>
+                            <td>
+                               Usable  
+                            </td>
+                            <td>
+                                5
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               3.
+                            </td>
+                            <td>
+                               Volleyball
+                            </td>
+                            <td>
+                               Brand New 
+                            </td>
+                            <td>
+                                1
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content-sub" id="sub-2">
+                    <form class="form-issue">
+                        <table class="table-pending">
+                        <tr><td><label for="name">NAME:-</label></td>
+                        <td><input type="text" id="name" name="name"></td></tr><br><br>
+                        <tr><td><label for="enrol">ENROLLMENT NUMBER:-</label></td>
+                        <td><input type="number" id="enrol" name="enrol"></td></tr><br><br>
+                        <tr><td><label for="branch">BRANCH:-</label></td>
+                    <td><select name="branch" id="branch">
+                        <option value="ict">ICT</option>
+                        <option value="ele">ELECTRICAL</option>
+                        <option value="cie">CIVIL</option>
+                    </select></td></tr><br><br>
+                    <tr><td><label for="sem">SEMESTER:-</label></td>
+                    <td><select name="sem" id="sem">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select></td></tr><br><br>
+                    <tr><td><label for="equip">EQUIPMENT NAME:-</label></td>
+                    <td><select name="equip" id="equip">
+                        <option value="bb">Nivia Basketball</option>
+                        <option value="v">Volleyball</option>
+                        <option value="tt">Table-Tennis Racket</option>
+                        <option value="ppb">Ping-Pong Ball</option>
+                        <option value="ball">Tennis Ball</option>
+                        <option value="bat">Kukaboora Tennis Bat</option>
+                    </select></td></tr><br><br>
+                    <tr><td><label for="qua">QUANTITY:-</label></td>
+                    <td><select name="qua" id="qua">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select></td></tr><br><br>
+                    <tr><td><label for="issue">CHOOSE THE ISSUING TIME:-</label></td>
+                        <td><input type="time" id="issue" name="issue"
+                                min="10:00" max="18:00" required><br>
+                        <small>Office hours are from 10am to 6pm</small></td></tr><br><br>
+                        <tr><td><label for="idate">ISSUING DATE:-</label></td>
+                        <td><input type="date" id="idate" name="idate"
+                                value=""
+                                min="2021-01-01" max="2021-12-31"></td></tr><br><br>
+                                <tr><td><button type="submit" value="Submit">Submit</button>
+                                <button type="reset" value="Reset">Reset</button></td></tr>
+                
+                            </table>
+                    </form>
+                    
+                </div>
+                <div class="content-sub" id="sub-3">
+                3
+                </div>
+                <div class="content-sub" id="sub-4">
+                4
+                </div>
+                <div class="content-sub" id="sub-5">
+                 5
+                </div>
+
+            </div>
+        </div>
+    </body>
