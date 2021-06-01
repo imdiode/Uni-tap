@@ -12,7 +12,6 @@ body {
 .navigation {
     color: white;
     position: relative;
-    
 }
 
 .navigation a {
@@ -23,10 +22,8 @@ body {
 .navigation ul {
     list-style-type: none;
     display: inline;
-  
     margin-left: 50px;
     margin-right: 20px;
-    
     transition: all .7s ease-out;
 }
 
@@ -41,8 +38,7 @@ body {
     color: black;
 }
 
-.profile
-{
+.profile {
     margin-right: 10px;
     color: white;
     margin-left: auto;
@@ -92,34 +88,34 @@ body {
     background-color: white;
     width: 80%;
     height: Calc(100vh - 70px);
-    position:inherit;
+    position: inherit;
     display: inline-block;
+    margin-left: 15%;
 }
 
 .content-main {
     margin: 5%;
     color: #0097e3;
-    width: 114%;
+    width: 80%;
 }
 
 .nav-2 {
     width: 100%;
-    background-color:yellowgreen;
+    background-color: yellowgreen;
     height: 40px;
     color: white;
     border-radius: 20px;
-    text-align: end;
 }
 
 .menu {
     display: inline-block;
-    margin-left: 20mm;
+    margin-left: 20px;
     margin-top: 6px;
     background-color: #023c7e;
-    width: 30mm;
     text-align: center;
-    color:yellowgreen;
-    padding: 5px;
+    color: yellowgreen;
+    padding: 7px;
+    padding-bottom: 4px;
     border-radius: 12px;
     transition: all .7s ease-out;
 }
@@ -129,12 +125,13 @@ body {
     margin-right: 58mm;
     margin-top: 6px;
     background-color: #023c7e;
-    color:yellowgreen;
-    padding: 5px;
+    color: yellowgreen;
+    padding: 7px;
+    padding-bottom: 4px;
     border-radius: 12px;
     transition: all .7s ease-in-out
-    
 }
+
 .active {
     color: white;
 }
@@ -151,8 +148,9 @@ body {
     margin-left: 2.5%;
     height: 70vh;
     z-index: 2;
-    
     overflow-y: scroll !important;
+    margin-top: 30px;
+    padding: 0;
 }
 
 .active-sub {
@@ -161,7 +159,7 @@ body {
 
 .content-sub h3 {
     text-align: center;
-    color:yellowgreen;
+    color: yellowgreen;
     margin-top: 7mm;
     margin-bottom: 7mm;
 }
@@ -191,8 +189,6 @@ body {
 .table-pending th {
     border: 1px solid black;
     color: #023c7e;
-    
-  
 }
 
 .table-pending td {
@@ -215,6 +211,27 @@ body {
     position: absolute;
 }
 
+#sub-2 {
+    overflow-y: hidden !important;
+}
 
+#issue-form {
+    border: none;
+    width: auto;
+    margin-top: 20px;
+}
 
+#issue-form td {
+    border: none;
+    padding: 10px;
+    padding-left: 5px;
+    text-align: left;
+}
 
+.lbl {
+    text-align: right !important;
+}
+
+.btns {
+    text-align: center !important;
+}
