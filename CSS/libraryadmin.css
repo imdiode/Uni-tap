@@ -1,0 +1,278 @@
+body {
+    margin: 0;
+}
+
+.top {
+    width: 100%;
+    height: 70px;
+    background-color: deepskyblue;
+    display: flex;
+}
+
+.navigation {
+    color: white;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: inline;
+    margin-left: 50px;
+    margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li {
+    display: inline;
+    line-height: 70px;
+    margin-right: 20px;
+    transition: all .7s ease-out;
+}
+
+.navigation li:hover {
+    color: black;
+}
+
+.profile {
+    margin-right: 10px;
+    color: white;
+    margin-left: auto;
+    line-height: 70px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 7mm;
+    margin-left: 3mm;
+    background-color: black;
+    vertical-align: middle;
+}
+
+.sidebar {
+    margin-left: 0;
+    width: 20%;
+    background-color: #023c7e;
+    height: Calc(100vh - 70px);
+    position: relative;
+    display: inline-block;
+}
+
+.options {
+    height: 50px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    transition: all .7s ease-out;
+}
+
+.options:hover {
+    background-color: #002d61;
+    cursor: pointer;
+}
+
+.bstick {
+    margin-top: 3mm;
+    margin-left: 5mm;
+    position: absolute;
+    width: 100%;
+}
+
+.center-main {
+    background-color: white;
+    width: 80%;
+    height: Calc(100vh - 70px);
+    position: inherit;
+    display: inline-block;
+    margin-left: 14%;
+}
+
+.content-main {
+    margin: 5%;
+    color: #0097e3;
+    width: 80%;
+}
+
+.nav-2 {
+    width: 100%;
+    background-color:#0097e3;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.menu {
+    display: inline-block;
+    margin-left: 7mm;
+    margin-right: 7mm;
+    margin-top: 6px;
+    background-color: #023c7e;
+    padding: 7px;
+    padding-bottom: 4px;
+    border-radius: 12px;
+    transition: all .7s ease-out;
+}
+
+
+.active {
+    color:greenyellow;
+}
+
+.menu:hover {
+    cursor: pointer;
+    color: white;
+    background-color: yellowgreen;
+}
+
+.content-sub {
+    display: none;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 70vh;
+    z-index: 2;
+    overflow-y: scroll !important;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.active-sub {
+    display: inline-block;
+}
+
+.content-sub h3 {
+    text-align: center;
+    color: yellowgreen;
+    margin-top: 7mm;
+    margin-bottom: 7mm;
+}
+
+.new-order-sign {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    background-color: #0097e3;
+    color: white;
+    border-radius: 50%;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.new-order {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.table-pending {
+    width: 90%;
+    margin-left: 5%;
+    border: 2px solid black;
+}
+
+.table-pending th {
+    border: 1px solid black;
+    color: #023c7e;
+    font: bold;
+}
+
+.table-pending td {
+    border: 1px solid black;
+    text-align: center;
+    color: #0097e3;
+
+}
+
+.price {
+    text-align: center;
+}
+
+.ads {
+    display: inline-block;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: auto;
+    height: 60vh;
+    width: 10%;
+    border: 2px dotted black;
+    position: absolute;
+}
+
+#sub-2 {
+    overflow-y: hidden !important;
+    color: #023c7e;
+}
+
+#sub-3 {
+    overflow-y: hidden !important;
+    color: #023c7e;
+}
+
+#sub-5 {
+    text-align: center;
+    color: yellowgreen;
+}
+
+.content-sub h4 {
+    text-align: center;
+    color: yellowgreen;
+    margin-top: 7mm;
+    margin-bottom: 3mm;
+    font-size: 18px;
+}
+
+.issue-form {
+    border: none;
+    width: auto;
+    margin-top: 20px;
+}
+
+.issue-form td {
+    border: none;
+    padding: 10px;
+    padding-left: 5px;
+    text-align: left;
+    color: #023c7e;
+}
+
+#edit_link {
+    color:gray
+}
+
+.lbl {
+    text-align: right !important;
+}
+
+.btns {
+    text-align: center !important;
+}
+
+.add_item{
+    width: 20%;
+	height: 20%;
+    border-radius: 15px;
+    background-color: white;
+    color: #0097e3;
+    box-shadow: 0 0 10px dimgray;
+	display: none;
+	left: 40%;
+	padding-left: 5%;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 5%;
+    margin-bottom: 10px;
+    top: 20%;
+    z-index: 99;
+    position: fixed;
+    font-size: 20px;
+}
+
+.blur {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}

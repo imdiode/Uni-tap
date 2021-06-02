@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>
+        CCAS | Sports Admin
+    </title>
+    <link rel="stylesheet" href="CSS/libraryadmin.css">
+    <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <script rel="text/javascript" src="Backend/JS/libraryadmin.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="profile">
+            Hello Sir!
+            <img src="./Backend/Images/aiie.png">
+        </div>
+    </div>
+
+    <div class="center-main">
+        <div class="content-main">
+            <div class="nav-2">
+                <div class="menu active " id="menu-item-1" onclick="po_click()">
+                    Available
+                </div>
+                <div class="menu " id="menu-item-2" onclick="oh_click()">
+                    Issue
+                </div>
+                <div class="menu" id="menu-item-3" onclick="tm_click()">
+                    Return
+                </div>
+                <div class="menu" id="menu-item-4" onclick="as_click()">
+                    Logs
+                </div>
+                <div class="menu" id="menu-item-5" onclick="ds_click()">
+                    Update
+                </div>
+
+            </div>
+            <div class="content-sub active-sub" id="sub-1">
+                <h3>THESE ITEMS ARE CURRENTLY AVAILABLE FOR ISSUING</h3>
+
+                <table class="table-pending">
+                    <th>
+                        SR NO.
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Author
+                    </th>
+                    <th>
+                        Publisher
+                    </th>
+                    <tr>
+                        <td>
+                            1.
+                        </td>
+                        <td>
+                            Let us C
+                        </td>
+                        <td>
+                            Yashvant Kanetkar
+                        </td>
+                        <td>
+                            BPB Publication
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2.
+                        </td>
+                        <td>
+                            Think and Grow Rich
+                        </td>
+                        <td>
+                            Napoleon Hill
+                        </td>
+                        <td>
+                            FP classics
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3.
+                        </td>
+                        <td>
+                            The Old Man and the Sea
+                        </td>
+                        <td>
+                            Ernest Hemingway
+                        </td>
+                        <td>
+                            Harper Collins Publication
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4.
+                        </td>
+                        <td>
+                            The Great Gatsby
+                        </td>
+                        <td>
+                            F. Scott Fitzgerald
+                        </td>
+                        <td>
+                            Penguin Publication
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-sub" id="sub-2">
+                <form>
+                    <table class="issue-form">
+                        <tr>
+                            <td class="lbl"><label for="branch">BRANCH:-</label></td>
+                            <td><select name="branch" id="branch">
+                                    <option value="ict">ICT</option>
+                                    <option value="ele">ELECTRICAL</option>
+                                    <option value="cie">CIVIL</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="sem">SEMESTER:-</label></td>
+                            <td><select name="sem" id="sem">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="enrol">ENROLLMENT NUMBER:-</label></td>
+                            <td><input type="number" id="enrol" name="enrol"></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="equip">Book Name: </label></td>
+                            <td><select name="equip" id="equip">
+                                    <option value="luc">Let us C</option>
+                                    <option value="tagr">Think and grow Rich</option>
+                                    <option value="tomats">The Old Man and The Sea</option>
+                                    <option value="tgg">The Great Gatsby</option>
+                                    <option value="tpom">The Psychology of Money</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="eqid">EQUIPMENT ID:-</label></td>
+                            <td><input type="number" id="eqid" name="eqid"></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="issue">CHOOSE THE TIME OF ISSUING:-</label></td>
+                            <td><input type="time" id="issue" name="issue" min="10:00" max="18:00" required>
+                                <br/><small>Office hours are from 10am to 6pm</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="idate">ISSUING DATE:-</label></td>
+                            <td><input type="date" id="idate" name="idate" value="" min="2021-01-01" max="2021-12-31">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
+                            <td><button type="reset" value="Reset">Reset</button></td>
+                        </tr>
+
+                    </table>
+                </form>
+
+            </div>
+            <div class="content-sub" id="sub-3">
+                <form>
+                    <table class="issue-form">
+                        <tr>
+                            <td class="lbl"><label for="branch">BRANCH:-</label></td>
+                            <td><select name="branch" id="branchname">
+                                    <option value="ict">ICT</option>
+                                    <option value="ele">ELECTRICAL</option>
+                                    <option value="cie">CIVIL</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="sem">SEMESTER:-</label></td>
+                            <td><select name="sem" id="semester">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="enrol">ENROLLMENT NUMBER:-</label></td>
+                            <td><input type="number" id="enrollment" name="enrollment_num"></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="bname">Book Name: </label></td>
+                            <td><select name="Book Name" id="bname">
+                                    <option value="luc">Let us C</option>
+                                    <option value="tagr">Think and grow Rich</option>
+                                    <option value="tomats">The Old Man and The Sea</option>
+                                    <option value="tgg">The Great Gatsby</option>
+                                    <option value="tpom">The Psychology of Money</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="eqid">EQUIPMENT ID:-</label></td>
+                            <td><input type="number" id="equipmentid" name="eqid"></td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="issue">CHOOSE THE TIME OF RETURNING:-</label></td>
+                            <td><input type="time" id="issuetime" name="issue" min="10:00" max="18:00" required>
+                                <br/><small>Office hours are from 10am to 6pm</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><label for="idate">RETURNING DATE:-</label></td>
+                            <td><input type="date" id="returndate" name="idate" value="" min="2021-01-01" max="2021-12-31">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
+                            <td><button type="reset" value="Reset">Reset</button></td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+            <div class="content-sub" id="sub-4">
+                <table class="table-pending">
+                    <th>Sr No.</th>
+                    <th>Enroll No.</th>
+                    <th>Equi Id</th>
+                    <th>Book Name</th>
+                    <th>Issued At</th>
+                    <th>Returned At</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                    <tr>
+                        <td>1</td>
+                        <td>191310132136</td>
+                        <td>007</td>
+                        <td>Think and Grow Rich</td>
+                        <td>12:40 7/1/2021</td>
+                        <td>17:30 7/1/2021</td>
+                        <td>-</td>
+                        <td class="edit_link">Click Here</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>191310132068</td>
+                        <td>002</td>
+                        <td>The Psychology of Money</td>
+                        <td>12:40 7/4/2021</td>
+                        <td>13:30 7/4/2021</td>
+                        <td>-</td>
+                        <td class="edit_link">Click Here</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="content-sub" id="sub-5">
+                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" onclick="additem()">Add Item</button></h4>
+                <br><table class="table-pending">
+                    <th>SR NO.</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>QUANTITY</th>
+                    <th>Delete</th>
+                    <tr>
+                        <td>1</td>
+                        <td>Let us C</td>
+                        <td>Yashvant Kanetkar</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>The Old Man and The Sea</td>
+                        <td>Ernest Hemingway</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>The Psychology of Money</td>
+                        <td>Morgan Housel</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Think and Grow Rich</td>
+                        <td>Napoleon Hill</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="add_item" id="add__item">
+                <form>
+                    <label for="bookname">Book Name:-</label>
+                    <input type="text" value="Book Name" id="bookname">
+                    <br>
+                    <label for="authorname">Author Name:-</label>
+                    <input type="text" id="authorname" value="Author Name"><br>
+                    <label for="quant">Quantity:-</label>
+                    <select name="quantity" id="quant">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select><br>
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
