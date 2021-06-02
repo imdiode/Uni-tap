@@ -9,35 +9,6 @@ body {
     display: flex;
 }
 
-.navigation {
-    color: white;
-    position: relative;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.navigation ul {
-    list-style-type: none;
-    display: inline;
-    margin-left: 50px;
-    margin-right: 20px;
-    transition: all .7s ease-out;
-}
-
-.navigation li {
-    display: inline;
-    line-height: 70px;
-    margin-right: 20px;
-    transition: all .7s ease-out;
-}
-
-.navigation li:hover {
-    color: black;
-}
-
 .profile {
     margin-right: 10px;
     color: white;
@@ -53,35 +24,6 @@ body {
     margin-left: 3mm;
     background-color: black;
     vertical-align: middle;
-}
-
-.sidebar {
-    margin-left: 0;
-    width: 20%;
-    background-color: #023c7e;
-    height: Calc(100vh - 70px);
-    position: relative;
-    display: inline-block;
-}
-
-.options {
-    height: 50px;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    transition: all .7s ease-out;
-}
-
-.options:hover {
-    background-color: #002d61;
-    cursor: pointer;
-}
-
-.bstick {
-    margin-top: 3mm;
-    margin-left: 5mm;
-    position: absolute;
-    width: 100%;
 }
 
 .center-main {
@@ -101,7 +43,7 @@ body {
 
 .nav-2 {
     width: 100%;
-    background-color:#0097e3;
+    background-color:#002d61;
     height: 40px;
     color: white;
     border-radius: 20px;
@@ -113,22 +55,23 @@ body {
     margin-left: 7mm;
     margin-right: 7mm;
     margin-top: 6px;
-    background-color: #023c7e;
+    background-color: #002d61;
     padding: 7px;
     padding-bottom: 4px;
     border-radius: 12px;
     transition: all .7s ease-out;
+    color: deepskyblue;
 }
 
 
 .active {
-    color:greenyellow;
+    color:white;
 }
 
 .menu:hover {
     cursor: pointer;
     color: white;
-    background-color: yellowgreen;
+    background-color: #002d61;
 }
 
 .content-sub {
@@ -148,7 +91,7 @@ body {
 
 .content-sub h3 {
     text-align: center;
-    color: yellowgreen;
+    color: deepskyblue;
     margin-top: 7mm;
     margin-bottom: 7mm;
 }
@@ -215,12 +158,12 @@ body {
 
 #sub-5 {
     text-align: center;
-    color: yellowgreen;
+    color: deepskyblue;
 }
 
 .content-sub h4 {
     text-align: center;
-    color: yellowgreen;
+    color: deepskyblue;
     margin-top: 7mm;
     margin-bottom: 3mm;
     font-size: 18px;
@@ -253,19 +196,20 @@ body {
 }
 
 .add_item{
-    width: 20%;
+    width: 25%;
 	height: 20%;
     border-radius: 15px;
     background-color: white;
     color: #0097e3;
     box-shadow: 0 0 10px dimgray;
 	display: none;
-	left: 40%;
+	left: 32%;
 	padding-left: 5%;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	padding-right: 5%;
     margin-bottom: 10px;
+    margin-top: 10%;
     top: 20%;
     z-index: 99;
     position: fixed;
@@ -275,4 +219,32 @@ body {
 .blur {
     filter: blur(4px);
     -webkit-filter: blur(4px);
+}
+
+.btn{
+    margin-top: 40px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 40px;
+    background-color: #0097e3;
+    color: white;
+    font-size: 15px;
+    padding: 8px 20px 8px 20px;
+}
+
+.add-item-sign {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    background-color: #0097e3;
+    color: white;
+    border-radius: 50%;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.add-itemm {
+    display: inline-block;
+    cursor: pointer;
 }

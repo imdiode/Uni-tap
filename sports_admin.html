@@ -161,8 +161,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
-                            <td><button type="reset" value="Reset">Reset</button></td>
+                            <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
+                            <td><button type="reset" value="Reset" class="btn">Reset</button></td>
                         </tr>
 
                     </table>
@@ -232,8 +232,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
-                            <td><button type="reset" value="Reset">Reset</button></td>
+                            <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
+                            <td><button type="reset" value="Reset" class="btn">Reset</button></td>
                         </tr>
 
                     </table>
@@ -276,7 +276,18 @@
                 </table>
             </div>
             <div class="content-sub" id="sub-5">
-                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" onclick="additem()">Add Item</button></h4>
+                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE
+                    <br>
+                    <br>
+                    <center>
+                        <div class="add-item-sign" onclick="additem()">
+                        +
+                        </div>
+                        <div class="add-itemm" onclick="additem()">
+                            Add Item
+                        </div>
+                    </center>
+                </h4>
                 <br><table class="table-pending">
                     <th>SR NO.</th>
                     <th>EQUIPMENT NAME</th>
@@ -329,7 +340,7 @@
             </div>
             <div class="add_item" id="add__item">
                 <form>
-                    <label for="equip">EQUIPMENT NAME:-</label>
+                    <label for="equip">Equipment Name:-</label>
                     <select name="equip" id="equipm">
                         <option value="bb">Nivia Basketball</option>
                         <option value="v">Volleyball</option>
@@ -338,14 +349,11 @@
                         <option value="ball">Tennis Ball</option>
                         <option value="bat">Kukaboora Tennis Bat</option>
                     </select><br>
-                    <label for="eqid">EQUIPMENT ID:-</label>
+                    <label for="eqid">Equipment Id:-</label>
                     <input type="number" id="equipid" name="eqid"><br>
-                    <label for="qua">QUANTITY:-</label>
-                    <select name="qua" id="quant">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select><br>
-                    <input type="submit" value="Add Item">
+                    <label for="qua">Quantity:-</label>
+                    <input type="number" name="quantity" id="quant">
+                    <input type="submit" value="Add Item" class="btn">
                 </form>
             </div>
 
