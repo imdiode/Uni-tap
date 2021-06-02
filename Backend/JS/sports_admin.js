@@ -65,3 +65,16 @@ function ds_click(){
     document.getElementById('menu-item-4').className = 'menu';
 }
 
+function additem ()
+{
+    if (document.getElementById("add__item").style.display == "block")
+    {
+        document.getElementById("add__item").style.display = "none";
+        document.getElementById("sub-5").className = "content-sub";
+    }
+    else
+    {
+        document.getElementById("add__item").style.display = "block";
+        document.getElementById("sub-5").className += " blur";
+    }
+}

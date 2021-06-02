@@ -174,11 +174,11 @@
                     <table class="table-pending" id="issue-form">
                         <tr>
                             <td class="lbl"><label for="enrol">ENROLLMENT NUMBER:-</label></td>
-                            <td><input type="number" id="enrol" name="enrol"></td>
+                            <td><input type="number" id="enrollment" name="enrollment_num"></td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="branch">BRANCH:-</label></td>
-                            <td><select name="branch" id="branch">
+                            <td><select name="branch" id="branchname">
                                     <option value="ict">ICT</option>
                                     <option value="ele">ELECTRICAL</option>
                                     <option value="cie">CIVIL</option>
@@ -186,7 +186,7 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="sem">SEMESTER:-</label></td>
-                            <td><select name="sem" id="sem">
+                            <td><select name="sem" id="semester">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -199,7 +199,7 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="equip">EQUIPMENT NAME:-</label></td>
-                            <td><select name="equip" id="equip">
+                            <td><select name="equip" id="equipment">
                                     <option value="bb">Nivia Basketball</option>
                                     <option value="v">Volleyball</option>
                                     <option value="tt">Table-Tennis Racket</option>
@@ -210,25 +210,25 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="eqid">EQUIPMENT ID:-</label></td>
-                            <td><input type="number" id="eqid" name="eqid"></td>
+                            <td><input type="number" id="equipmentid" name="eqid"></td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="qua">QUANTITY:-</label>
                             </td>
-                            <td><select name="qua" id="qua">
+                            <td><select name="qua" id="quantity">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                 </select></td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="issue">CHOOSE THE TIME OF RETURNING:-</label></td>
-                            <td><input type="time" id="issue" name="issue" min="10:00" max="18:00" required>
+                            <td><input type="time" id="issuetime" name="issue" min="10:00" max="18:00" required>
                                 <br/><small>Office hours are from 10am to 6pm</small>
                             </td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="idate">RETURNING DATE:-</label></td>
-                            <td><input type="date" id="idate" name="idate" value="" min="2021-01-01" max="2021-12-31">
+                            <td><input type="date" id="returndate" name="idate" value="" min="2021-01-01" max="2021-12-31">
                             </td>
                         </tr>
                         <tr>
@@ -259,7 +259,7 @@
                         <td>12:40 7/1/2021</td>
                         <td>17:30 7/1/2021</td>
                         <td>-</td>
-                        <td id="edit_link">Click Here</td>
+                        <td class="edit_link">Click Here</td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -270,13 +270,13 @@
                         <td>12:40 7/4/2021</td>
                         <td>13:30 7/4/2021</td>
                         <td>-</td>
-                        <td id="edit_link">Click Here</td>
+                        <td class="edit_link">Click Here</td>
                     </tr>
 
                 </table>
             </div>
             <div class="content-sub" id="sub-5">
-                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button">Add Item</button></h4>
+                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" onclick="additem()">Add Item</button></h4>
                 <br><table class="table-pending">
                     <th>SR NO.</th>
                     <th>EQUIPMENT NAME</th>
@@ -327,7 +327,29 @@
                     </tr>
                 </table>
             </div>
+            <div class="add_item" id="add__item">
+                <form>
+                    <label for="equip">EQUIPMENT NAME:-</label>
+                    <select name="equip" id="equipm">
+                        <option value="bb">Nivia Basketball</option>
+                        <option value="v">Volleyball</option>
+                        <option value="tt">Table-Tennis Racket</option>
+                        <option value="ppb">Ping-Pong Ball</option>
+                        <option value="ball">Tennis Ball</option>
+                        <option value="bat">Kukaboora Tennis Bat</option>
+                    </select><br>
+                    <label for="eqid">EQUIPMENT ID:-</label>
+                    <input type="number" id="equipid" name="eqid"><br>
+                    <label for="qua">QUANTITY:-</label>
+                    <select name="qua" id="quant">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select><br>
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
 
         </div>
     </div>
 </body>
+</html>

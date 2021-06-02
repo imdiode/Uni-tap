@@ -252,3 +252,27 @@ body {
     text-align: center !important;
 }
 
+.add_item{
+    width: 20%;
+	height: 20%;
+    border-radius: 15px;
+    background-color: white;
+    color: #0097e3;
+    box-shadow: 0 0 10px dimgray;
+	display: none;
+	left: 40%;
+	padding-left: 5%;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 5%;
+    margin-bottom: 10px;
+    top: 20%;
+    z-index: 99;
+    position: fixed;
+    font-size: 20px;
+}
+
+.blur {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
