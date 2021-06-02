@@ -226,13 +226,13 @@ body {
     font-size: 18px;
 }
 
-#issue-form {
+.issue-form {
     border: none;
     width: auto;
     margin-top: 20px;
 }
 
-#issue-form td {
+.issue-form td {
     border: none;
     padding: 10px;
     padding-left: 5px;
