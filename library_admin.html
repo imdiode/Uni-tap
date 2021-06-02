@@ -166,8 +166,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
-                            <td><button type="reset" value="Reset">Reset</button></td>
+                            <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
+                            <td><button type="reset" value="Reset" class="btn">Reset</button></td>
                         </tr>
 
                     </table>
@@ -228,8 +228,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="lbl"><button type="submit" value="Submit">Submit</button></td>
-                            <td><button type="reset" value="Reset">Reset</button></td>
+                            <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
+                            <td><button type="reset" value="Reset" class="btn">Reset</button></td>
                         </tr>
 
                     </table>
@@ -269,7 +269,18 @@
                 </table>
             </div>
             <div class="content-sub" id="sub-5">
-                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" onclick="additem()">Add Item</button></h4>
+                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE
+                    <br>
+                    <br>
+                    <center>
+                        <div class="add-item-sign" onclick="additem()">
+                        +
+                        </div>
+                        <div class="add-itemm" onclick="additem()">
+                            Add New Book
+                        </div>
+                    </center>
+                </h4>
                 <br><table class="table-pending">
                     <th>SR NO.</th>
                     <th>Book Name</th>
@@ -314,11 +325,8 @@
                     <label for="authorname">Author Name:-</label>
                     <input type="text" id="authorname" value="Author Name"><br>
                     <label for="quant">Quantity:-</label>
-                    <select name="quantity" id="quant">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select><br>
-                    <input type="submit" value="Add Item">
+                    <input type="number" name="quantity" id="quant">
+                    <input type="submit" value="Add Item" class="btn">
                 </form>
             </div>
 
