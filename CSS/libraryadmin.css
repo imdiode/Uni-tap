@@ -43,7 +43,7 @@ body {
 
 .nav-2 {
     width: 100%;
-    background-color: #002d61;
+    background-color: #023c7e;
     height: 40px;
     color: white;
     border-radius: 20px;
@@ -55,7 +55,7 @@ body {
     margin-left: 7mm;
     margin-right: 7mm;
     margin-top: 6px;
-    background-color: #002d61;
+    background-color: #023c7e;
     padding: 7px;
     padding-bottom: 4px;
     border-radius: 12px;
@@ -196,24 +196,26 @@ body {
 }
 
 .add_item{
-    width: 20%;
-	height: 20%;
+    width: 30%;
+	height: 40%;
     border-radius: 15px;
     background-color: white;
     color: #0097e3;
     box-shadow: 0 0 10px dimgray;
 	display: none;
-	left: 40%;
+	left: 30%;
 	padding-left: 5%;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	padding-right: 5%;
     margin-bottom: 10px;
     margin-top: 10%;
-    top: 20%;
+    top: 16%;
     z-index: 99;
     position: fixed;
     font-size: 20px;
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .blur {
@@ -231,6 +233,8 @@ body {
     color: white;
     font-size: 15px;
     padding: 8px 20px 8px 20px;
+    box-shadow: none;
+    border: deepskyblue 0px;
 }
 
 .add-item-sign {
