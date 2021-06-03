@@ -85,3 +85,66 @@ function closeadditem ()
     document.getElementById('sub-5').className += ' active-sub';
     document.getElementById("sub-5").className -= " blur";
 }
+
+function closedeletebook ()
+{
+    document.getElementById("delete_book").style.display = "none";
+    document.getElementById('sub-5').className += ' active-sub';
+    document.getElementById("sub-5").className -= " blur";
+}
+
+function deletebook ()
+{
+    if (document.getElementById("delete_book").style.display == "block")
+    {
+        document.getElementById("delete_book").style.display = "none";
+        document.getElementById("sub-5").className = "content-sub";
+    }
+    else
+    {
+        document.getElementById("delete_book").style.display = "block";
+        document.getElementById("sub-5").className += " blur";
+    }
+}
+
+function closedeletelog ()
+{
+    document.getElementById("delete_log").style.display = "none";
+    document.getElementById('sub-4').className += ' active-sub';
+    document.getElementById("sub-4").className -= " blur";
+}
+
+function deletelog ()
+{
+    if (document.getElementById("delete_log").style.display == "block")
+    {
+        document.getElementById("delete_log").style.display = "none";
+        document.getElementById("sub-4").className = "content-sub";
+    }
+    else
+    {
+        document.getElementById("delete_log").style.display = "block";
+        document.getElementById("sub-4").className += " blur";
+    }
+}
+
+function closeupdatelog ()
+{
+    document.getElementById("update_log").style.display = "none";
+    document.getElementById('sub-4').className += ' active-sub';
+    document.getElementById("sub-4").className -= " blur";
+}
+
+function updatelog ()
+{
+    if (document.getElementById("update_log").style.display == "block")
+    {
+        document.getElementById("update_log").style.display = "none";
+        document.getElementById("sub-4").className = "content-sub";
+    }
+    else
+    {
+        document.getElementById("update_log").style.display = "block";
+        document.getElementById("sub-4").className += " blur";
+    }
+}

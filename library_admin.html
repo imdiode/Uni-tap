@@ -199,7 +199,7 @@
                                 </select></td>
                         </tr>
                         <tr>
-                            <td class="lbl"><label for="enrol">ENROLLMENT NUMBER:-</label></td>
+                            <td class="lbl"><label for="enrollment">ENROLLMENT NUMBER:-</label></td>
                             <td><input type="number" id="enrollment" name="enrollment_num"></td>
                         </tr>
                         <tr>
@@ -236,42 +236,110 @@
                 </form>
             </div>
             <div class="content-sub" id="sub-4">
+                <center>
+                    <button class="btn" name="Edit Log" onclick="updatelog()">Edit Log</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn" name="Delete Log" onclick="deletelog()">Delete Log</button>
+                </center>
+                <br>
+                <br>
                 <table class="table-pending">
                     <th>Sr No.</th>
+                    <th>Trans ID</th>
                     <th>Enroll No.</th>
-                    <th>Equi Id</th>
+                    <th>Book Id</th>
                     <th>Book Name</th>
-                    <th>Issued At</th>
-                    <th>Returned At</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
+                    <th>I/R</th>
+                    <th>Time Date</th>
                     <tr>
                         <td>1</td>
+                        <td>111</td>
                         <td>191310132136</td>
                         <td>007</td>
                         <td>Think and Grow Rich</td>
-                        <td>12:40 7/1/2021</td>
-                        <td>17:30 7/1/2021</td>
-                        <td>-</td>
-                        <td class="edit_link">Click Here</td>
+                        <td>R</td>
+                        <td>17:30 8/1/2021</td>
                     </tr>
                     <tr>
                         <td>2</td>
+                        <td>112</td>
                         <td>191310132068</td>
                         <td>002</td>
                         <td>The Psychology of Money</td>
-                        <td>12:40 7/4/2021</td>
+                        <td>R</td>
                         <td>13:30 7/4/2021</td>
-                        <td>-</td>
-                        <td class="edit_link">Click Here</td>
                     </tr>
-
+                    <tr>
+                        <td>3</td>
+                        <td>113</td>
+                        <td>191310132136</td>
+                        <td>007</td>
+                        <td>Think and Grow Rich</td>
+                        <td>I</td>
+                        <td>10:30 7/1/2021</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>114</td>
+                        <td>191310132068</td>
+                        <td>002</td>
+                        <td>The Psychology of Money</td>
+                        <td>I</td>
+                        <td>13:30 6/4/2021</td>
+                    </tr>
                 </table>
             </div>
+            <div class="pop_up" id="delete_log">
+                <form>
+                    <h4>Select The Log You want to delete:-</h4>
+                    <label for="deletelogid">Transaction ID:-</label>
+                    <select name="Log ID" id="deletelogid">
+                        <option value="111">111</option>
+                        <option value="112">112</option>
+                        <option value="113">113</option>
+                        <option value="114">114</option>
+                    </select>
+                    <br>
+                    <button type="reset" value="Cancel" class="btn" onclick="closedeletelog()">Cancel</button>
+                    <input type="submit" value="Delete Log" class="btn">                
+                </form>
+            </div>
+            <div class="pop_up" id="update_log">
+                <form>
+                    <h4>Select The Log You want to edit:-</h4>
+                    <label for="editlogid">Transaction ID:-</label>
+                    <select name="Log ID" id="editlogid">
+                        <option value="111">111</option>
+                        <option value="112">112</option>
+                        <option value="113">113</option>
+                        <option value="114">114</option>
+                    </select>
+                    <br>
+                    <label for="updatedenrol">Enrollment Number:-</label>
+                    <input type="number" id="updatedenrol" name="enrollment_num">
+                    <br>
+                    <label for="updatedbname">Book Name: </label>
+                    <select name="Book Name" id="updatedbname">
+                        <option value="luc">Let us C</option>
+                        <option value="tagr">Think and grow Rich</option>
+                        <option value="tomats">The Old Man and The Sea</option>
+                        <option value="tgg">The Great Gatsby</option>
+                        <option value="tpom">The Psychology of Money</option>
+                    </select>
+                    <br>
+                    <label for="updatedtime">Updated Time:-</label>
+                    <input type="time" id="updatedtime" name="issue" min="10:00" max="18:00" required>
+                    <br><small>Office hours are from 10am to 6pm</small>
+                    <br>
+                    <label for="updateddate">Updated Date:-</label>
+                    <input type="date" id="updateddate" name="idate" value="" min="2021-01-01" max="2021-12-31">
+                    <br>
+                    <button type="reset" value="Cancel" class="btn" onclick="closeupdatelog()">Cancel</button>
+                    <input type="submit" value="Update Log" class="btn">                
+                </form>
+            </div>
             <div class="content-sub" id="sub-5">
-                <h4>LIST OF ALL ITEMS AVAILABLE WITH COLLEGE
-                    <br>
-                    <br>
+                <h4>
                     <center>
                         <div class="add-item-sign" onclick="additem()">
                         +
@@ -279,45 +347,55 @@
                         <div class="add-itemm" onclick="additem()">
                             Add New Book
                         </div>
+                        &nbsp;&nbsp;
+                        <div class="add-item-sign" onclick="deletebook()">
+                            -
+                            </div>
+                            <div class="add-itemm" onclick="deletebook()">
+                                Delete Book
+                            </div>
                     </center>
+                    <br>
+                    <br>
+                    LIST OF ALL ITEMS AVAILABLE WITH COLLEGE
                 </h4>
                 <br><table class="table-pending">
                     <th>SR NO.</th>
+                    <th>Book Id</th>
                     <th>Book Name</th>
                     <th>Author</th>
                     <th>QUANTITY</th>
-                    <th>Delete</th>
                     <tr>
                         <td>1</td>
+                        <td>007</td>
                         <td>Let us C</td>
                         <td>Yashvant Kanetkar</td>
                         <td>2</td>
-                        <td>-</td>
                     </tr>
                     <tr>
                         <td>2</td>
+                        <td>093</td>
                         <td>The Old Man and The Sea</td>
                         <td>Ernest Hemingway</td>
                         <td>1</td>
-                        <td>-</td>
                     </tr>
                     <tr>
                         <td>3</td>
+                        <td>342</td>
                         <td>The Psychology of Money</td>
                         <td>Morgan Housel</td>
                         <td>3</td>
-                        <td>-</td>
                     </tr>
                     <tr>
                         <td>4</td>
+                        <td>345</td>
                         <td>Think and Grow Rich</td>
                         <td>Napoleon Hill</td>
                         <td>2</td>
-                        <td>-</td>
                     </tr>
                 </table>
             </div>
-            <div class="add_item" id="add__item">
+            <div class="pop_up" id="add__item">
                 <form>
                     <h4> Add New Book:</h4>
                     <label for="bookname">Book Name:-</label>
@@ -330,6 +408,24 @@
                     <br>
                     <button type="reset" value="Cancel" class="btn" onclick="closeadditem()">Cancel</button>
                     <input type="submit" value="Add Item" class="btn">
+                </form>
+            </div>
+            <div class="pop_up" id="delete_book">
+                <form>
+                    <h4>Select The book You want to delete:-</h4>
+                    <label for="deletebookid">Book ID:-</label>
+                    <select name="Book ID" id="deletebookid">
+                        <option value="007">007</option>
+                        <option value="093">093</option>
+                        <option value="342">342</option>
+                        <option value="345">345</option>
+                    </select>
+                    <br>
+                    <label for="deletequant">Quantity:-</label>
+                    <input type="number" name="quantity" id="deletequant">
+                    <br>
+                    <button type="reset" value="Cancel" class="btn" onclick="closedeletebook()">Cancel</button>
+                    <input type="submit" value="Delete Book" class="btn">                
                 </form>
             </div>
 
