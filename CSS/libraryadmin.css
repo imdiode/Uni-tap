@@ -209,13 +209,12 @@ body {
 	padding-top: 5px;
 	padding-right: 5%;
     margin-bottom: 10px;
-    margin-top: 10%;
-    top: 16%;
+    margin-top: 10px;
+    top: 20%;
     z-index: 99;
     position: fixed;
     font-size: 20px;
     min-width: 300px;
-    max-width: 400px;
 }
 
 .blur {

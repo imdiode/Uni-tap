@@ -78,3 +78,10 @@ function additem ()
         document.getElementById("sub-5").className += " blur";
     }
 }
+
+function closeadditem ()
+{
+    document.getElementById("add__item").style.display = "none";
+    document.getElementById('sub-5').className += ' active-sub';
+    document.getElementById("sub-5").className -= " blur";
+}
