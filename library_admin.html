@@ -113,6 +113,7 @@
                 </table>
             </div>
             <div class="content-sub" id="sub-2">
+                <center>
                 <form>
                     <table class="issue-form">
                         <tr>
@@ -172,9 +173,10 @@
 
                     </table>
                 </form>
-
+                </center>
             </div>
             <div class="content-sub" id="sub-3">
+                <center>
                 <form>
                     <table class="issue-form">
                         <tr>
@@ -234,6 +236,7 @@
 
                     </table>
                 </form>
+                </center>
             </div>
             <div class="content-sub" id="sub-4">
                 <center>
@@ -290,53 +293,71 @@
                 </table>
             </div>
             <div class="pop_up" id="delete_log">
+                <center>
                 <form>
                     <h4>Select The Log You want to delete:-</h4>
-                    <label for="deletelogid">Transaction ID:-</label>
-                    <select name="Log ID" id="deletelogid">
-                        <option value="111">111</option>
-                        <option value="112">112</option>
-                        <option value="113">113</option>
-                        <option value="114">114</option>
-                    </select>
-                    <br>
+                    <table class="issue-form">
+                        <tr>
+                            <td><label for="deletelogid">Transaction ID:-</label></td>
+                            <td><select name="Log ID" id="deletelogid">
+                                <option value="111">111</option>
+                                <option value="112">112</option>
+                                <option value="113">113</option>
+                                <option value="114">114</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
                     <button type="reset" value="Cancel" class="btn" onclick="closedeletelog()">Cancel</button>
                     <input type="submit" value="Delete Log" class="btn">                
                 </form>
+                </center>
             </div>
             <div class="pop_up" id="update_log">
+                <center>
                 <form>
                     <h4>Select The Log You want to edit:-</h4>
-                    <label for="editlogid">Transaction ID:-</label>
-                    <select name="Log ID" id="editlogid">
-                        <option value="111">111</option>
-                        <option value="112">112</option>
-                        <option value="113">113</option>
-                        <option value="114">114</option>
-                    </select>
-                    <br>
-                    <label for="updatedenrol">Enrollment Number:-</label>
-                    <input type="number" id="updatedenrol" name="enrollment_num">
-                    <br>
-                    <label for="updatedbname">Book Name: </label>
-                    <select name="Book Name" id="updatedbname">
-                        <option value="luc">Let us C</option>
-                        <option value="tagr">Think and grow Rich</option>
-                        <option value="tomats">The Old Man and The Sea</option>
-                        <option value="tgg">The Great Gatsby</option>
-                        <option value="tpom">The Psychology of Money</option>
-                    </select>
-                    <br>
-                    <label for="updatedtime">Updated Time:-</label>
-                    <input type="time" id="updatedtime" name="issue" min="10:00" max="18:00" required>
-                    <br><small>Office hours are from 10am to 6pm</small>
-                    <br>
-                    <label for="updateddate">Updated Date:-</label>
-                    <input type="date" id="updateddate" name="idate" value="" min="2021-01-01" max="2021-12-31">
-                    <br>
+                    <table class="issue-form">
+                        <tr>
+                            <td><label for="editlogid">Transaction ID:-</label></td>
+                            <td>
+                                <select name="Log ID" id="editlogid">
+                                <option value="111">111</option>
+                                <option value="112">112</option>
+                                <option value="113">113</option>
+                                <option value="114">114</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="updatedenrol">Enrollment Number:-</label></td>
+                            <td><input type="number" id="updatedenrol" name="enrollment_num"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="updatedbname">Book Name: </label></td>
+                            <td>
+                                <select name="Book Name" id="updatedbname">
+                                <option value="luc">Let us C</option>
+                                <option value="tagr">Think and grow Rich</option>
+                                <option value="tomats">The Old Man and The Sea</option>
+                                <option value="tgg">The Great Gatsby</option>
+                                <option value="tpom">The Psychology of Money</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="updatedtime">Updated Time:-</label></td>
+                            <td><input type="time" id="updatedtime" name="issue" min="10:00" max="18:00" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="updateddate">Updated Date:-</label></td>
+                            <td><input type="date" id="updateddate" name="idate" value="" min="2021-01-01" max="2021-12-31"></td>
+                        </tr>
+                    </table>
                     <button type="reset" value="Cancel" class="btn" onclick="closeupdatelog()">Cancel</button>
                     <input type="submit" value="Update Log" class="btn">                
                 </form>
+                </center>
             </div>
             <div class="content-sub" id="sub-5">
                 <h4>
@@ -396,37 +417,71 @@
                 </table>
             </div>
             <div class="pop_up" id="add__item">
+                <center>
                 <form>
                     <h4> Add New Book:</h4>
-                    <label for="bookname">Book Name:-</label>
-                    <input type="text" value="Book Name" id="bookname">
-                    <br>
-                    <label for="authorname">Author Name:-</label>
-                    <input type="text" id="authorname" value="Author Name"><br>
-                    <label for="quant">Quantity:-</label>
-                    <input type="number" name="quantity" id="quant">
-                    <br>
+                    <table class="issue-form">
+                        <tr>
+                            <td>
+                                <label for="bookname">Book Name:-</label>
+                            </td>
+                            <td>
+                                <input type="text" value="Book Name" id="bookname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="authorname">Author Name:-</label>
+                            </td>
+                            <td>
+                                <input type="text" id="authorname" value="Author Name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="quant">Quantity:-</label>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" id="quant">
+                            </td>
+                        </tr>
+                    </table>
                     <button type="reset" value="Cancel" class="btn" onclick="closeadditem()">Cancel</button>
                     <input type="submit" value="Add Item" class="btn">
                 </form>
+                </center>
             </div>
             <div class="pop_up" id="delete_book">
+                <center>
                 <form>
                     <h4>Select The book You want to delete:-</h4>
-                    <label for="deletebookid">Book ID:-</label>
-                    <select name="Book ID" id="deletebookid">
-                        <option value="007">007</option>
-                        <option value="093">093</option>
-                        <option value="342">342</option>
-                        <option value="345">345</option>
-                    </select>
-                    <br>
-                    <label for="deletequant">Quantity:-</label>
-                    <input type="number" name="quantity" id="deletequant">
-                    <br>
+                    <table class="issue-form">
+                        <tr>
+                            <td>
+                                <label for="deletebookid">Book ID:-</label>
+                            </td>
+                            <td>
+                                <select name="Book ID" id="deletebookid">
+                                <option value="007">007</option>
+                                <option value="093">093</option>
+                                <option value="342">342</option>
+                                <option value="345">345</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="deletequant">Quantity:-</label>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" id="deletequant">
+                            </td>
+                        </tr>
+                    </table>
                     <button type="reset" value="Cancel" class="btn" onclick="closedeletebook()">Cancel</button>
-                    <input type="submit" value="Delete Book" class="btn">                
+                    <input type="submit" value="Delete Book" class="btn"> 
                 </form>
+                </center>
             </div>
 
         </div>
