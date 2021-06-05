@@ -43,7 +43,7 @@ body {
 
 .nav-2 {
     width: 100%;
-    background-color:#002d61;
+    background-color: #023c7e;
     height: 40px;
     color: white;
     border-radius: 20px;
@@ -55,7 +55,7 @@ body {
     margin-left: 7mm;
     margin-right: 7mm;
     margin-top: 6px;
-    background-color: #002d61;
+    background-color: #023c7e;
     padding: 7px;
     padding-bottom: 4px;
     border-radius: 12px;
@@ -63,9 +63,8 @@ body {
     color: deepskyblue;
 }
 
-
 .active {
-    color:white;
+    color: white;
 }
 
 .menu:hover {
@@ -128,7 +127,6 @@ body {
     border: 1px solid black;
     text-align: center;
     color: #0097e3;
-
 }
 
 .price {
@@ -184,7 +182,7 @@ body {
 }
 
 #edit_link {
-    color:gray
+    color: gray
 }
 
 .lbl {
@@ -195,25 +193,31 @@ body {
     text-align: center !important;
 }
 
-.add_item{
-    width: 25%;
-	height: 20%;
+.pop_up {
+    width: 30%;
+    height: 40%;
     border-radius: 15px;
     background-color: white;
     color: #0097e3;
     box-shadow: 0 0 10px dimgray;
-	display: none;
-	left: 32%;
-	padding-left: 5%;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	padding-right: 5%;
+    display: none;
+    left: 30%;
+    padding-left: 5%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 5%;
     margin-bottom: 10px;
-    margin-top: 10%;
+    margin-top: 10px;
     top: 20%;
     z-index: 99;
     position: fixed;
     font-size: 20px;
+    min-height: 250px;
+    min-width: max-content;
+}
+
+#update_log {
+    height: 500px;
 }
 
 .blur {
@@ -221,7 +225,7 @@ body {
     -webkit-filter: blur(4px);
 }
 
-.btn{
+.btn {
     margin-top: 40px;
     text-align: center;
     display: inline-block;
@@ -231,6 +235,8 @@ body {
     color: white;
     font-size: 15px;
     padding: 8px 20px 8px 20px;
+    box-shadow: none;
+    border: deepskyblue 0px;
 }
 
 .add-item-sign {
@@ -247,4 +253,8 @@ body {
 .add-itemm {
     display: inline-block;
     cursor: pointer;
+}
+
+input label select button {
+    margin-bottom: 20px;
 }
