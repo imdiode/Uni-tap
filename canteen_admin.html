@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CCAS | Canteen</title>
+    <link rel="stylesheet" href="./canteenAdmin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <script rel="text/javascript" src="../Backend/JS/redirect.js"></script> -->
+    <script rel="text/javascript" src="./canteenAdmin.js"></script>
+  </head>
+
+  <body>
+    <div class="top">
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Notice Board</a></li>
+          <li><a href="#">My Violations</a></li>
+          <li><a href="#">CCAS Support</a></li>
+        </ul>
+      </div>
+      <div class="profile">
+        <!-- <img src="../Backend/Images/logo_2_dicot_Dark.svg"> -->
+        Hi! Nandan
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="options">Profile</div>
+      <div class="options">Grievance</div>
+      <div class="options">Help desk</div>
+      <div class="options">Academic record</div>
+      <div class="options">Library</div>
+      <div class="options">Sports equipment</div>
+      <div class="options">Canteen</div>
+      <div class="options bstick">Logout</div>
+    </div>
+    <div class="sidebar-main-right">
+      <div class="content-main">
+        <div class="nav-2">
+          <div class="menu active" id="menu-item-1" onclick="po_click()">
+            Place Order
+          </div>
+          <div class="menu" id="menu-item-2" onclick="oh_click()">
+            Order History
+          </div>
+          <div class="menu" id="menu-item-3" onclick="tm_click()">
+            Today's Menu
+          </div>
+        </div>
+        <div class="content-sub active-sub" id="sub-1">
+          <center>
+            <div class="new-order-sign" onclick="">+</div>
+            <div class="new-order" onclick="">place new order</div>
+          </center>
+          <h3>Pending orders</h3>
+          <table class="table-pending">
+            <th>Sr.</th>
+            <th>Item</th>
+            <th>Price (Rs.)</th>
+            <th>Student</th>
+            <tr>
+              <td>1.</td>
+              <td>Samosa (2 nos.)</td>
+              <td class="price">40</td>
+              <td>Nandan</td>
+            </tr>
+          </table>
+        </div>
+        <div class="content-sub" id="sub-2">
+          <table class="table-pending">
+            <th>Sr.</th>
+            <th>Time</th>
+            <th>Student</th>
+            <th>Ordered item</th>
+            <th>Count Item</th>
+            <th>Price (Rs.)</th>
+            <th>Payment status</th>
+            <tr>
+              <td>1.</td>
+              <td>11:00 AM</td>
+              <td>Nandan</td>
+              <td>Samosa</td>
+              <td>2</td>
+              <td class="price">40</td>
+              <td>Done</td>
+            </tr>
+          </table>
+        </div>
+        <div class="content-sub" id="sub-3">
+          <table class="table-menu">
+            <th>Sr.</th>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Items</th>
+            <th class="type">Type</th>
+            <th class="modify">Modify</th>
+            <tr>
+              <td>1.</td>
+              <td class="date">5-June-2021</td>
+              <td>Friday</td>
+              <td>Samosa, Sandwich</td>
+              <td class="type">Breakfast</td>
+              <td>
+                <button>
+                  <i
+                    class="fa fa-pencil-square fa-lg"
+                    aria-hidden="true"
+                    id="icon-modify"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-trash fa-lg"
+                    aria-hidden="true"
+                    id="icon-delete"
+                  ></i>
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ads">
+        <center>ads go here</center>
+      </div>
+    </div>
+  </body>
+</html>
