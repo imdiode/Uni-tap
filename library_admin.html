@@ -139,7 +139,7 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="enrol">ENROLLMENT NUMBER:-</label></td>
-                            <td><input type="number" id="enrol" name="enrol"></td>
+                            <td><input type="text" id="enrol" name="enrol"></td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="equip">Book Name: </label></td>
@@ -153,10 +153,10 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="eqid">EQUIPMENT ID:-</label></td>
-                            <td><input type="number" id="eqid" name="eqid"></td>
+                            <td><input type="number" id="eqid" name="eqid" min="1"></td>
                         </tr>
                         <tr>
-                            <td class="lbl"><label for="issue">CHOOSE THE TIME OF ISSUING:-</label></td>
+                            <td class="lbl"><label for="issue">ISSUE TIME:-</label></td>
                             <td><input type="time" id="issue" name="issue" min="10:00" max="18:00" required>
                                 <br/><small>Office hours are from 10am to 6pm</small>
                             </td>
@@ -202,7 +202,7 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="enrollment">ENROLLMENT NUMBER:-</label></td>
-                            <td><input type="number" id="enrollment" name="enrollment_num"></td>
+                            <td><input type="text" id="enrollment" name="enrollment_num"></td>
                         </tr>
                         <tr>
                             <td class="lbl"><label for="bname">Book Name: </label></td>
@@ -216,10 +216,10 @@
                         </tr>
                         <tr>
                             <td class="lbl"><label for="eqid">EQUIPMENT ID:-</label></td>
-                            <td><input type="number" id="equipmentid" name="eqid"></td>
+                            <td><input type="number" id="equipmentid" name="eqid" min="1"></td>
                         </tr>
                         <tr>
-                            <td class="lbl"><label for="issue">CHOOSE THE TIME OF RETURNING:-</label></td>
+                            <td class="lbl"><label for="issue">RETURN TIME:-</label></td>
                             <td><input type="time" id="issuetime" name="issue" min="10:00" max="18:00" required>
                                 <br/><small>Office hours are from 10am to 6pm</small>
                             </td>
@@ -331,7 +331,7 @@
                         </tr>
                         <tr>
                             <td><label for="updatedenrol">Enrollment Number:-</label></td>
-                            <td><input type="number" id="updatedenrol" name="enrollment_num"></td>
+                            <td><input type="text" id="updatedenrol" name="enrollment_num"></td>
                         </tr>
                         <tr>
                             <td><label for="updatedbname">Book Name: </label></td>
@@ -442,7 +442,7 @@
                                 <label for="quant">Quantity:-</label>
                             </td>
                             <td>
-                                <input type="number" name="quantity" id="quant">
+                                <input type="number" name="quantity" id="quant" min="1">
                             </td>
                         </tr>
                     </table>
@@ -474,7 +474,7 @@
                                 <label for="deletequant">Quantity:-</label>
                             </td>
                             <td>
-                                <input type="number" name="quantity" id="deletequant">
+                                <input type="number" name="quantity" id="deletequant" min="1">
                             </td>
                         </tr>
                     </table>
