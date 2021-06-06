@@ -49,7 +49,7 @@
             Today's Menu
           </div>
           <div class="menu" id="menu-item-4" onclick="pm_click()">
-            Pending Menu
+            Pending Orders
           </div>
         </div>
         <div class="content-sub active-sub" id="sub-1">
@@ -128,33 +128,34 @@
         </div>
         <div class="content-sub" id="sub-3">
           <center>
-            <div id="abc">
-              <div id="popupContact">
-                <form action="#" id="form" method="post" name="form">
-                  <img id="close" src="images/3.png" onclick="div_hide()" />
-                  <h2>Add item</h2>
-                  <hr />
-                  <input id="name" name="name" placeholder="Dish" type="text" />
+            <div class="openBtn">
+              <button class="openButton new-order-sign" onclick="openForm()">
+                <strong>+</strong>
+              </button>
+              <div class="new-order" onclick="">Add new item</div>
+            </div>
+            <div class="loginPopup">
+              <div class="formPopup" id="popupForm">
+                <form action="/action_page.php" class="formContainer">
+                  <input type="text" placeholder="Dish" name="name" required />
                   <input
-                    id="mode"
-                    name="name"
-                    placeholder="Mode: eg:~ Breakfast/Lunch/Dinner"
                     type="text"
+                    placeholder="Mode: eg:~ Breakfast/Lunch/Dinner"
+                    name="name"
+                    required
                   />
-                  <textarea
-                    id="msg"
-                    name="message"
-                    placeholder="Message"
-                  ></textarea>
-                  <a href="javascript:%20check_empty()" id="submit">Add</a>
+                  <textarea name="message" placeholder="Message"></textarea>
+                  <button type="submit" class="btn">Log in</button>
+                  <button
+                    type="button"
+                    class="btn cancel"
+                    onclick="closeForm()"
+                  >
+                    Close
+                  </button>
                 </form>
               </div>
             </div>
-
-            <button class="new-order-sign" id="popup" onclick="div_show()">
-              +
-            </button>
-            <div class="new-order" onclick="">Add new item</div>
           </center>
           <!-- ------------------------------------------------------------------ -->
           <table class="table-menu">
@@ -190,8 +191,7 @@
           </table>
           <!-- ------------------------------------------------------------------ -->
         </div>
-        <div class="content-sub active-sub" id="sub-4">
-          <!-- ------------------------------------------------------------------ -->
+        <div class="content-sub" id="sub-4">
           <table class="table-pending" style="padding: 4px 5px">
             <th>Sr.</th>
             <th>Date</th>
@@ -206,24 +206,19 @@
               <td>Sandwich</td>
               <td>4</td>
               <td>
-                <button>
-                  <i
-                    class="fa fa-pencil-square fa-lg"
-                    aria-hidden="true"
-                    id="icon-modify"
-                  ></i>
+                <button class="btn">
+                  <i class="fa fa-check-circle fa-lg" id="tick"></i>
                 </button>
-                <button>
+                <button class="btn">
                   <i
                     class="fa fa-trash fa-lg"
                     aria-hidden="true"
-                    id="icon-delete"
+                    id="cancel"
                   ></i>
                 </button>
               </td>
             </tr>
           </table>
-          <!-- ------------------------------------------------------------------ -->
         </div>
       </div>
       <div class="ads">

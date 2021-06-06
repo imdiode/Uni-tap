@@ -197,8 +197,8 @@ button{
   background: none;
 }
 
-button:hover{
-  font-size: 16px;
+#icon-modify:hover, #icon-delete:hover{
+  font-size: 20px;
 }
 
 /* ---- */
@@ -307,6 +307,16 @@ color:red;
 font-weight:700
 }
 
+#circle{
+  color:rgb(7, 6, 44);
+}
+#cancel{
+  color:rgb(192, 0, 10);
+}
+.btn:hover{
+  font-size: 16px;
+}
+
 .ads {
   display: inline-block;
   margin-top: 5%;
@@ -316,4 +326,54 @@ font-weight:700
   width: 10%;
   border: 2px dotted black;
   position: absolute;
+}
+
+.loginPopup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.formPopup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
+}
+.formContainer {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}
+.formContainer input[type=text]{
+  width: 85%;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 5px 0 20px 0;
+  border: none;
+  background: #eee;
+}
+.formContainer input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+.formContainer .btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #0e062f;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 15px;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+.formContainer .cancel {
+  background-color: #0e062f;
+}
+.formContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
 }
