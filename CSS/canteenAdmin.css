@@ -141,17 +141,6 @@ body {
   text-align: center;
 }
 
-.new-order-sign {
-  width: 30px;
-  height: 25px;
-  display: inline-block;
-  background-color: #0097e3;
-  color: white;
-  border-radius: 70%;
-  padding-top: 5px;
-  cursor: pointer;
-}
-
 .new-order {
   display: inline-block;
   cursor: pointer;
@@ -226,13 +215,16 @@ margin-left:-202px;
 font-family:'Raleway',sans-serif
 }
 form {
-max-width:300px;
-min-width:250px;
-padding:10px 50px;
-border:2px solid gray;
-border-radius:10px;
-font-family:raleway;
-background-color:#fff
+  max-width:300px;
+  min-width:250px;
+  padding:10px 50px;
+  border:2px solid gray;
+  border-radius:10px;
+  font-family:raleway;
+  background-color:#fff;
+  /* margin-left: auto;
+  margin-right: auto; */
+
 }
 p {
 margin-top:30px
@@ -288,9 +280,9 @@ text-decoration:none;
 width:100%;
 text-align:center;
 display:block;
-background-color:#12053b;
+background-color:#023c7e;
 color:#fff;
-border:1px solid #12053b;
+border:1px solid #023c7e;
 padding:10px 0;
 font-size:20px;
 cursor:pointer;
@@ -357,7 +349,7 @@ font-weight:700
 .formContainer .btn {
   padding: 12px 20px;
   border: none;
-  background-color: #0e062f;
+  background-color: #023c7e;
   color: #fff;
   cursor: pointer;
   width: 100%;
@@ -366,7 +358,7 @@ font-weight:700
   border-radius: 10px;
 }
 .formContainer .cancel {
-  background-color: #0e062f;
+  background-color: #023c7e;
 }
 .formContainer .btn:hover,
 .openButton:hover {
