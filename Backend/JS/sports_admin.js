@@ -86,23 +86,23 @@ function closeadditem ()
     document.getElementById("sub-5").className -= " blur";
 }
 
-function closedeletebook ()
+function closedeleteequi ()
 {
-    document.getElementById("delete_book").style.display = "none";
+    document.getElementById("delete_equipment").style.display = "none";
     document.getElementById('sub-5').className += ' active-sub';
     document.getElementById("sub-5").className -= " blur";
 }
 
-function deletebook ()
+function deleteequi ()
 {
-    if (document.getElementById("delete_book").style.display == "block")
+    if (document.getElementById("delete_equipment").style.display == "block")
     {
-        document.getElementById("delete_book").style.display = "none";
+        document.getElementById("delete_equipment").style.display = "none";
         document.getElementById("sub-5").className = "content-sub";
     }
     else
     {
-        document.getElementById("delete_book").style.display = "block";
+        document.getElementById("delete_equipment").style.display = "block";
         document.getElementById("sub-5").className += " blur";
     }
 }
