@@ -48,11 +48,46 @@
           <div class="menu" id="menu-item-3" onclick="tm_click()">
             Today's Menu
           </div>
+          <div class="menu" id="menu-item-4" onclick="pm_click()">
+            Pending Menu
+          </div>
         </div>
         <div class="content-sub active-sub" id="sub-1">
+          <!-- ------------------------------------------------------------------ -->
           <center>
-            <div class="new-order-sign" onclick="">+</div>
-            <div class="new-order" onclick="">place new order</div>
+            <div id="abc">
+              <div id="popupContact">
+                <form action="#" id="form" method="post" name="form">
+                  <img id="close" src="images/3.png" onclick="div_hide()" />
+                  <h2>Add item</h2>
+                  <hr />
+                  <input id="name" name="name" placeholder="Dish" type="text" />
+                  <input
+                    id="count"
+                    name="name"
+                    placeholder="No. of items"
+                    type="text"
+                  />
+                  <input
+                    id="mode"
+                    name="name"
+                    placeholder="Mode: eg:~ Breakfast/Lunch/Dinner"
+                    type="text"
+                  />
+                  <textarea
+                    id="msg"
+                    name="message"
+                    placeholder="Message"
+                  ></textarea>
+                  <a href="javascript:%20check_empty()" id="submit">Add</a>
+                </form>
+              </div>
+            </div>
+
+            <button class="new-order-sign" id="popup" onclick="div_show()">
+              +
+            </button>
+            <div class="new-order" onclick="">Add new item</div>
           </center>
           <h3>Pending orders</h3>
           <table class="table-pending">
@@ -67,8 +102,10 @@
               <td>Nandan</td>
             </tr>
           </table>
+          <!-- ------------------------------------------------------------------ -->
         </div>
         <div class="content-sub" id="sub-2">
+          <!-- ------------------------------------------------------------------ -->
           <table class="table-pending">
             <th>Sr.</th>
             <th>Time</th>
@@ -87,8 +124,39 @@
               <td>Done</td>
             </tr>
           </table>
+          <!-- ------------------------------------------------------------------ -->
         </div>
         <div class="content-sub" id="sub-3">
+          <center>
+            <div id="abc">
+              <div id="popupContact">
+                <form action="#" id="form" method="post" name="form">
+                  <img id="close" src="images/3.png" onclick="div_hide()" />
+                  <h2>Add item</h2>
+                  <hr />
+                  <input id="name" name="name" placeholder="Dish" type="text" />
+                  <input
+                    id="mode"
+                    name="name"
+                    placeholder="Mode: eg:~ Breakfast/Lunch/Dinner"
+                    type="text"
+                  />
+                  <textarea
+                    id="msg"
+                    name="message"
+                    placeholder="Message"
+                  ></textarea>
+                  <a href="javascript:%20check_empty()" id="submit">Add</a>
+                </form>
+              </div>
+            </div>
+
+            <button class="new-order-sign" id="popup" onclick="div_show()">
+              +
+            </button>
+            <div class="new-order" onclick="">Add new item</div>
+          </center>
+          <!-- ------------------------------------------------------------------ -->
           <table class="table-menu">
             <th>Sr.</th>
             <th>Date</th>
@@ -120,6 +188,42 @@
               </td>
             </tr>
           </table>
+          <!-- ------------------------------------------------------------------ -->
+        </div>
+        <div class="content-sub active-sub" id="sub-4">
+          <!-- ------------------------------------------------------------------ -->
+          <table class="table-pending" style="padding: 4px 5px">
+            <th>Sr.</th>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Items Remaining</th>
+            <th>Count</th>
+            <th class="modify">Modify</th>
+            <tr>
+              <td>1.</td>
+              <td class="date">5-June-2021</td>
+              <td>Friday</td>
+              <td>Sandwich</td>
+              <td>4</td>
+              <td>
+                <button>
+                  <i
+                    class="fa fa-pencil-square fa-lg"
+                    aria-hidden="true"
+                    id="icon-modify"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="fa fa-trash fa-lg"
+                    aria-hidden="true"
+                    id="icon-delete"
+                  ></i>
+                </button>
+              </td>
+            </tr>
+          </table>
+          <!-- ------------------------------------------------------------------ -->
         </div>
       </div>
       <div class="ads">
