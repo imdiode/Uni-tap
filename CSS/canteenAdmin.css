@@ -147,7 +147,7 @@ body {
   display: inline-block;
   background-color: #0097e3;
   color: white;
-  border-radius: 50%;
+  border-radius: 70%;
   padding-top: 5px;
   cursor: pointer;
 }
@@ -201,12 +201,6 @@ button{
   font-size: 20px;
 }
 
-/* ---- */
-
-
-/*----------------------------------------------
-CSS settings for HTML div Exact Center
-------------------------------------------------*/
 #abc {
 width:100%;
 height:100%;
@@ -294,9 +288,9 @@ text-decoration:none;
 width:100%;
 text-align:center;
 display:block;
-background-color:#FFBC00;
+background-color:#12053b;
 color:#fff;
-border:1px solid #FFCB00;
+border:1px solid #12053b;
 padding:10px 0;
 font-size:20px;
 cursor:pointer;
@@ -313,9 +307,6 @@ font-weight:700
 #cancel{
   color:rgb(192, 0, 10);
 }
-.btn:hover{
-  font-size: 16px;
-}
 
 .ads {
   display: inline-block;
@@ -326,6 +317,10 @@ font-weight:700
   width: 10%;
   border: 2px dotted black;
   position: absolute;
+}
+
+.openBtn{
+  padding: 15px 0px;
 }
 
 .loginPopup {
