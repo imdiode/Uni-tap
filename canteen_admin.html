@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CCAS | Canteen</title>
+    <link rel="stylesheet" href="./CSS/canteenAdmin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script rel="text/javascript" src="./Backend/JS/canteen_admin.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Notice Board</a></li>
+                <li><a href="#">My Violations</a></li>
+                <li><a href="#">CCAS Support</a></li>
+            </ul>
+        </div>
+        <div class="profile">Hi! Nandan</div>
+    </div>
+    <div class="sidebar">
+        <div class="options">Profile</div>
+        <div class="options">Grievance</div>
+        <div class="options">Help desk</div>
+        <div class="options">Academic record</div>
+        <div class="options">Library</div>
+        <div class="options">Sports equipment</div>
+        <div class="options">Canteen</div>
+        <div class="options bstick">Logout</div>
+    </div>
+    <div class="sidebar-main-right">
+        <div class="content-main">
+            <div class="nav-2">
+                <div class="menu active" id="menu-item-1" onclick="po_click()">
+                    Place Order
+                </div>
+                <div class="menu" id="menu-item-2" onclick="oh_click()">
+                    Order History
+                </div>
+                <div class="menu" id="menu-item-3" onclick="tm_click()">
+                    Today's Menu
+                </div>
+                <div class="menu" id="menu-item-4" onclick="pm_click()">
+                    Pending Orders
+                </div>
+            </div>
+            <div class="content-sub active-sub" id="sub-1">
+                <!-- ------------------------------------------------------------------ -->
+                <center>
+                    <div id="abc">
+                        <div id="popupContact">
+                            <form action="#" id="form" method="post" name="form">
+                                <img id="close" src="images/3.png" onclick="div_hide()" />
+                                <h2>Add item</h2>
+                                <hr />
+                                <input id="name" name="name" placeholder="Dish" type="text" />
+                                <input id="count" name="name" placeholder="No. of items" type="text" />
+                                <input id="mode" name="name" placeholder="Mode: eg:~ Breakfast/Lunch/Dinner" type="text" />
+                                <textarea id="msg" name="message" placeholder="Message"></textarea>
+                                <a href="javascript:%20check_empty()" id="submit">Add</a>
+                            </form>
+                        </div>
+                    </div>
+
+                    <button class="new-order-sign" id="popup" onclick="div_show()">
+            <i class="fa fa-plus-circle fa-lg"></i>
+          </button>
+                    <div class="new-order" onclick="">Add new item</div>
+                </center>
+                <h3>Pending orders</h3>
+                <table class="table-pending">
+                    <th>Sr.</th>
+                    <th>Item</th>
+                    <th>Price (Rs.)</th>
+                    <th>Student</th>
+                    <tr>
+                        <td>1.</td>
+                        <td>Samosa (2 nos.)</td>
+                        <td class="price">40</td>
+                        <td>Nandan</td>
+                    </tr>
+                </table>
+                <!-- ------------------------------------------------------------------ -->
+            </div>
+            <div class="content-sub" id="sub-2">
+                <!-- ------------------------------------------------------------------ -->
+                <table class="table-pending">
+                    <th>Sr.</th>
+                    <th>Time</th>
+                    <th>Student</th>
+                    <th>Ordered item</th>
+                    <th>Count Item</th>
+                    <th>Price (Rs.)</th>
+                    <th>Payment status</th>
+                    <tr>
+                        <td>1.</td>
+                        <td>11:00 AM</td>
+                        <td>Nandan</td>
+                        <td>Samosa</td>
+                        <td>2</td>
+                        <td class="price">40</td>
+                        <td>Done</td>
+                    </tr>
+                </table>
+                <!-- ------------------------------------------------------------------ -->
+            </div>
+            <div class="content-sub" id="sub-3">
+                <center>
+                    <div class="openBtn">
+                        <button class="openButton new-order-sign" onclick="openForm()">
+              <i class="fa fa-plus-circle fa-lg"></i>
+            </button>
+                        <div class="new-order" onclick="">Add new item</div>
+                    </div>
+                    <div class="loginPopup">
+                        <div class="formPopup" id="popupForm">
+                            <form action="/action_page.php" class="formContainer">
+                                <input type="text" placeholder="Dish" name="name" required />
+                                <input type="text" placeholder="Mode: eg:~ Breakfast/Lunch/Dinner" name="name" required />
+                                <textarea name="message" placeholder="Message"></textarea>
+                                <button type="submit" class="btn">Add</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">
+                  Close
+                </button>
+                            </form>
+                        </div>
+                    </div>
+                </center>
+                <!-- ------------------------------------------------------------------ -->
+                <table class="table-menu">
+                    <th>Sr.</th>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Items</th>
+                    <th class="type">Type</th>
+                    <th class="modify">Modify</th>
+                    <tr>
+                        <td>1.</td>
+                        <td class="date">5-June-2021</td>
+                        <td>Friday</td>
+                        <td>Samosa, Sandwich</td>
+                        <td class="type">Breakfast</td>
+                        <td>
+                            <button>
+                <i class="fa fa-pencil-square fa-lg" aria-hidden="true" id="icon-modify"></i>
+              </button>
+                            <button>
+                <i class="fa fa-trash fa-lg" aria-hidden="true" id="icon-delete"></i>
+              </button>
+                        </td>
+                    </tr>
+                </table>
+                <!-- ------------------------------------------------------------------ -->
+            </div>
+            <div class="content-sub" id="sub-4">
+                <table class="table-pending" style="padding: 4px 5px">
+                    <th>Sr.</th>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Items Remaining</th>
+                    <th>Count</th>
+                    <th class="modify">Modify</th>
+                    <tr>
+                        <td>1.</td>
+                        <td class="date">5-June-2021</td>
+                        <td>Friday</td>
+                        <td>Sandwich</td>
+                        <td>4</td>
+                        <td>
+                            <button class="btn">
+                <i class="fa fa-check-circle fa-lg" id="tick"></i>
+              </button>
+                            <button class="btn">
+                <i class="fa fa-trash fa-lg" aria-hidden="true" id="cancel"></i>
+              </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="ads">
+            <center>ads go here</center>
+        </div>
+    </div>
+</body>
+
+</html>
