@@ -1,7 +1,7 @@
 {
     "hosting": {
         "site": "ccas-1",
-        "public": "public",
+        "public": "",
         "ignore": [
             "firebase.json",
             "**/.*",
