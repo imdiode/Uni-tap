@@ -3,7 +3,7 @@
 
 <head>
     <title>CCAS | Login to your account</title>
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="./CSS/login.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="/__/firebase/8.6.5/firebase-app.js"></script>
 
@@ -23,10 +23,10 @@
             </h2>
             <div class="login-form-container">
                 <form id="login-form">
-                    <input id="userEmail" class="cred-input logon" name="Email" autocomplete="off" placeholder="Email..." autofocus="" type="email">
-                    <input id="password" class="cred-input logon" name="Password" autocomplete="off" type="password" placeholder="Password..." autofocus="">
+                    <input class="cred-input logon" name="Username" autocomplete="off" placeholder="Username..." autofocus="">
+                    <input class="cred-input logon" name="Password" autocomplete="off" type="password" placeholder="Password..." autofocus="">
                     <div>
-                        <div class="login-btn" onclick="login()">Login</div>
+                        <div class="login-btn" onclick="red()">Login</div>
                         <div class="forgot"><a href="#">Forgot Password</a></div>
                     </div>
                 </form>
@@ -37,7 +37,7 @@
 
 
 
-    <script rel="text/javascript" src="../Backend/JS/login.js"></script>
+    <script rel="text/javascript" src="./Backend/JS/login.js"></script>
 </body>
 
 </html>
