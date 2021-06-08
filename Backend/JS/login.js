@@ -4,7 +4,16 @@ function red() {
     firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
         location.href = "Dashboard.html";
     }).catch((error) => {
-        var errorMessage = error.message;
-        console.log(errorMessage)
+        var errorCode = error.code;
+        console.log(errorCode);
+
+        if (errorCode == "auth/wrong-password") {
+            document.getElementById('ErrorSin').innerHTML = "Incorrect Password!";
+        } else if (errorCode == "auth/user-not-found") {
+            document.getElementById('ErrorSin').innerHTML = "Incorrect Email!";
+        } else if (errorCode != null) {
+            document.getElementById('ErrorSin').innerHTML = "Something went wrong!";
+        }
+
     });
 }
