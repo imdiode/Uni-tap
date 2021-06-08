@@ -17,11 +17,3 @@ function red() {
 
     });
 }
-
-function rec() {
-    username = document.getElementById('uname').value;
-
-    firebase.auth().sendPasswordResetEmail(username).then(function() {
-        document.getElementById('ErrorSin').innerHTML = "Email sent!"
-    });
-}
