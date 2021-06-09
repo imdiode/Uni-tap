@@ -23,5 +23,7 @@ function rec() {
 
     firebase.auth().sendPasswordResetEmail(username).then(function() {
         document.getElementById('ErrorSin').innerHTML = "Email sent!"
+        document.getElementById('ErrorSin').style.backgroundColor = "rgb(235, 255, 234)";
+        document.getElementById('ErrorSin').style.color = "#3cff35"
     });
 }
