@@ -1,5 +1,6 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyAaW3Wr58E9MRcWWf6_w8M-V57-SxgO2GI",
   authDomain: "ccas-77c96.firebaseapp.com",
@@ -10,10 +11,10 @@ const firebaseConfig = {
   appId: "1:95714386169:web:6893537f9b0d6cbbb9c228",
   measurementId: "G-J42PYMQWX8"
 };
-// Initialize Firebase
+//Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+*/
 const msgScreen = document.getElementById("messages"); //the <ul> that displays all the <li> msgs
 const msgForm = document.getElementById("messageForm"); //the input form
 const msgInput = document.getElementById("msg-input"); //the input element to write messages
