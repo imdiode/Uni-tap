@@ -7,8 +7,8 @@ const firebaseConfig = {
   projectId: "ccas-77c96",
   storageBucket: "ccas-77c96.appspot.com",
   messagingSenderId: "95714386169",
-  appId: "1:95714386169:web:9fef1954a368a910b9c228",
-  measurementId: "G-P8ZXSSP1Q1"
+  appId: "1:95714386169:web:6893537f9b0d6cbbb9c228",
+  measurementId: "G-J42PYMQWX8"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
