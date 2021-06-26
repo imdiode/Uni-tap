@@ -6,6 +6,13 @@
         </title>
         <link rel="stylesheet" href="./CSS/help_desk.css">
         <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+        <script rel="text/javascript" src="./Backend/JS/chat.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
        
     </head>
 
@@ -52,35 +59,48 @@
         </div>
 
         <div class="sidebar-main-right">
-            <div class="container">
-                <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
-                <p>Hello. How are you today?</p>
-                 <span class="time-right">11:00</span>
+            <div class="chat-window" id="chat-window">
+                <ul id="messages">
+                    <li class="msg">
+                        <div class="container">
+                            <span class="msg-span">
+                                <i class="name">Host: </i>Hello. How are you today?<br>
+                                <span class="time-right">11:00</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="msg my">
+                        <div class="container darker">
+                            <span class="msg-span">
+                                <i class="name">Me :</i>Hey! I'm fine. Thanks for asking!<br>
+                                <span class="time-left">11:01</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="msg">
+                        <div class="container">
+                            <span class="msg-span">
+                                <i class="name">Host: </i>Sweet! So, what do you wanna do today?<br>
+                                <span class="time-right">11:02</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="msg my">
+                        <div class="container darker">
+                            <span class="msg-span">
+                                <i class="name">Me: </i>Nah, I dunno. Play soccer.. or learn more coding perhaps?<br>
+                                <span class="time-left">11:05</span>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+                   <br>
+                   <form id="messageForm" autocomplete="off"> 
+                        <input class="textbox" type="text" id="msg-input">
+                        <button class="send" type="submit" id="msg-btn">Send</button>
+                    </form>
             </div>
-
-            <div class="container darker">
-                <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
-                <p>Hey! I'm fine. Thanks for asking!</p>
-                <span class="time-left">11:01</span>
-            </div>
-
-            <div class="container">
-                 <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
-                 <p>Sweet! So, what do you wanna do today?</p>
-                 <span class="time-right">11:02</span>
-            </div>
-
-            <div class="container darker">
-                <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
-                <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-                <span class="time-left">11:05</span>
-            </div>
-
-               <br>
-               <form> 
-                    <input class="textbox" type="text" name="comment" size="50">
-                    <input class="send" type="submit" value="Send">
-                </form>
         </div>
+        <script src="./Backend/JS/chat.js"></script>
     </body>
 </html>

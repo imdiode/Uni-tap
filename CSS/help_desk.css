@@ -153,15 +153,73 @@ body {
     
     margin-top:35mm;
     margin-left: 0mm;
-    width: 240mm;
+    width: 80%;
     height: 10mm;
     background-color:white;
+
 
 }
 
 .send {
     margin-left: 3mm;
-    width: 25mm;
+    width: 10%;
     height: 10mm;
-    background-color: green;
+    background-color: #023c7e;
+    max-width: 25mm;
+    color: white;
+}
+
+.msg{
+    list-style-type: none;
+}
+
+.msg-span{
+    display: inline-block;
+    padding:10px;
+    border-radius: 20px;
+    font-size: large;
+    /*background-color: */
+    color: black;
+    margin: 15px 5px 0px 0px;
+    text-align: left;
+}
+.name{
+    font-weight: bold;
+}
+
+.my{
+    text-align: right;
+}
+
+.my span{
+    color: black;
+    /*background-color: */
+    margin-right: 20px;
+}
+
+.my i{
+    display:none;
+}
+
+#chat-window::-webkit-scrollbar {
+    width: 20px;
+    height: 50%;
+}
+  
+/* Track */
+#chat-window::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 20px;
+}
+
+/* Handle */
+#chat-window::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px grey; 
+    background:rgb(82, 196, 133);
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+#chat-window::-webkit-scrollbar-thumb:hover {
+    background:rgb(5, 190, 144); 
 }
