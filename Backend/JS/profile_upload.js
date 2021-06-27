@@ -22,12 +22,12 @@ window.addEventListener('load', function() {
     dropArea.addEventListener("dragover", (event) => {
         event.preventDefault();
         dropArea.classList.add("active");
-        dragText.textContent = "Release to Profile File";
+        dragText.textContent = "Release Profile File";
     });
 
     dropArea.addEventListener("dragleave", () => {
         dropArea.classList.remove("active");
-        dragText.textContent = "Drag & Drop to Profile File";
+        dragText.textContent = "Drag & Drop Profile File";
     });
 
     dropArea.addEventListener("drop", (event) => {
@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
         } else {
             alert("This is not an CSV File!");
             dropArea.classList.remove("active");
-            dragText.textContent = "Drag & Drop to Profile File";
+            dragText.textContent = "Drag & Drop Profile File";
         }
     }
 });
