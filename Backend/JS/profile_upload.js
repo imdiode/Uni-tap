@@ -40,6 +40,7 @@ window.addEventListener('load', function() {
         let fileType = file.type;
         let validExtensions = ["text/csv"];
         if (validExtensions.includes(fileType)) {
+            // add code to upload it to firebase here
             dropArea.classList.remove("active");
             dragText.textContent = file.name + " Uploaded! Drag & Drop another profile file";
         } else {
