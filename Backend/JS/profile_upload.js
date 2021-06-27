@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
         let validExtensions = ["text/csv"];
         if (validExtensions.includes(fileType)) {
             dropArea.classList.remove("active");
-            dragText.textContent = file.name + " Selected";
+            dragText.textContent = file.name + " Uploaded! Drag & Drop another profile file";
         } else {
             alert("This is not an CSV File!");
             dropArea.classList.remove("active");
