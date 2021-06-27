@@ -38,10 +38,10 @@ window.addEventListener('load', function() {
 
     function showFile() {
         let fileType = file.type;
-        let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; //adding some valid image extensions in array
+        let validExtensions = ["text/csv"];
         if (validExtensions.includes(fileType)) {
             dropArea.classList.remove("active");
-            dragText.textContent = "Profile File Selected";
+            dragText.textContent = file.name + " Selected";
         } else {
             alert("This is not an CSV File!");
             dropArea.classList.remove("active");
