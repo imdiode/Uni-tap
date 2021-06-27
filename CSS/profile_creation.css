@@ -120,10 +120,6 @@ body {
     color: #023c7e;
 }
 
-.lbl {
-    text-align: right !important;
-}
-
 .btn {
     margin-top: 40px;
     text-align: center;
@@ -138,16 +134,9 @@ body {
     border: deepskyblue 0px;
 }
 
-#sub-1{
+#sub-1 {
     text-align: center;
     margin-top: 50px;
-}
-
-#drop_zone {
-    margin-top: 20px;
-    border: 5px solid blue;
-    width:  910px;
-    height: 350px;
 }
 
 .btns {
@@ -162,4 +151,45 @@ body {
     padding: 8px 20px 8px 20px;
     box-shadow: none;
     border: deepskyblue 0px;
+}
+
+.drag-container {
+    border-radius: 10px;
+    border: 2px dashed #002d61;
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: beige;
+}
+
+.drag-container.active {
+    border: 2px solid #0097e3;
+    color: #023c7e;
+}
+
+.drag-container span {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 10px 0 15px 0;
+}
+
+.drag-container header {
+    text-align: center;
+    font-size: 30px;
+    vertical-align: middle;
+    margin-top: 10%;
+    font-weight: 500;
+}
+
+.drag-container button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #002d61;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }

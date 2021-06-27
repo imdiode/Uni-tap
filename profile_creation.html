@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <script src="./Backend/JS/profile_upload.js"></script>
     <div class="top">
         <div class="profile">
             Hello Sir!
@@ -29,55 +30,53 @@
                 </div>
             </div>
             <div class="content-sub active-sub" id="sub-1">
-                <form>
-                    <label for="csv">ADD YOUR CSV FILE:-</label>
-                    <input type="file" id="csv_file" name="csv_file" accept=".csv,.sql">
-
-                <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-                    <p>Drag one or more files to this Drop Zone ...</p> </div>
-                <center> <button type="submit" value="Submit" class="btns">Submit</button>
-                <button type="reset" value="Reset" class="btns">Reset</button> </center>
-                </form> 
+                <div class="drag-container">
+                    <header>Drag & Drop to Profile File</header>
+                    <span>OR</span>
+                    <button>Browse File</button>
+                    <input type="file" hidden>
+                </div>
             </div>
-            
+
             <div class="content-sub" id="sub-2">
-                    <center>
-                        <form>
-                            <table class="issue-form">
-                                <tr>
-                                    <td class="lbl"><label for="name">NAME:-</label></td>
-                                    <td> <input type="text" id="name" name="name" pattern="[A-Za-z]{4}" ></td>
-                                </tr>
-                                <tr>
-                                    <td class="lbl"><label for="uid">UID:-</label></td>
-                                    <td><input type="number" id="uid" name="uid" min="1"></td>
-                                </tr>
-                                <tr>
-                                    <td class="lbl"><label for="email">E-MAIL:-</label></td>
-                                    <td><input type="email" id="email" name="email"></td>
-                                </tr>
-                                <tr>
-                                    <td class="lbl"><label for="branch">BRANCH:-</label></td>
-                                    <td><select name="branch" id="branch">
+                <center>
+                    <form>
+                        <table class="issue-form">
+                            <tr>
+                                <td class="lbl"><label for="name">NAME:-</label></td>
+                                <td> <input type="text" id="name" name="name" pattern="[A-Za-z]{4}"></td>
+                            </tr>
+                            <tr>
+                                <td class="lbl"><label for="uid">UID:-</label></td>
+                                <td><input type="number" id="uid" name="uid" min="1"></td>
+                            </tr>
+                            <tr>
+                                <td class="lbl"><label for="email">E-MAIL:-</label></td>
+                                <td><input type="email" id="email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td class="lbl"><label for="branch">BRANCH:-</label></td>
+                                <td><select name="branch" id="branch">
                                         <option value="ict">ICT</option>
                                         <option value="ele">ELECTRICAL</option>
                                         <option value="cie">CIVIL</option>
                                     </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="lbl"><label for="photo">PHOTO:-</label></td>
-                                    <td><input type="file" id="photo" name="photo" accept="image/*"></td>
-                                </tr>
-                                <tr>
-                                    <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
-                                    <td><button type="reset" value="Reset" class="btn">Reset</button></td>
-                                </tr>
-    
-                            </table>
-                        </form>
-                    </center>
+                            </tr>
+                            <tr>
+                                <td class="lbl"><label for="photo">PHOTO:-</label></td>
+                                <td><input type="file" id="photo" name="photo" accept="image/*"></td>
+                            </tr>
+                            <tr>
+                                <td class="lbl"><button type="submit" value="Submit" class="btn">Submit</button></td>
+                                <td><button type="reset" value="Reset" class="btn">Reset</button></td>
+                            </tr>
+
+                        </table>
+                    </form>
+                </center>
             </div>
         </div>
     </div>
 </body>
+
 </html>
