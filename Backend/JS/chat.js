@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-/*
+
 const firebaseConfig = {
   apiKey: "AIzaSyAaW3Wr58E9MRcWWf6_w8M-V57-SxgO2GI",
   authDomain: "ccas-77c96.firebaseapp.com",
@@ -14,7 +14,6 @@ const firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-*/
 const msgScreen = document.getElementById("messages"); //the <ul> that displays all the <li> msgs
 const msgForm = document.getElementById("messageForm"); //the input form
 const msgInput = document.getElementById("msg-input"); //the input element to write messages
@@ -46,8 +45,7 @@ function sendMessage(e){
       msgInput.value = "";
   }
 
-  msgRef.on('child_added', updateMsgs);
-
+/*  
   const updateMsgs = data =>{
     const {dataName, text} = data.val(); //get name and text
   
@@ -56,11 +54,15 @@ function sendMessage(e){
       <i class = "name">${name}: </i>${text}
       </span>
     </li>`
-  
-    msgScreen.innerHTML += msg; //add the <li> message to the chat window
-  
-    //auto scroll to bottom
-    document.getElementById("chat-window").scrollTop = document.getElementById("chat-window").scrollHeight;
-  }
+
+    msgRef.on('child_added', updateMsgs);
 
   
+//    msgScreen.innerHTML += msg; //add the <li> message to the chat window
+  
+    //auto scroll to bottom
+//    document.getElementById("chat-window").scrollTop = document.getElementById("chat-window").scrollHeight;
+
+
+  }
+*/
