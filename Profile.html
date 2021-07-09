@@ -7,6 +7,21 @@
         <link rel="stylesheet" href="./CSS/profile.css">
         <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
         <script rel="text/javascript" src="./Backend/JS/ProfileUI.js"></script>
+        <!--  Firebase Config  -->
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+        <!-- end Firebase Config -->
     </head>
 
     <body>
@@ -43,6 +58,7 @@
             <div class="options" onclick="sports_click()">
                 Sports equipment
             </div>
+
             <div class="options" onclick="canteen_click()">
                 Canteen
             </div>
@@ -55,7 +71,7 @@
                 <h1>
                     Your Profile
                 </h1>
-                <h2>
+                <h2 id="name">
                     Nandan Shukla
                 </h2>
                 <div>
@@ -64,27 +80,27 @@
                             <th colspan="3">Basic Information</th>
                             <tr>
                                 <td class="fields">Semester:</td>
-                                <td>4</td>
+                                <td id="sem">4</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td class="fields">Email:</td>
-                                <td>nandan@dicot.in</td>
+                                <td id="email">nandan@dicot.in</td>
                                 <td><a href="#">change</a></td>
                             </tr>
                             <tr>
                                 <td class="fields">Mobile:</td>
-                                <td>+91 93280 06290</td>
+                                <td id="mob_num">+91 93280 06290</td>
                                 <td><a href="#">change</a></td>
                             </tr>
                             <tr>
-                                <td class="fields">Address:</td>
+                                <td class="fields" id="address">Address:</td>
                                 <td>28, Earth Bunglows<br/><a href="#"> read more...</a></td>
                                 <td><a href="#" style="vertical-align: top;">change</a></td>
                             </tr>
                             <tr>
                                 <td class="fields">Enrollment No.:</td>
-                                <td>191310132139</td>
+                                <td id="student_uid">191310132139</td>
                             </tr>
                         </table>
                         <div class="expander">

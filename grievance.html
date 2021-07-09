@@ -6,7 +6,21 @@
         </title>
         <link rel="stylesheet" href="./CSS/grievance.css">
         <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
-
+        <!--  Firebase Config  -->
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+        <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+        <!-- end Firebase Config -->
     </head>
 
     <body>
@@ -79,7 +93,7 @@
                             <td>
                                 <textarea name="message" maxlength="300" cols="60" rows="5">
                                     Enter your message here in less than 300 characters
-                                </textarea> 
+                                </textarea>
                             </td>
                         </tr>
                         <tr>
