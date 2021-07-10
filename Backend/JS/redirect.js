@@ -1,3 +1,4 @@
+var auth = firebase.auth();
 
 function profile_click()
 {
@@ -35,7 +36,7 @@ function canteen_click()
 }
 
 async function firebaseLogout() {
-  firebase.auth().signOut()
+  auth.signOut()
     .then((ret)=>{
       location.href = "index.html";
     })

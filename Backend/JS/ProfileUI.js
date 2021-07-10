@@ -1,10 +1,10 @@
 
 //window.onload = loadProfile();
 
+var db = firebase.firestore();
+var profileRef = db.collection('users').doc(auth.currentUser.uid);
+
 async function loadProfile() {
-  let db = firebase.firestore();
-  let auth = firebase.auth();
-  let profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
   profileRef.get().then((doc)=>{
     let profileData = doc.data();
     document.getElementById("navFirstName").innerHTML = profileData.firstName;
