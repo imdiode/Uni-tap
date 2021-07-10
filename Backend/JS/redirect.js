@@ -1,4 +1,3 @@
-var auth = firebase.auth();
 
 function profile_click()
 {
