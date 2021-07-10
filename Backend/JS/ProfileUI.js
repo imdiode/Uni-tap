@@ -1,9 +1,5 @@
 
-
-
-window.onload = setTimeout(loadProfile,5000);
-
-async function loadProfile() {
+function loadProfile() {
   var db = firebase.firestore();
   var auth = firebase.auth();
   var profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
