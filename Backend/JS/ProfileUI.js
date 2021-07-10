@@ -2,16 +2,16 @@
 //window.onload = loadProfile();
 
 async function loadProfile() {
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-  const profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+  let db = firebase.firestore();
+  let auth = firebase.auth();
+  let profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
   profileRef.get().then((doc)=>{
-    const profileData = doc.data();
+    let profileData = doc.data();
     document.getElementById("navFirstName").innerHTML = profileData.firstName;
     document.getElementById("fullName").innerHTML = profileData.firstName + " " + profileData.lastName;
     document.getElementById("semester").innerHTML = profileData.semester;
     document.getElementById("emailId").innerHTML = profileData.emailId;
-    document.getElementById("moblieNumber").innerHTML = profileData.mobileNumber;
+    document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
     document.getElementById("address").innerHTML = "<td>" + profileData.address.line1 + "<br>" + "</td>";
     document.getElementById("studentUID").innerHTML = profileData.studentUID;
     document.getElementById("profilePictureNav").src = profileData.profilePicture;
