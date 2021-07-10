@@ -4,7 +4,7 @@
 async function loadProfile() {
   const db = firebase.firestore();
   const auth = firebase.auth();
-  const profileRef = db.collection('users').doc(auth.currentUser.uid);
+  const profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
   profileRef.get().then((doc)=>{
     const profileData = doc.data();
     document.getElementById("navFirstName").innerHTML = profileData.firstName;
