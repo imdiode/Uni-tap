@@ -1,7 +1,7 @@
 
 
 
-window.onload = loadProfile();
+window.setTimeout(loadProfile,3000);
 
 async function loadProfile() {
   var db = firebase.firestore();
