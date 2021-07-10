@@ -4,9 +4,6 @@ firebase.auth().onAuthStateChanged((user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     var uid = user.uid;
     console.log(uid);
-    const db = firebase.firestore();
-    const auth = firebase.auth();
-    const profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
     loadProfile();
     // ...
   } else {
