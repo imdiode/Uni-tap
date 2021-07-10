@@ -1,8 +1,9 @@
 
-window.onload = loadProfile();
+//window.onload = loadProfile();
 
 async function loadProfile() {
   const db = firebase.firestore();
+  const auth = firebase.auth();
   const profileRef = db.collection('users').doc(auth.currentUser.uid);
   profileRef.get().then((doc)=>{
     const profileData = doc.data();
