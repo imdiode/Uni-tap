@@ -8,11 +8,24 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
   }
 });
 
+//to check if login is already present.
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    location.href = "Dashboard.html";
+    //console.log(uid);
+    //loadProfile();
+    // ...
+  }
+});
+
 function red() {
     username = document.getElementById('uname').value;
     password = document.getElementById('passw').value;
     firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
-        location.href = "Dashboard.html";
+        //location.href = "Dashboard.html";
     }).catch((error) => {
         var errorCode = error.code;
         console.log(errorCode);
