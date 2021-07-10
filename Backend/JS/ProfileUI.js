@@ -1,4 +1,6 @@
 
+const db = firebase.firestore();
+const profileRef = db.collection('users').doc(auth.currentUser.uid);
 
 window.onload = loadProfile();
 
@@ -20,7 +22,6 @@ async function loadProfile() {
     console.log(err);
   })
 }
-
 
 function disp ()
 {
