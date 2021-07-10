@@ -1,8 +1,8 @@
 
-function loadProfile() {
+async function loadProfile() {
   var db = firebase.firestore();
   var auth = firebase.auth();
-  var profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+  var profileRef = db.collection('users').doc(await firebase.auth().currentUser.uid);
   profileRef.get().then((doc)=>{
     let profileData = doc.data();
     document.getElementById("navFirstName").innerHTML = profileData.firstName;
@@ -20,6 +20,8 @@ function loadProfile() {
 }
 
 loadProfile();
+
+
 
 function disp ()
 {
