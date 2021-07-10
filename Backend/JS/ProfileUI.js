@@ -34,3 +34,14 @@ function disp ()
         document.getElementById("1exp").style.display = "block";
     }
 }
+
+async function firebaseLogout() {
+  auth.signOut()
+    .then((ret)=>{
+      console.log(ret);
+      location.href = "index.html";
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+}

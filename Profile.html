@@ -3,8 +3,6 @@
     <head>
         <title>CCAS | Profile</title>
         <link rel="stylesheet" href="./CSS/profile.css">
-        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
-        <script rel="text/javascript" src="./Backend/JS/ProfileUI.js"></script>
         <!--  Firebase Config  -->
         <!-- update the version number as needed -->
         <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
@@ -20,6 +18,8 @@
         <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
         <script defer src="/__/firebase/init.js?useEmulator=true"></script>
         <!-- end Firebase Config -->
+        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+        <script rel="text/javascript" src="./Backend/JS/ProfileUI.js"></script>
     </head>
 
     <body>
@@ -56,11 +56,10 @@
             <div class="options" onclick="sports_click()">
                 Sports equipment
             </div>
-
             <div class="options" onclick="canteen_click()">
                 Canteen
             </div>
-            <div class="options bstick">
+            <div class="options bstick" onclick="firebaseLogout()">
                 Logout
             </div>
         </div>

@@ -1,3 +1,5 @@
+const auth = firebase.auth();
+
 function profile_click()
 {
     location.href = "Profile.html";
@@ -31,4 +33,15 @@ function sports_click()
 function canteen_click()
 {
     location.href = "canteen.html";
+}
+
+async function firebaseLogout() {
+  auth.signOut()
+    .then((ret)=>{
+      console.log(ret);
+      location.href = "index.html";
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
 }

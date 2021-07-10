@@ -5,7 +5,6 @@
             CCAS | Student Dashboard
         </title>
         <link rel="stylesheet" href="./CSS/grievance.css">
-        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
         <!--  Firebase Config  -->
         <!-- update the version number as needed -->
         <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
@@ -21,6 +20,7 @@
         <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
         <script defer src="/__/firebase/init.js?useEmulator=true"></script>
         <!-- end Firebase Config -->
+        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
     </head>
 
     <body>
@@ -60,7 +60,7 @@
             <div class="options" onclick="canteen_click()">
                 Canteen
             </div>
-            <div class="options bstick">
+            <div class="options bstick" onclick="firebaseLogout()">
                 Logout
             </div>
         </div>
