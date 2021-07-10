@@ -19,6 +19,8 @@ function loadProfile() {
   })
 }
 
+loadProfile();
+
 function disp ()
 {
     if (document.getElementById("1exp").style.display == "block")
