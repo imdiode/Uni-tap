@@ -15,6 +15,8 @@ async function loadProfile() {
     document.getElementById("moblieNumber").innerHTML = profileData.mobileNumber;
     document.getElementById("address").innerHTML = "<td>" + profileData.address.line1 + "<br>" + "</td>";
     document.getElementById("studentUID").innerHTML = profileData.studentUID;
+    document.getElementById("profilePictureNav").src = profileData.profilePicture;
+    document.getElementById("profilePictureLarge").src = profileData.profilePicture;
   }).catch((err)=>{
     console.log(err);
   })
