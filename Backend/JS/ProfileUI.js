@@ -1,9 +1,10 @@
-const db = firebase.firestore();
-const profileRef = db.collection('users').doc(auth.currentUser.uid);
+
 
 window.onload = loadProfile();
 
 async function loadProfile() {
+  const db = firebase.firestore();
+  const profileRef = db.collection('users').doc(auth.currentUser.uid);
   profileRef.get().then((doc)=>{
     const profileData = doc.data();
     document.getElementById("navFirstName").innerHTML = profileData.firstName;
@@ -31,15 +32,4 @@ function disp ()
     {
         document.getElementById("1exp").style.display = "block";
     }
-}
-
-async function firebaseLogout() {
-  auth.signOut()
-    .then((ret)=>{
-      console.log(ret);
-      location.href = "index.html";
-    })
-    .catch((err)=>{
-      console.log(err);
-    });
 }
