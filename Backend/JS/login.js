@@ -4,7 +4,7 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    document.getElementByClassName("login-btn").click();
+    document.getElementsByClassName("login-btn").click();
   }
 });
 
