@@ -35,7 +35,7 @@ function canteen_click()
 }
 
 async function firebaseLogout() {
-  auth.signOut()
+  firebase.auth().signOut()
     .then((ret)=>{
       location.href = "index.html";
     })
