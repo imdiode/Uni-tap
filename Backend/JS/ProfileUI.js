@@ -27,11 +27,11 @@ function disp() {
     }
 }
 
-const modalOpenButton = document.querySelectorAll('[data-modal-target]');
+const dataModalOpenButton = document.querySelectorAll('[data-modal-target]');
 const dataCloseButton = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
 
-modalOpenButton.forEach(button => {
+dataModalOpenButton.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget);
         openModal(modal);

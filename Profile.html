@@ -62,6 +62,7 @@
             Logout
         </div>
     </div>
+
     <div class="sidebar-main-right">
         <div class="content-main">
             <h1>Your Profile</h1>
@@ -78,18 +79,18 @@
                         <tr>
                             <td class="fields">Email:</td>
                             <td id="emailId"></td>
-                            <td><a href="#">change</a></td>
+                            <td><a href="#" data-modal-target="#email">change</a></td>
                         </tr>
                         <tr>
                             <td class="fields">Mobile:</td>
                             <td id="mobileNumber"></td>
-                            <td><a href="#">change</a></td>
+                            <td><a href="#" data-modal-target="#phone">change</a></td>
                         </tr>
                         <tr>
                             <td class="fields">Address:</td>
                             <td id="address"><br/></td>
                             <td><a href="#"> read more...</a></td>
-                            <td><a href="#" style="vertical-align: top;" data-modal-target="#email">change</a></td>
+                            <td><a href="#" data-modal-target="#addr">change</a></td>
                         </tr>
                         <tr>
                             <td class="fields">Enrollment No.:</td>
@@ -123,14 +124,13 @@
             </div>
         </div>
     </div>
+
     <div class="change-modal modal-open " id="email">
         <div class="modal-header">
             Change Email
         </div>
         <div class="modal-content">
             <span class="modal-fields">New Email:</span><input class="modal-input" type="email" placeholder="Email..." id="nmail">
-            <span class="modal-fields">Phone No.:</span><input class="modal-input" type="number" placeholder="">
-            <span class="modal-fields">Address:</span><input class="modal-input" type="text" placeholder="">
             <div class="modal-save-btn" id="email-change">
                 Save
             </div>
@@ -139,8 +139,8 @@
             x
         </div>
     </div>
-    <div id="overlay"></div>
-    <div class="change-modal" id="phone">
+
+    <div class="change-modal  modal-open" id="phone">
         <div class="modal-header">
             Change Phone
         </div>
@@ -150,8 +150,12 @@
                 Save
             </div>
         </div>
+        <div class="modal-close" data-close-button>
+            x
+        </div>
     </div>
-    <div class="change-modal" id="addr">
+
+    <div class="change-modal modal-open" id="addr">
         <div class="modal-header">
             Change Address
         </div>
@@ -161,7 +165,11 @@
                 Save
             </div>
         </div>
+        <div class="modal-close" data-close-button>
+            x
+        </div>
     </div>
+
     <script defer rel="text/javascript" src="./Backend/JS/ProfileUI.js"></script>
     <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
 </body>
