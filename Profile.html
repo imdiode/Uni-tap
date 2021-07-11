@@ -89,7 +89,7 @@
                             <td class="fields">Address:</td>
                             <td id="address"><br/></td>
                             <td><a href="#"> read more...</a></td>
-                            <td><a href="#" style="vertical-align: top;">change</a></td>
+                            <td><a href="#" style="vertical-align: top;" data-modal-target="#email">change</a></td>
                         </tr>
                         <tr>
                             <td class="fields">Enrollment No.:</td>
@@ -123,20 +123,23 @@
             </div>
         </div>
     </div>
-    <div class="change-modal modal-open" id="email">
+    <div class="change-modal modal-open " id="email">
         <div class="modal-header">
             Change Email
         </div>
         <div class="modal-content">
             <span class="modal-fields">New Email:</span><input class="modal-input" type="email" placeholder="Email..." id="nmail">
+            <span class="modal-fields">Phone No.:</span><input class="modal-input" type="number" placeholder="">
+            <span class="modal-fields">Address:</span><input class="modal-input" type="text" placeholder="">
             <div class="modal-save-btn" id="email-change">
                 Save
             </div>
         </div>
-        <div class="modal-close">
+        <div class="modal-close" data-close-button>
             x
         </div>
     </div>
+    <div id="overlay"></div>
     <div class="change-modal" id="phone">
         <div class="modal-header">
             Change Phone
