@@ -12,7 +12,7 @@ const fadeEffect = setInterval(() => {
     }
 }, 200);
 
-window.addEventListener('load', fadeEffect);
+window.addEventListener('onload', fadeEffect);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
