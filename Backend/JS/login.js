@@ -12,16 +12,17 @@ const fadeEffect = setInterval(() => {
     }
 }, 200);
 
-window.addEventListener('onload', fadeEffect);
+window.addEventListener('load', fadeEffect);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
         red();
     }
+    console.log(`Key "${event.key}" pressed  [event: keydown]`);
 });
 
 document.getElementById("login-btn").addEventListener("click", function() {
