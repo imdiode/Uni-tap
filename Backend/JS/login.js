@@ -9,7 +9,6 @@ window.addEventListener('load', function() {
             preloader.style.opacity -= 0.1;
         } else {
             preloader.style.display = 'none';
-            clearInterval(fadeEffect);
         }
     }, 200);
 });
@@ -23,10 +22,6 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
         red();
     }
     //console.log(`Key "${event.key}" pressed  [event: keydown]`);
-});
-
-document.getElementById("login-btn").addEventListener("click", function() {
-    alert("Hi");
 });
 
 //to check if login is already present.
