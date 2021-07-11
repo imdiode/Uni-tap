@@ -19,7 +19,6 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
-        document.getElementByClassName("login-btn").click();
         // Trigger the button element with a click
         red();
     }
@@ -42,7 +41,7 @@ function red() {
     username = document.getElementById('uname').value;
     password = document.getElementById('passw').value;
     firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
-        //location.href = "Dashboard.html";
+        location.href = "Dashboard.html";
     }).catch((error) => {
         var errorCode = error.code;
         console.log(errorCode);
