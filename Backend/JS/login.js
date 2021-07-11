@@ -25,7 +25,7 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
 });
 
 document.getElementById("login-btn").addEventListener("click", function() {
-    red();
+    alert("Hi");
 });
 
 //to check if login is already present.
