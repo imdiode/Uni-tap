@@ -22,7 +22,7 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
         // Trigger the button element with a click
         red();
     }
-    console.log(`Key "${event.key}" pressed  [event: keydown]`);
+    //console.log(`Key "${event.key}" pressed  [event: keydown]`);
 });
 
 document.getElementById("login-btn").addEventListener("click", function() {
