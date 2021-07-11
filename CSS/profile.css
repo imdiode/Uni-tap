@@ -35,8 +35,7 @@ body {
     color: black;
 }
 
-.profile
-{
+.profile {
     margin-right: 10px;
     color: white;
     margin-left: auto;
@@ -156,4 +155,68 @@ body {
     cursor: pointer;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.change-modal {
+    width: 500px;
+    z-index: 500;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #0097e3;
+    display: none;
+    opacity: 0.95;
+}
+
+.modal-open {
+    display: block;
+}
+
+.modal-header {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0097e3;
+}
+
+.modal-container {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #0097e3;
+}
+
+.modal-fields {
+    display: inline-block;
+    margin-left: 20%;
+    color: #0097e3;
+}
+
+.modal-input {
+    margin-left: 5px;
+    border: none;
+    border-bottom: 2px dashed #002d61;
+    font-size: 15px;
+    outline: none;
+    color: #06acff;
+}
+
+.modal-save-btn {
+    width: 80%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #0097e3;
+    margin-left: 10%;
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 7px;
+    color: #ffffff;
+    margin-bottom: 15px;
 }
