@@ -70,6 +70,7 @@ body {
     color: white;
     font-size: 15px;
     padding: 8px 20px 8px 20px;
+    outline: none;
 }
 
 .forgot {

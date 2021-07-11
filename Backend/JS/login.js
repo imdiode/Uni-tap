@@ -24,6 +24,10 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
     }
 });
 
+document.getElementById("login-btn").addEventListener("click", function() {
+    red();
+});
+
 //to check if login is already present.
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -41,7 +45,7 @@ function red() {
     username = document.getElementById('uname').value;
     password = document.getElementById('passw').value;
     firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
-        location.href = "Dashboard.html";
+        //location.href = "Dashboard.html";
     }).catch((error) => {
         var errorCode = error.code;
         console.log(errorCode);
