@@ -1,16 +1,18 @@
 const preloader = document.querySelector('.loader');
 
-const fadeEffect = setInterval(() => {
-    if (!preloader.style.opacity) {
-        preloader.style.opacity = 1;
-    }
-    if (preloader.style.opacity > 0) {
-        preloader.style.opacity -= 0.1;
-    } else {
-        preloader.style.display = 'none';
-        clearInterval(fadeEffect);
-    }
-}, 200);
+function fadeEffect() {
+    setInterval(() => {
+        if (!preloader.style.opacity) {
+            preloader.style.opacity = 1;
+        }
+        if (preloader.style.opacity > 0) {
+            preloader.style.opacity -= 0.1;
+        } else {
+            preloader.style.display = 'none';
+            clearInterval(fadeEffect);
+        }
+    }, 200);
+};
 
 window.addEventListener('load', fadeEffect);
 
