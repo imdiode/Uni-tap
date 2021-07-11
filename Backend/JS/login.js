@@ -13,7 +13,8 @@ window.addEventListener('load', function() {
     }, 200);
 });
 
-document.getElementById('login.btn').addEventListener('touchend', red(), false);
+document.getElementById('login.btn').addEventListener('touchend', function() { red();
+    alert("Touch"); }, false);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
