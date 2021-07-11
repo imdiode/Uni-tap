@@ -1,11 +1,12 @@
 document.getElementById('passw').addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    red();
-  }
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+
+        // Trigger the button element with a click
+        red();
+    }
 });
 
 function red() {
