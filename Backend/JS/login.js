@@ -19,7 +19,7 @@ document.getElementById('passw').addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
-
+        document.getElementByClassName("login-btn").click();
         // Trigger the button element with a click
         red();
     }
