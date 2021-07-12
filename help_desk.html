@@ -1,109 +1,110 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>
-            CCAS | Help Desk
-        </title>
-        <link rel="stylesheet" href="./CSS/help_desk.css">
-        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+
+<head>
+    <title>
+        CCAS | Help Desk
+    </title>
+    <link rel="stylesheet" href="./CSS/help_desk.css">
+    <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
     <!--    <script rel="text/javascript" src="./Backend/JS/chat.js"></script>
 -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>  
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-functions.js"></script>
 
-    </head>
+</head>
 
-    <body>
-        <div class="top">
-            <div class="navigation">
-                <ul>
-                    <li><a href="Dashboard.html">Dashboard</a></li>
-                    <li><a href="Notice.html">Notice Board</a></li>
-                    <li><a href="violations.html">My Violations</a></li>
-                    <li><a href="Support_Page.html">CCAS Support</a></li>
-                </ul>
-            </div>
-            <div class="profile">
-                <img src="./Backend/Images/logo_2_dicot_Dark.svg">
-                Hi! Nandan
-            </div>
+<body>
+    <div class="top">
+        <div class="navigation">
+            <ul>
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <li><a href="Notice.html">Notice Board</a></li>
+                <li><a href="violations.html">My Violations</a></li>
+                <li><a href="Support_Page.html">CCAS Support</a></li>
+            </ul>
         </div>
-        <div class="sidebar">
-            <div class="options" onclick="profile_click()">
-                Profile
-            </div>
-            <div class="options" onclick="griv_click()">
-                Grievance
-            </div>
-            <div class="options" onclick="help_click()">
-                Help desk
-            </div>
-            <div class="options" onclick="aca_click()">
-                Academic record
-            </div>
-            <div class="options" onclick="library_click()">
-                Library
-            </div>
-            <div class="options" onclick="sports_click()">
-                Sports equipment
-            </div>
-            <div class="options" onclick="canteen_click()">
-                Canteen
-            </div>
-            <div class="options bstick">
-                Logout
-            </div>
+        <div class="profile">
+            <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
         </div>
+    </div>
+    <div class="sidebar">
+        <div class="options" onclick="profile_click()">
+            Profile
+        </div>
+        <div class="options" onclick="griv_click()">
+            Grievance
+        </div>
+        <div class="options" onclick="help_click()">
+            Help desk
+        </div>
+        <div class="options" onclick="aca_click()">
+            Academic record
+        </div>
+        <div class="options" onclick="library_click()">
+            Library
+        </div>
+        <div class="options" onclick="sports_click()">
+            Sports equipment
+        </div>
+        <div class="options" onclick="canteen_click()">
+            Canteen
+        </div>
+        <div class="options bstick">
+            Logout
+        </div>
+    </div>
 
-        <div class="sidebar-main-right">
-            <div class="chat-window" id="chat-widow">
-                <ul id="mesages">
-                    <li class="msg">
-                        <div class="container">
-                            <span class="msg-span">
+    <div class="sidebar-main-right">
+        <div class="chat-window" id="chat-widow">
+            <ul id="mesages">
+                <li class="msg">
+                    <div class="container">
+                        <span class="msg-span">
                                 <i class="name">Host: </i>Hello. How are you today?<br>
                                 <span class="time-right">11:00</span>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="msg my">
-                        <div class="container darker">
-                            <span class="msg-span">
+                        </span>
+                    </div>
+                </li>
+                <li class="msg my">
+                    <div class="container darker">
+                        <span class="msg-span">
                                 <i class="name">Me :</i>Hey! I'm fine. Thanks for asking!<br>
                                 <span class="time-left">11:01</span>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="msg">
-                        <div class="container">
-                            <span class="msg-span">
+                        </span>
+                    </div>
+                </li>
+                <li class="msg">
+                    <div class="container">
+                        <span class="msg-span">
                                 <i class="name">Host: </i>Sweet! So, what do you wanna do today?<br>
                                 <span class="time-right">11:02</span>
-                            </span>
-                        </div>
-                    </li>
-                    <li class="msg my">
-                        <div class="container darker">
-                            <span class="msg-span">
+                        </span>
+                    </div>
+                </li>
+                <li class="msg my">
+                    <div class="container darker">
+                        <span class="msg-span">
                                 <i class="name">Me: </i>Nah, I dunno. Play soccer.. or learn more coding perhaps?<br>
                                 <span class="time-left">11:05</span>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-                   <br>
-                   <form id="messageForm" autocomplete="off"> 
-                        <input class="textbox" type="text" id="msg-input">
-                        <button class="send" type="submit" id="msg-btn">Send</button>
-                    </form>
-            </div>
+                        </span>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <script src="./Backend/JS/chat.js"></script>
-<!--        <script>
+        <div class="sending-bar">
+            <form id="messageForm" autocomplete="off">
+                <input class="textbox" type="text" id="msg-input">
+                <button class="send" type="submit" id="msg-btn">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="./Backend/JS/chat.js"></script>
+    <!--        <script>
             // Your web app's Firebase configuration
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
             var firebaseConfig = {
@@ -120,5 +121,6 @@
             firebase.initializeApp(firebaseConfig);
             firebase.analytics();
           </script> -->
-    </body>
+</body>
+
 </html>
