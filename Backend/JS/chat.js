@@ -14,7 +14,7 @@ const firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const msgScreen = document.getElementById("messages"); //the <ul> that displays all the <li> msgs
+const msgScreen = document.getElementById("mesages"); //the <ul> that displays all the <li> msgs
 const msgForm = document.getElementById("messageForm"); //the input form
 const msgInput = document.getElementById("msg-input"); //the input element to write messages
 const msgBtn = document.getElementById("msg-btn"); //the Send button
@@ -45,24 +45,29 @@ function sendMessage(e){
       msgInput.value = "";
   }
 
-/*  
+
+
   const updateMsgs = data =>{
     const {dataName, text} = data.val(); //get name and text
-  
     //load messages, display on left if not the user's name. Display on right if it is the user.
-    const msg = `<li class="${dataName == name ? "msg my": "msg"}"><span class = "msg-span">
-      <i class = "name">${name}: </i>${text}
+    var today = new Date();
+    var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const msg = `<li class="${dataName == name ? "msg my": "msg"}">
+      <div class="${dataName == name ? "container darker": "container"}">
+      <span class = "msg-span">
+      <i class = "name">${name}: </i>${text}<br>
       </span>
-    </li>`
-
-    msgRef.on('child_added', updateMsgs);
+      </span>
+      </div>
+      </li>`
 
   
-//    msgScreen.innerHTML += msg; //add the <li> message to the chat window
+    msgScreen.innerHTML += msg; //add the <li> message to the chat window
   
     //auto scroll to bottom
-//    document.getElementById("chat-window").scrollTop = document.getElementById("chat-window").scrollHeight;
+    document.getElementById("chat-widow").scrollTop = document.getElementById("chat-widow").scrollHeight;
 
 
   }
-*/
+
+  msgRef.on('child_added', updateMsgs);

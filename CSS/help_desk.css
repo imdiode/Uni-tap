@@ -86,7 +86,7 @@ body {
     height: Calc(100vh - 70px);
     position: absolute;
     display: inline-block;
-    overflow-y:scroll;
+  /*  overflow-y:scroll; */
 }
 
 .content-main {
@@ -222,4 +222,8 @@ body {
 /* Handle on hover */
 #chat-window::-webkit-scrollbar-thumb:hover {
     background:rgb(5, 190, 144); 
+}
+
+.chat-window {
+    height: Calc(100vh - 70px);
 }
