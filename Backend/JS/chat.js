@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 var uid;
 var email;
+function init() {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -31,6 +32,7 @@ firebase.auth().onAuthStateChanged((user) => {
     location.href = "index.html";
   }
 });
+}
 
 const msgScreen = document.getElementById("mesages"); //the <ul> that displays all the <li> msgs
 const msgForm = document.getElementById("messageForm"); //the input form
@@ -39,12 +41,13 @@ const msgBtn = document.getElementById("msg-btn"); //the Send button
 
 const db = firebase.database();
 const msgRef = db.ref("/msgs"); 
-
-//let name="";
-//function init() {
-//  name = prompt("Please enter your name");
-//}
-//document.addEventListener('DOMContentLoaded', init);
+/*
+let name="";
+function init() {
+  name = prompt("Please enter your name");
+}
+*/
+document.addEventListener('DOMContentLoaded', init);
 
 
 msgForm.addEventListener('submit', sendMessage);
