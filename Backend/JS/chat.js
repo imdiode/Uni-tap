@@ -14,6 +14,24 @@ const firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var uid;
+var email;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    var email = user.email;
+    //console.log(uid);
+    //loadProfile();
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    location.href = "index.html";
+  }
+});
+
 const msgScreen = document.getElementById("mesages"); //the <ul> that displays all the <li> msgs
 const msgForm = document.getElementById("messageForm"); //the input form
 const msgInput = document.getElementById("msg-input"); //the input element to write messages
@@ -22,11 +40,11 @@ const msgBtn = document.getElementById("msg-btn"); //the Send button
 const db = firebase.database();
 const msgRef = db.ref("/msgs"); 
 
-let name="";
-function init() {
-  name = prompt("Please enter your name");
-}
-document.addEventListener('DOMContentLoaded', init);
+//let name="";
+//function init() {
+//  name = prompt("Please enter your name");
+//}
+//document.addEventListener('DOMContentLoaded', init);
 
 
 msgForm.addEventListener('submit', sendMessage);
@@ -37,7 +55,7 @@ function sendMessage(e){
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
       const msg = {
-          name: name,
+          uid: uid,
           text: text
       };
   
@@ -48,14 +66,14 @@ function sendMessage(e){
 
 
   const updateMsgs = data =>{
-    const {dataName, text} = data.val(); //get name and text
+    const {datauid, text} = data.val(); //get name and text
     //load messages, display on left if not the user's name. Display on right if it is the user.
     var today = new Date();
     var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    const msg = `<li class="${dataName == name ? "msg my": "msg"}">
-      <div class="${dataName == name ? "container darker": "container"}">
+    const msg = `<li class="${datauid == uid ? "msg my": "msg"}">
+      <div class="${datauid == uid ? "container darker": "container"}">
       <span class = "msg-span">
-      <i class = "name">${name}: </i>${text}<br>
+      <i class = "name">${email}: </i>${text}<br>
       </span>
       </span>
       </div>
