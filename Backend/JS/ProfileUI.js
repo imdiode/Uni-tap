@@ -37,20 +37,21 @@ function closeModal(modal) {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
+//firbase constants
+const db = firebase.firestore();
+const auth = firebase.auth();
+const profileRef = db.collection('users').doc(auth.currentUser.uid);
+
+//ui elements
+const addrChangeBtn = document.getElementById("addr-change");
+const phNumberChangeBtn = document.getElementById("phone-change");
+const emailChangeBtn = document.getElementById("email-change");
+
 var user_firestore_data;
 
 /*----------------------------------------------------------------------------*/
 //It will run on startup
 try{
-  //firbase constants
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-  const profileRef = db.collection('users').doc(auth.currentUser.uid);
-
-  //ui elements
-  const addrChangeBtn = document.getElementById("addr-change");
-  const phNumberChangeBtn = document.getElementById("phone-change");
-  const emailChangeBtn = document.getElementById("email-change");
 
   //listeners
   addrChangeBtn.addEventListener("click", changeAddr );
