@@ -1,15 +1,18 @@
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
 
-//firbase constants
-const db = firebase.firestore();
-const auth = firebase.auth();
-const profileRef = db.collection('users').doc(auth.currentUser.uid);
+
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
+
+    //firbase constants
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+    const profileRef = db.collection('users').doc(auth.currentUser.uid);
+
     var uid = user.uid;
     //console.log(uid);
     loadProfile();
