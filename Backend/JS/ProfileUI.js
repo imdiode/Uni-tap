@@ -37,7 +37,24 @@ function closeModal(modal) {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
-
+//user elements Initializations
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    var db = firebase.firestore();
+    var auth = firebase.auth();
+    var profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+    //console.log(uid);
+    loadProfile();
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    location.href = "index.html";
+  }
+});
 //ui elements
 const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
@@ -59,6 +76,9 @@ catch(err){
   //and open error window telling user about error, Try to log error on rtdb
 };
 /*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//to initialize the page
 
 /*----------------------------------------------------------------------------*/
 //to load profile on startup or, refresh anytime in between
