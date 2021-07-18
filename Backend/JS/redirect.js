@@ -1,5 +1,11 @@
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
+
+//firbase constants
+const db = firebase.firestore();
+const auth = firebase.auth();
+const profileRef = db.collection('users').doc(auth.currentUser.uid);
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -14,6 +20,16 @@ firebase.auth().onAuthStateChanged((user) => {
     location.href = "index.html";
   }
 });
+
+async function firebaseLogout() {
+  firebase.auth().signOut()
+    .then((ret)=>{
+      location.href = "index.html";
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+}
 
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
@@ -51,14 +67,4 @@ function sports_click()
 function canteen_click()
 {
     location.href = "canteen.html";
-}
-
-async function firebaseLogout() {
-  firebase.auth().signOut()
-    .then((ret)=>{
-      location.href = "index.html";
-    })
-    .catch((err)=>{
-      console.log(err);
-    });
 }

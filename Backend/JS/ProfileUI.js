@@ -37,10 +37,6 @@ function closeModal(modal) {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
-//firbase constants
-const db = firebase.firestore();
-const auth = firebase.auth();
-const profileRef = db.collection('users').doc(auth.currentUser.uid);
 
 //ui elements
 const addrChangeBtn = document.getElementById("addr-change");
