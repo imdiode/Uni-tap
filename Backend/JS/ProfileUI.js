@@ -37,15 +37,17 @@ function closeModal(modal) {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
+//Constants
+const db = firebase.firestore();
+const auth = firebase.auth();
+const profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+
 //user elements Initializations
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     var uid = user.uid;
-    var db = firebase.firestore();
-    var auth = firebase.auth();
-    var profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
     //console.log(uid);
     loadProfile();
     // ...
@@ -55,6 +57,8 @@ firebase.auth().onAuthStateChanged((user) => {
     location.href = "index.html";
   }
 });
+
+
 //ui elements
 const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
