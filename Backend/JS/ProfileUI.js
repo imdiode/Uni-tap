@@ -38,9 +38,9 @@ function closeModal(modal) {
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
 //Constants
-const db = firebase.firestore();
-const auth = firebase.auth();
-const profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+var db;
+var auth;
+var profileRef;
 
 //user elements Initializations
 firebase.auth().onAuthStateChanged((user) => {
@@ -87,6 +87,9 @@ catch(err){
 /*----------------------------------------------------------------------------*/
 //to load profile on startup or, refresh anytime in between
 async function loadProfile() {
+  db = firebase.firestore();
+  auth = firebase.auth();
+  profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
     profileRef.get().then((doc) => {
         let profileData = doc.data();
         user_firestore_data = profileData;
