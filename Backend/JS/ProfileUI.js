@@ -63,6 +63,7 @@ firebase.auth().onAuthStateChanged((user) => {
 const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
+const readMoreBtn = document.getElementById("readMore");
 
 var user_firestore_data;
 
@@ -74,6 +75,7 @@ try{
   addrChangeBtn.addEventListener("click", changeAddr );
   phNumberChangeBtn.addEventListener("click", changePhNo );
   emailChangeBtn.addEventListener("click", changeEmail );
+  readMoreBtn.addEventListener("click", readMore)
 }
 catch(err){
   console.log(err.message);
@@ -124,6 +126,7 @@ async function changeEmail() {
     console.log(err.message);
     //and open error window telling user about error, Try to log error on rtdb
   }
+  loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -141,6 +144,7 @@ async function changePhNo() {
     console.log(err.message);
     //and open error window telling user about error, Try to log error on rtdb
   }
+  loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -161,9 +165,16 @@ async function changeAddr() {
     console.log(err.message);
     //and open error window telling user about error, Try to log error on rtdb
   }
+  loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
+/*----------------------------------------------------------------------------*/
+//readMore function
+async function readMore() {
+  document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
+}
+/*----------------------------------------------------------------------------*/
 
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
