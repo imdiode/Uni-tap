@@ -117,7 +117,7 @@ async function loadProfile() {
 //change email function
 async function changeEmail() {
   try{
-    user_firestore_data.emailId = document.getElementById("nmail").value;
+    user_firestore_data.contactEmailId = document.getElementById("nmail").value;
     profileRef.set(user_firestore_data).then(()=>{
       document.getElementById("emailClose").click();
     });
