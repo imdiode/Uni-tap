@@ -1,5 +1,11 @@
 body {
-    background-color: deepskyblue;
+    background: rgb(55, 205, 255);
+    overflow: hidden;
+    height: 100vh;
+    background: no-repeat -moz-linear-gradient(315deg, rgba(55, 205, 255, 1) 0%, rgba(0, 191, 255, 1) 55%, rgba(113, 219, 255, 1) 100%);
+    background: no-repeat -webkit-linear-gradient(315deg, rgba(55, 205, 255, 1) 0%, rgba(0, 191, 255, 1) 55%, rgba(113, 219, 255, 1) 100%);
+    background: no-repeat linear-gradient(315deg, rgba(55, 205, 255, 1) 0%, rgba(0, 191, 255, 1) 55%, rgba(113, 219, 255, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#37cdff", endColorstr="#71dbff", GradientType=1);
 }
 
 .loader {
@@ -13,7 +19,15 @@ body {
     top: 0;
     left: 0;
     z-index: 9999;
+    opacity: 0;
+    display: none;
     transition: opacity 0.3s linear;
+}
+
+.logo {
+    width: 100px;
+    margin-left: -20px;
+    margin-bottom: -20px;
 }
 
 .login-container {
@@ -32,9 +46,8 @@ body {
 }
 
 .login-title {
-    color: #0097e3;
+    color: #f5690a;
     text-align: center;
-    font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

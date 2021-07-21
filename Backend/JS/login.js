@@ -1,6 +1,6 @@
 const preloader = document.querySelector('.loader');
 
-window.addEventListener('load', function() {
+/* window.addEventListener('load', function() {
     setInterval(() => {
         if (!preloader.style.opacity) {
             preloader.style.opacity = 1;
@@ -11,9 +11,13 @@ window.addEventListener('load', function() {
             preloader.style.display = 'none';
         }
     }, 200);
-});
+}); */
 
-document.getElementById('login-btn').addEventListener('touchend', function() { red(); }, false);
+document.getElementById('login-btn').addEventListener('touchend', function() {
+    red();
+    preloader.style.opacity += 1;
+    preloader.style.display = 'block';
+}, false);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
@@ -31,6 +35,8 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
+        preloader.style.opacity += 1;
+        preloader.style.display = 'block';
         var uid = user.uid;
         location.href = "Dashboard.html";
         //console.log(uid);
