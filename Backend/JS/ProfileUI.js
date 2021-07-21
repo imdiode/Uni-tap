@@ -1,12 +1,3 @@
-
-function disp() {
-    if (document.getElementById("1exp").style.display == "block") {
-        document.getElementById("1exp").style.display = "none";
-    } else {
-        document.getElementById("1exp").style.display = "block";
-    }
-}
-
 const dataModalOpenButton = document.querySelectorAll('[data-modal-target]');
 const dataCloseButton = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
@@ -44,18 +35,18 @@ var profileRef;
 
 //user elements Initializations
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    var uid = user.uid;
-    //console.log(uid);
-    loadProfile();
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    location.href = "index.html";
-  }
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        var uid = user.uid;
+        //console.log(uid);
+        loadProfile();
+        // ...
+    } else {
+        // User is signed out
+        // ...
+        location.href = "index.html";
+    }
 });
 
 
@@ -69,17 +60,16 @@ var user_firestore_data;
 
 /*----------------------------------------------------------------------------*/
 //It will run on startup
-try{
+try {
 
-  //listeners
-  addrChangeBtn.addEventListener("click", changeAddr );
-  phNumberChangeBtn.addEventListener("click", changePhNo );
-  emailChangeBtn.addEventListener("click", changeEmail );
-  readMoreBtn.addEventListener("click", readMore)
-}
-catch(err){
-  console.log(err.message);
-  //and open error window telling user about error, Try to log error on rtdb
+    //listeners
+    addrChangeBtn.addEventListener("click", changeAddr);
+    phNumberChangeBtn.addEventListener("click", changePhNo);
+    emailChangeBtn.addEventListener("click", changeEmail);
+    readMoreBtn.addEventListener("click", readMore)
+} catch (err) {
+    console.log(err.message);
+    //and open error window telling user about error, Try to log error on rtdb
 };
 /*----------------------------------------------------------------------------*/
 
@@ -89,14 +79,13 @@ catch(err){
 /*----------------------------------------------------------------------------*/
 //to load profile on startup or, refresh anytime in between
 async function loadProfile() {
-  try{
-    db = firebase.firestore();
-    auth = firebase.auth();
-    profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
-  }
-  catch(err){
-    console.log(err.message);
-  }
+    try {
+        db = firebase.firestore();
+        auth = firebase.auth();
+        profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+    } catch (err) {
+        console.log(err.message);
+    }
 
     profileRef.get().then((doc) => {
         let profileData = doc.data();
@@ -122,17 +111,16 @@ async function loadProfile() {
 /*----------------------------------------------------------------------------*/
 //change email function
 async function changeEmail() {
-  try{
-    user_firestore_data.contactEmailId = document.getElementById("nmail").value;
-    profileRef.set(user_firestore_data).then(()=>{
-      document.getElementById("emailClose").click();
-    });
-  }
-  catch(err){
-    console.log(err.message);
-    //and open error window telling user about error, Try to log error on rtdb
-  }
-  loadProfile();
+    try {
+        user_firestore_data.contactEmailId = document.getElementById("nmail").value;
+        profileRef.set(user_firestore_data).then(() => {
+            document.getElementById("emailClose").click();
+        });
+    } catch (err) {
+        console.log(err.message);
+        //and open error window telling user about error, Try to log error on rtdb
+    }
+    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -140,45 +128,43 @@ async function changeEmail() {
 /*----------------------------------------------------------------------------*/
 //change phoneNumber function
 async function changePhNo() {
-  try{
-    user_firestore_data.mobileNumber = document.getElementById("nphone").value;
-    profileRef.set(user_firestore_data).then(()=>{
-      document.getElementById("phNoClose").click();
-    });
-  }
-  catch(err){
-    console.log(err.message);
-    //and open error window telling user about error, Try to log error on rtdb
-  }
-  loadProfile();
+    try {
+        user_firestore_data.mobileNumber = document.getElementById("nphone").value;
+        profileRef.set(user_firestore_data).then(() => {
+            document.getElementById("phNoClose").click();
+        });
+    } catch (err) {
+        console.log(err.message);
+        //and open error window telling user about error, Try to log error on rtdb
+    }
+    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
 
 /*----------------------------------------------------------------------------*/
 async function changeAddr() {
-  try{
-    user_firestore_data.address.line1 = document.getElementById("naddrL1").value;
-    user_firestore_data.address.line2 = document.getElementById("naddrL2").value;
-    user_firestore_data.address.district = document.getElementById("naddrDistrict").value;
-    user_firestore_data.address.pincode = document.getElementById("naddrPin").value;
-    user_firestore_data.address.city = document.getElementById("naddrCity").value;
-    profileRef.set(user_firestore_data).then(()=>{
-      document.getElementById("addrClose").click();
-    });
-  }
-  catch(err){
-    console.log(err.message);
-    //and open error window telling user about error, Try to log error on rtdb
-  }
-  loadProfile();
+    try {
+        user_firestore_data.address.line1 = document.getElementById("naddrL1").value;
+        user_firestore_data.address.line2 = document.getElementById("naddrL2").value;
+        user_firestore_data.address.district = document.getElementById("naddrDistrict").value;
+        user_firestore_data.address.pincode = document.getElementById("naddrPin").value;
+        user_firestore_data.address.city = document.getElementById("naddrCity").value;
+        profileRef.set(user_firestore_data).then(() => {
+            document.getElementById("addrClose").click();
+        });
+    } catch (err) {
+        console.log(err.message);
+        //and open error window telling user about error, Try to log error on rtdb
+    }
+    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
 //readMore function
 async function readMore() {
-  document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
+    document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
 }
 /*----------------------------------------------------------------------------*/
 

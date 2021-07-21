@@ -127,25 +127,6 @@ body {
     border-radius: 50%;
 }
 
-.expander {
-    margin-top: 50px;
-}
-
-.expansion {
-    background-color: #023c7e;
-    color: white;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.exp {
-    margin-top: 20px;
-    display: none;
-}
-
 .save-btn {
     color: white;
     background-color: #0097e3;
