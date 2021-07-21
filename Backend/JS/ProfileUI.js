@@ -89,9 +89,14 @@ catch(err){
 /*----------------------------------------------------------------------------*/
 //to load profile on startup or, refresh anytime in between
 async function loadProfile() {
-  db = firebase.firestore();
-  auth = firebase.auth();
-  profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+  try{
+    db = firebase.firestore();
+    auth = firebase.auth();
+    profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+  }.catch(err){
+    console.log(err.message);
+  }
+
     profileRef.get().then((doc) => {
         let profileData = doc.data();
         user_firestore_data = profileData;
