@@ -1,78 +1,79 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>
-            CCAS | Student Dashboard
-        </title>
-        <link rel="stylesheet" href="./CSS/Dashboard.css">
-        <!--  Firebase Config  -->
-        <!-- update the version number as needed -->
-        <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
-        <!-- include only the Firebase features as you need -->
-        <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
-        <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <!-- end Firebase Config -->
-        <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
-    </head>
 
-    <body>
-        <div class="top">
-            <div class="navigation">
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="Notice.html">Notice Board</a></li>
-                    <li><a href="violations.html">My Violations</a></li>
-                    <li><a href="Support_Page.html">CCAS Support</a></li>
-                </ul>
-            </div>
-            <div class="profile">
-                <img src="./Backend/Images/logo_2_dicot_Dark.svg">
-                Hi! Nandan
-            </div>
+<head>
+    <title>
+        Uni-Tap | Student Dashboard
+    </title>
+    <link rel="stylesheet" href="./CSS/Dashboard.css">
+    <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
+    <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="Notice.html">Notice Board</a></li>
+                <li><a href="violations.html">My Violations</a></li>
+                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+            </ul>
         </div>
-        <div class="sidebar">
-            <div class="options" onclick="profile_click()">
-                Profile
-            </div>
-            <div class="options" onclick="griv_click()">
-                Grievance
-            </div>
-            <div class="options" onclick="help_click()">
-                Help desk
-            </div>
-            <div class="options" onclick="aca_click()">
-                Academic record
-            </div>
-            <div class="options" onclick="library_click()">
-                Library
-            </div>
-            <div class="options" onclick="sports_click()">
-                Sports equipment
-            </div>
-            <div class="options" onclick="canteen_click()">
-                Canteen
-            </div>
-            <div class="options bstick" onclick="firebaseLogout()">
-                Logout
-            </div>
+        <div class="profile">
+            <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
         </div>
-        <div class="sidebar-main-right">
-            <div class="content-main">
-                <h1>
-                    The college weekly
-                </h1>
-            </div>
-            <div class="ads">
-                <center>ads go here</center>
-            </div>
+    </div>
+    <div class="sidebar">
+        <div class="options" onclick="profile_click()">
+            Profile
         </div>
-    </body>
+        <div class="options" onclick="griv_click()">
+            Grievance
+        </div>
+        <div class="options" onclick="help_click()">
+            Help desk
+        </div>
+        <div class="options" onclick="aca_click()">
+            Academic record
+        </div>
+        <div class="options" onclick="library_click()">
+            Library
+        </div>
+        <div class="options" onclick="sports_click()">
+            Sports equipment
+        </div>
+        <div class="options" onclick="canteen_click()">
+            Canteen
+        </div>
+        <div class="options bstick" onclick="firebaseLogout()">
+            Logout
+        </div>
+    </div>
+    <div class="sidebar-main-right">
+        <div class="content-main">
+            <h1>
+                The college weekly
+            </h1>
+        </div>
+        <div class="ads">
+            <center>ads go here</center>
+        </div>
+    </div>
+</body>
+
 </html>
