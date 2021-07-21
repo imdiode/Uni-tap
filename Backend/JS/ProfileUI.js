@@ -93,7 +93,8 @@ async function loadProfile() {
     db = firebase.firestore();
     auth = firebase.auth();
     profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
-  }.catch(err){
+  }
+  catch(err){
     console.log(err.message);
   }
 
