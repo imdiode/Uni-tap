@@ -16,7 +16,7 @@ const preloader = document.querySelector('.loader');
 document.getElementById('login-btn').addEventListener('touchend', function() {
     red();
     preloader.style.opacity += 1;
-    preloader.style.display = 'block';
+    preloader.style.display = 'flex';
 }, false);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
