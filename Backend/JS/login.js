@@ -14,9 +14,9 @@ const preloader = document.querySelector('.loader');
 }); */
 
 document.getElementById('login-btn').addEventListener('touchend', function() {
-    red();
-    preloader.style.opacity += 1;
     preloader.style.display = 'flex';
+    preloader.style.opacity += 1;
+    red();
 }, false);
 
 document.getElementById('passw').addEventListener("keyup", function(event) {
@@ -51,6 +51,8 @@ function red() {
     firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
         //location.href = "Dashboard.html";
     }).catch((error) => {
+        preloader.style.opacity -= 1;
+        preloader.style.display = 'none';
         var errorCode = error.code;
         console.log(errorCode);
 
