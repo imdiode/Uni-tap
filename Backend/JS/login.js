@@ -1,4 +1,4 @@
-const preloader = document.querySelector('.loader');
+const preloader = document.querySelector('loader');
 
 /* window.addEventListener('load', function() {
     setInterval(() => {
@@ -14,6 +14,8 @@ const preloader = document.querySelector('.loader');
 }); */
 
 document.getElementById('login-btn').addEventListener('touchend', function() {
+    document.getElementById("uname").disabled = true;
+    document.getElementById("passw").disabled = true;
     preloader.style.display = 'flex';
     preloader.style.opacity += 1;
     red();
@@ -22,10 +24,13 @@ document.getElementById('login-btn').addEventListener('touchend', function() {
 document.getElementById('passw').addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.key === 'Enter') {
+        document.getElementById("uname").disabled = true;
+        document.getElementById("passw").disabled = true;
         // Cancel the default action, if needed
         event.preventDefault();
         preloader.style.display = 'flex';
         preloader.style.opacity += 1;
+
         // Trigger the button element with a click
         red();
     }
@@ -53,6 +58,8 @@ function red() {
     }).catch((error) => {
         preloader.style.opacity -= 1;
         preloader.style.display = 'none';
+        document.getElementById("uname").disabled = false;
+        document.getElementById("passw").disabled = false;
         var errorCode = error.code;
         console.log(errorCode);
 
