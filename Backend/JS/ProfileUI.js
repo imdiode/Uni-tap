@@ -32,6 +32,7 @@ function closeModal(modal) {
 var db;
 var auth;
 var profileRef;
+var storageRef;
 
 //user elements Initializations
 firebase.auth().onAuthStateChanged((user) => {
@@ -55,8 +56,12 @@ const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
 const readMoreBtn = document.getElementById("readMore");
+const profilePic = document.getElementById("changeAvatar");
 
 var user_firestore_data;
+
+var uploader = document.getElementById("uploader");
+var fileButton = document.getElementById("fileButton");
 
 /*----------------------------------------------------------------------------*/
 //It will run on startup
@@ -66,7 +71,10 @@ try {
     addrChangeBtn.addEventListener("click", changeAddr);
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
-    readMoreBtn.addEventListener("click", readMore)
+    readMoreBtn.addEventListener("click", readMore);
+    profilePic.addEventListener("click", changeProfilePic);
+    fileButton.addEventListener("change", uploadProfilePic);
+
 } catch (err) {
     console.log(err.message);
     //and open error window telling user about error, Try to log error on rtdb
@@ -84,6 +92,7 @@ async function loadProfile() {
         db = firebase.firestore();
         auth = firebase.auth();
         profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+        storageRef = firebase.storage().ref();
     } catch (err) {
         console.log(err.message);
     }
@@ -166,6 +175,47 @@ async function changeAddr() {
 //readMore function
 async function readMore() {
     document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
+}
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//change avatar
+async function changeProfilePic() {
+  fileButton.click();
+}
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//
+async function uploadProfilePic(e) {
+  //get file
+  var file = e.target.files[0];
+
+  //file reference
+  var myPicRef = storage.child("/profilePics/" + user_firestore_data.uid + "/" +
+   user_firestore_data.uid + "ProfilePic");
+
+  //upload file;
+  var task = myPicRef.put(file);
+
+  //update progress bar
+  task.on('state_changed',
+    function progress(snap){
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = progress;
+    },
+    function error(err){
+      console.log(err);
+    },
+    function complete(snap){
+      task.snap.ref.getDownloadURL().then((url)=>{
+        user_firestore_data.profilePic = url;
+        profileRef.set(user_firestore_data).then(() => {
+          loadProfile();
+        });
+      });
+    }
+  )
 }
 /*----------------------------------------------------------------------------*/
 
