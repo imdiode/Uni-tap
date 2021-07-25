@@ -90,8 +90,9 @@ async function loadProfile() {
     try {
         db = firebase.firestore();
         auth = firebase.auth();
+        storage = firebase.storage();
         profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
-        storageRef = firebase.storage().ref();
+
     } catch (err) {
         console.log(err.message);
     }
@@ -211,12 +212,17 @@ fileButton.addEventListener('click', function(e){
     },
     (error) => {
       // Handle unsuccessful uploads
+      console.log(error);
     },
     () => {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        console.log('File available at', downloadURL);
+        user_firestore_data.profilePicture = downloadURL;
+        profileRef.set(user_firestore_data).then(() => {
+            loadProfile();
+            console.log('File available at', downloadURL);
+        });
       });
     }
   );
