@@ -188,6 +188,7 @@ async function changeProfilePic() {
 /*----------------------------------------------------------------------------*/
 //
 async function uploadProfilePic(e) {
+  console.log("etc");
   //get file
   var file = e.target.files[0];
 
