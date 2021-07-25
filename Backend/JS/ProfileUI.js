@@ -186,10 +186,14 @@ async function changeProfilePic() {
 
 /*----------------------------------------------------------------------------*/
 //setting up listener
+var file;
+var myPicRef;
+var uploadTask;
+
 fileButton.addEventListener('click', function(e){
-  var file = e.target.files[0];
-  var myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + user_firestore_data.uid + "ProfilePic");
-  var uploadTask = myPicRef.put(file);
+  file = e.target.files[0];
+  myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + user_firestore_data.uid + "ProfilePic");
+  uploadTask = myPicRef.put(file);
 })
 /*----------------------------------------------------------------------------*/
 
