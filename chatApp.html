@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <script src="./Backend/JS/chat-app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <img src="./Backend/Images/logo.jpg" alt="" class="logoImg">
+        <div class="chatHeader">
+            <h2>My Chat App <span><i class="fa fa-user fa-lg" aria-hidden="true"></i><br><span id="user"> User </span></span>
+            </h2>
+        </div>
+    </nav>
+
+    <hr>
+
+    <section class="clicked" id="chatList">
+        <div class="listOfUser">
+            <div class="userlist">
+                <ul class=listProfile>
+                    <li onclick="myfunctNandan()" class="click" id="nandan">
+                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Nandan Shukla</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="userlist">
+                <ul class=listProfile>
+                    <li onclick="myfunctAniket()" class="click" id="aniket">
+                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Aniket Nadkarni</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="userlist">
+                <ul class=listProfile>
+                    <li onclick="myfunctMohit()" class="click" id="mohit">
+                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Mohit Shah</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="userlist">
+                <ul class=listProfile>
+                    <li onclick="myfunctAryan()" class="click" id="aryan">
+                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Aryan Sheth</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="userlist">
+                <ul class=listProfile>
+                    <li onclick="myfunctMann()" class="click" id="mann">
+                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Mann Shah</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+        </div>
+    </section>
+
+    <section id="message-me">
+        <div class="message-workspace">
+            <nav class="message-navigation">
+                <i class="fa fa-user fa-2x myIcon" aria-hidden="true"></i><span class="profile">Nandan</span>
+                <span class="profile-option"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
+            </nav>
+
+            <hr>
+
+            <div class="message-div">
+                <i class="fa fa-paperclip" aria-hidden="true"></i><input class="send-message"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
