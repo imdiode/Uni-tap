@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-black: rgb(0, 0, 0);
+    --color-white: rgb(255, 255, 255);
+}
+
+.navigation {
+    height: auto;
+    padding: 1%;
+}
+
+.logoImg {
+    float: left;
+    width: 9%;
+    padding: 12px;
+}
+
+.chatHeader {
+    margin-left: 70px;
+    padding: 0 12px;
+    padding-top: 10px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.chatHeader span {
+    float: right;
+    font-family: 'Ubuntu', sans-serif;
+    margin-right: 22px;
+}
+
+#user {
+    padding-top: 12px;
+}
+
+.clicked {
+    width: 30%;
+    float: left;
+    margin-left: 0;
+}
+
+.listProfile {
+    list-style-type: none;
+}
+
+.chatWorkspace {
+    float: left;
+}
+
+.listOfUser {
+    margin-left: 0;
+}
+
+.fa {
+    padding: 9px;
+    border-radius: 54%;
+}
+
+.listProfile li span {
+    font-size: 18px;
+    padding-left: 2%;
+}
+
+.message-workspace nav .profile {
+    font-size: 36px;
+    padding: 4px 14px;
+}
+
+.message-workspace nav .profile-option {
+    float: right;
+}
+
+.message-workspace {
+    border: 1px solid var(--color-black);
+    float: left;
+    width: 65%;
+    height: 420px;
+}
+
+.message-navigation {
+    padding: 10px;
+}
+
+.myIcon {
+    border-radius: 50%;
+}
+
+.message-div {
+    text-align: center;
+    align-items: baseline;
+    display: flex;
+    position: relative;
+    display: block;
+    bottom: 0;
+    top: 72%;
+}
+
+.send-message {
+    margin-bottom: 0;
+    width: 90%;
+    height: 20px;
+    border-radius: 5px;
+}
