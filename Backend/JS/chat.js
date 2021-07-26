@@ -14,15 +14,15 @@ const firebaseConfig = {
 //Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var uid;
-var email;
+let uid="";
+let email="";
 function init() {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    var uid = user.uid;
-    var email = user.email;
+    uid = user.uid;
+    email = user.email;
     //console.log(uid);
     //loadProfile();
     // ...
@@ -58,7 +58,8 @@ function sendMessage(e){
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
       const msg = {
-          uid: uid,
+          datauid: uid,
+          dataemail: email,
           text: text
       };
   
@@ -69,14 +70,14 @@ function sendMessage(e){
 
 
   const updateMsgs = data =>{
-    const {datauid, text} = data.val(); //get name and text
+    const {datauid, dataemail, text} = data.val(); //get name and text
     //load messages, display on left if not the user's name. Display on right if it is the user.
-    var today = new Date();
-    var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  //  var today = new Date();
+   // var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     const msg = `<li class="${datauid == uid ? "msg my": "msg"}">
       <div class="${datauid == uid ? "container darker": "container"}">
       <span class = "msg-span">
-      <i class = "name">${email}: </i>${text}<br>
+      <i class = "name">${datauid == uid ? email: dataemail}: </i>${text}<br>
       </span>
       </span>
       </div>
@@ -87,8 +88,6 @@ function sendMessage(e){
   
     //auto scroll to bottom
     document.getElementById("chat-widow").scrollTop = document.getElementById("chat-widow").scrollHeight;
-
-
   }
 
   msgRef.on('child_added', updateMsgs);
