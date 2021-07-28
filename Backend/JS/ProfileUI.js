@@ -193,13 +193,14 @@ var uploadTask;
 
 fileButton.addEventListener('click', function(e){
   file = e.target.files[0];
-  myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + user_firestore_data.uid + "ProfilePic");
+  myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + "ProfilePic" + file.name );
   uploadTask = myPicRef.put(file);
   uploadTask.on('state_changed',
     (snapshot) => {
       // Observe state change events such as progress, pause, and resume
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = progress;
       console.log('Upload is ' + progress + '% done');
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED: // or 'paused'
