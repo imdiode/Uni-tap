@@ -191,7 +191,7 @@ var file;
 var myPicRef;
 var uploadTask;
 
-fileButton.addEventListener('click', function(e){
+fileButton.addEventListener('change', function(e){
   file = e.target.files[0];
   console.log(file);
   myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + "ProfilePic.jpg" );
