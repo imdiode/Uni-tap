@@ -73,6 +73,7 @@ try {
     emailChangeBtn.addEventListener("click", changeEmail);
     readMoreBtn.addEventListener("click", readMore);
     profilePic.addEventListener("click", changeProfilePic);
+    fileButton.addEventListener('change', uploadPicture);
 
 } catch (err) {
     console.log(err.message);
@@ -191,52 +192,20 @@ var file;
 var myPicRef;
 var uploadTask;
 
-fileButton.addEventListener('change', function(e){
-  file = e.target.files[0];
+async function uploadPicture(even) {
+  file = even.target.files[0];
   console.log(file);
-  myPicRef = storage.ref("profilePics/"+ user_firestore_data.uid + "/" + "ProfilePic.jpg" );
+  myPicRef = storage.ref( user_firestore_data.uid + "/" + "ProfilePic.jpg" );
   uploadTask = myPicRef.put(file).then((e)=>{
     e.ref.getDownloadURL().then((downloadURL) => {
       user_firestore_data.profilePicture = downloadURL;
       profileRef.set(user_firestore_data).then(() => {
-      loadProfile();
-      console.log('File available at', downloadURL);
-     });
+        loadProfile();
+        //console.log('File available at', downloadURL);
+      });
     });
   });
-  // uploadTask.on('state_changed',
-  //   (snapshot) => {
-  //     // Observe state change events such as progress, pause, and resume
-  //     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-  //     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-  //     uploader.value = progress;
-  //     console.log('Upload is ' + progress + '% done');
-  //     switch (snapshot.state) {
-  //       case firebase.storage.TaskState.PAUSED: // or 'paused'
-  //         console.log('Upload is paused');
-  //         break;
-  //       case firebase.storage.TaskState.RUNNING: // or 'running'
-  //         console.log('Upload is running');
-  //         break;
-  //     }
-  //   },
-  //   (error) => {
-  //     // Handle unsuccessful uploads
-  //     console.log(error);
-  //   },
-  //   () => {
-  //     // Handle successful uploads on complete
-  //     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  //     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-  //       user_firestore_data.profilePicture = downloadURL;
-  //       profileRef.set(user_firestore_data).then(() => {
-  //           loadProfile();
-  //           console.log('File available at', downloadURL);
-  //       });
-  //     });
-  //   }
-  // );
-})
+}
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
