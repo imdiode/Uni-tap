@@ -26,6 +26,13 @@ function closeModal(modal) {
     modal.classList.remove('active');
 }
 
+const buttonPhoto = document.getElementById('w-link');
+const inputPhoto = document.getElementById('fileButton');
+
+buttonPhoto.onclick = () => {
+    inputPhoto.click();
+}
+
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
 //Constants
@@ -182,7 +189,7 @@ async function readMore() {
 /*----------------------------------------------------------------------------*/
 //change avatar
 async function changeProfilePic() {
-  fileButton.click();
+    fileButton.click();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -193,18 +200,18 @@ var myPicRef;
 var uploadTask;
 
 async function uploadPicture(even) {
-  file = even.target.files[0];
-  console.log(file);
-  myPicRef = storage.ref( user_firestore_data.uid + "/" + "ProfilePic.jpg" );
-  uploadTask = myPicRef.put(file).then((e)=>{
-    e.ref.getDownloadURL().then((downloadURL) => {
-      user_firestore_data.profilePicture = downloadURL;
-      profileRef.set(user_firestore_data).then(() => {
-        loadProfile();
-        //console.log('File available at', downloadURL);
-      });
+    file = even.target.files[0];
+    console.log(file);
+    myPicRef = storage.ref(user_firestore_data.uid + "/" + "ProfilePic.jpg");
+    uploadTask = myPicRef.put(file).then((e) => {
+        e.ref.getDownloadURL().then((downloadURL) => {
+            user_firestore_data.profilePicture = downloadURL;
+            profileRef.set(user_firestore_data).then(() => {
+                loadProfile();
+                //console.log('File available at', downloadURL);
+            });
+        });
     });
-  });
 }
 /*----------------------------------------------------------------------------*/
 
