@@ -32,6 +32,7 @@ function closeModal(modal) {
 var db;
 var auth;
 var profileRef;
+var storageRef;
 
 //user elements Initializations
 firebase.auth().onAuthStateChanged((user) => {
@@ -55,8 +56,12 @@ const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
 const readMoreBtn = document.getElementById("readMore");
+const profilePic = document.getElementById("changeAvatar");
 
 var user_firestore_data;
+
+var uploader = document.getElementById("uploader");
+var fileButton = document.getElementById("fileButton");
 
 /*----------------------------------------------------------------------------*/
 //It will run on startup
@@ -66,12 +71,16 @@ try {
     addrChangeBtn.addEventListener("click", changeAddr);
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
-    readMoreBtn.addEventListener("click", readMore)
+    readMoreBtn.addEventListener("click", readMore);
+    //profilePic.addEventListener("click", changeProfilePic);
+    fileButton.addEventListener('change', uploadPicture);
+
 } catch (err) {
     console.log(err.message);
     //and open error window telling user about error, Try to log error on rtdb
 };
 /*----------------------------------------------------------------------------*/
+
 
 /*----------------------------------------------------------------------------*/
 //to initialize the page
@@ -82,7 +91,9 @@ async function loadProfile() {
     try {
         db = firebase.firestore();
         auth = firebase.auth();
+        storage = firebase.storage();
         profileRef = db.collection('users').doc(firebase.auth().currentUser.uid);
+
     } catch (err) {
         console.log(err.message);
     }
@@ -166,6 +177,40 @@ async function changeAddr() {
 async function readMore() {
     document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
 }
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//change avatar
+async function changeProfilePic() {
+  fileButton.click();
+}
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//setting up listener
+var file;
+var myPicRef;
+var uploadTask;
+
+async function uploadPicture(even) {
+  file = even.target.files[0];
+  console.log(file);
+  myPicRef = storage.ref( user_firestore_data.uid + "/" + "ProfilePic.jpg" );
+  uploadTask = myPicRef.put(file).then((e)=>{
+    e.ref.getDownloadURL().then((downloadURL) => {
+      user_firestore_data.profilePicture = downloadURL;
+      profileRef.set(user_firestore_data).then(() => {
+        loadProfile();
+        //console.log('File available at', downloadURL);
+      });
+    });
+  });
+}
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+//while uploading the file
+
 /*----------------------------------------------------------------------------*/
 
 /* __________________________________________________________________________ */
