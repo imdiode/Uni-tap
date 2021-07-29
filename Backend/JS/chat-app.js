@@ -1,41 +1,43 @@
-const nandan = document.querySelector("#nandan");
-const aniket = document.querySelector("#aniket");
-const mohit = document.querySelector("#mohit");
-const aryan = document.querySelector("#aryan");
-const mann = document.querySelector("#mann");
+// $( '.friend-drawer--onhover' ).on( 'click',  function() {
+
+//   $( '.chat-bubble' ).hide('slow').show('slow');
+
+// });
 
 
-function chatStarted() {
-    const chatList = document.querySelector("#chatList");
-    const message_workspace = document.querySelector(".message-workspace");
 
-    if (chatList.classList.contains('clicked') == false) {
-        chatList.className += "clicked";
-    }
 
-}
+
+// function chatStarted() {
+//   const chatList = document.querySelector("#chatList");
+//   const message_workspace = document.querySelector(".message-workspace");
+
+//   if (chatList.classList.contains('clicked') == false) {
+//       chatList.className += "clicked";
+//   }
+
+// }
 
 function myfunctNandan() {
-    chatStarted();
-    const me = document.querySelector(".profile").innerHTML = "Nandan";
+
+    const me = document.querySelector("#profile").innerHTML = "Nandan Shukla";
 }
 
 function myfunctAniket() {
-    chatStarted();
-    const me = document.querySelector(".profile").innerHTML = "Aniket"
+
+    const me = document.querySelector("#profile").innerHTML = "Aniket Nadkarni"
 }
 
 function myfunctMohit() {
-    chatStarted();
-    const me = document.querySelector(".profile").innerHTML = "Mohit"
+    const me = document.querySelector("#profile").innerHTML = "Mohit Shah"
 }
 
 function myfunctAryan() {
-    chatStarted();
-    const me = document.querySelector(".profile").innerHTML = "Aryan"
+
+    const me = document.querySelector("#profile").innerHTML = "Aryan Sheth"
 }
 
 function myfunctMann() {
-    chatStarted();
-    const me = document.querySelector(".profile").innerHTML = "Mann"
+
+    const me = document.querySelector("#profile").innerHTML = "Mann Shah"
 }

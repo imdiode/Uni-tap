@@ -12,84 +12,153 @@
 </head>
 
 <body>
-    <nav class="navigation">
-        <img src="./Backend/Images/logo.jpg" alt="" class="logoImg">
-        <div class="chatHeader">
-            <h2>My Chat App <span><i class="fa fa-user fa-lg" aria-hidden="true"></i><br><span id="user"> User </span></span>
-            </h2>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-4 border-right">
+                <div class="settings-tray">
+                    <img class="profile-image" id="logo" src="./Backend/Images/logo.jpg" alt="Profile img">
+                    <span class="settings-tray--right">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+              </span>
+                </div>
+                <div class="profile-list">
+                    <div class="profile-container">
+                        <div class="search-box">
+                            <div class="input-wrapper">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input placeholder="Search here" type="text">
+                            </div>
+                        </div>
+                        <div class="friend-drawer friend-drawer--onhover" onclick="myfunctNandan()">
+                            <img class="profile-image" src="" alt="">
+
+                            <div class="text">
+                                <h4>Nandan Shukla</h4>
+
+                            </div>
+
+                        </div>
+                        <!-- <hr> -->
+                        <div class="friend-drawer friend-drawer--onhover" onclick="myfunctAniket()">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4>Aniket Nadkarni</h4>
+                            </div>
+
+                        </div>
+                        <!-- <hr> -->
+                        <div class="friend-drawer friend-drawer--onhover " onclick="myfunctMohit()">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4>Mohit Shah</h4>
+                            </div>
+
+                        </div>
+                        <!-- <hr> -->
+                        <div class="friend-drawer friend-drawer--onhover" onclick="myfunctAryan()">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4>Aryan Sheth</h4>
+
+                            </div>
+
+                        </div>
+                        <!-- <hr> -->
+                        <div class="friend-drawer friend-drawer--onhover" onclick="myfunctMann()">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4>Mann Shah</h4>
+
+                            </div>
+
+                        </div>
+
+                        <div class="friend-drawer friend-drawer--onhover">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4>More</h4>
+
+                            </div>
+
+                        </div>
+                        <!-- <hr> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="settings-tray">
+                    <div class="friend-drawer no-gutters friend-drawer--grey">
+                        <img class="profile-image" src="" alt="">
+                        <div class="text">
+                            <h4 id="profile">Nandan Shukla</h4>
+                        </div>
+                        <span class="settings-tray--right"></span>
+                    </div>
+                </div>
+                <div class="chat-panel">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="chat-bubble chat-bubble--left">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3 offset-md-9">
+                            <div class="chat-bubble chat-bubble--right">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3 offset-md-9">
+                            <div class="chat-bubble chat-bubble--right">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="chat-bubble chat-bubble--left">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="chat-bubble chat-bubble--left">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <div class="chat-bubble chat-bubble--left">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-3 offset-md-9">
+                            <div class="chat-bubble chat-bubble--right">
+                                Hello dude!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="chat-box-tray">
+                                <i class="fa fa-paperclip"></i>
+                                <input type="text" placeholder="Type your message here...">
+                                <i class="fa fa-microphone" aria-hidden="true"></i>
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-
-    <hr>
-
-    <section class="clicked" id="chatList">
-        <div class="listOfUser">
-            <div class="userlist">
-                <ul class=listProfile>
-                    <li onclick="myfunctNandan()" class="click" id="nandan">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Nandan Shukla</span>
-                    </li>
-                </ul>
-            </div>
-
-            <hr>
-
-            <div class="userlist">
-                <ul class=listProfile>
-                    <li onclick="myfunctAniket()" class="click" id="aniket">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Aniket Nadkarni</span>
-                    </li>
-                </ul>
-            </div>
-
-            <hr>
-
-            <div class="userlist">
-                <ul class=listProfile>
-                    <li onclick="myfunctMohit()" class="click" id="mohit">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Mohit Shah</span>
-                    </li>
-                </ul>
-            </div>
-
-            <hr>
-
-            <div class="userlist">
-                <ul class=listProfile>
-                    <li onclick="myfunctAryan()" class="click" id="aryan">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Aryan Sheth</span>
-                    </li>
-                </ul>
-            </div>
-
-            <hr>
-
-            <div class="userlist">
-                <ul class=listProfile>
-                    <li onclick="myfunctMann()" class="click" id="mann">
-                        <i class="fa fa-user fa-lg" aria-hidden="true"></i> <span>Mann Shah</span>
-                    </li>
-                </ul>
-            </div>
-
-            <hr>
-        </div>
-    </section>
-
-    <section id="message-me">
-        <div class="message-workspace">
-            <nav class="message-navigation">
-                <i class="fa fa-user fa-2x myIcon" aria-hidden="true"></i><span class="profile">Nandan</span>
-                <span class="profile-option"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
-            </nav>
-
-            <hr>
-
-            <div class="message-div">
-                <i class="fa fa-paperclip" aria-hidden="true"></i><input class="send-message"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            </div>
-        </div>
-    </section>
+    </div>
 
 </body>
 
