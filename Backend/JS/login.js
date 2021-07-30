@@ -1,4 +1,4 @@
-const preloader = document.querySelector('loader');
+const preloader = document.getElementById('loader');
 
 /* window.addEventListener('load', function() {
     setInterval(() => {
