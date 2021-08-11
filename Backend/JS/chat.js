@@ -1,21 +1,41 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAaW3Wr58E9MRcWWf6_w8M-V57-SxgO2GI",
-  authDomain: "ccas-77c96.firebaseapp.com",
-  databaseURL: "https://ccas-77c96-default-rtdb.firebaseio.com",
-  projectId: "ccas-77c96",
-  storageBucket: "ccas-77c96.appspot.com",
-  messagingSenderId: "95714386169",
-  appId: "1:95714386169:web:6893537f9b0d6cbbb9c228",
-  measurementId: "G-J42PYMQWX8"
-};
+//const firebaseConfig = {
+//  apiKey: "AIzaSyAaW3Wr58E9MRcWWf6_w8M-V57-SxgO2GI",
+//  authDomain: "ccas-77c96.firebaseapp.com",
+//  databaseURL: "https://ccas-77c96-default-rtdb.firebaseio.com",
+//  projectId: "ccas-77c96",
+//  storageBucket: "ccas-77c96.appspot.com",
+//  messagingSenderId: "95714386169",
+//  appId: "1:95714386169:web:6893537f9b0d6cbbb9c228",
+//  measurementId: "G-J42PYMQWX8"
+//};
 //Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
 let uid="";
 let email="";
+
+function chatlistupdate(){
+  const db2=firebase.firestore();
+  chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
+  chatlists.get().then((doc) => {
+  chatdata=doc.data();
+  chatlist=chatdata.chats;
+  const listscreen =document.getElementById("chat_list");
+  for(let i=0;i<chatlist.length;i++){
+    const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover">
+    <img class="profile-image" src="" alt="">
+    <div class="text">
+        <h4>${chatlist[i].emailId}</h4>
+    </div>
+  </div>` 
+  listscreen.innerHTML += chatlistupdate;
+  }
+  });
+}
+
 function init() {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -26,13 +46,13 @@ firebase.auth().onAuthStateChanged((user) => {
     //console.log(uid);
     //loadProfile();
     // ...
+    chatlistupdate();
   } else {
     // User is signed out
     // ...
     location.href = "index.html";
   }
 });
-chatlistupdate();
 }
 
 const msgScreen = document.getElementById("mesages"); //the <ul> that displays all the <li> msgs
@@ -46,7 +66,7 @@ const msgRef = db.ref("/msgs");
 document.addEventListener('DOMContentLoaded', init);
 
 
-msgForm.addEventListener('submit', sendMessage);
+//msgForm.addEventListener('submit', sendMessage);
 
 function sendMessage(e){
     e.preventDefault();
@@ -88,21 +108,3 @@ function sendMessage(e){
 
   msgRef.on('child_added', updateMsgs);
 
-function chatlistupdate(){
-const db2=firebase.firestore();
-chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
-chatlists.get().then((doc) => {
-chatdata=doc.data();
-chatlist=chatdata.chats;
-})
-const listscreen =document.getElementById("chat_list");
-for(let i=0;i<chatlist.length;i++){
-  const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover">
-  <img class="profile-image" src="" alt="">
-  <div class="text">
-      <h4>chatlist[i].emailId</h4>
-  </div>
-</div>` 
-listscreen.innerHTML += chatlistupdate;
-}
-}
