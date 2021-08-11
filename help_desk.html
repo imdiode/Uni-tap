@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./CSS/help_desk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <!--  Firebase Config  -->
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
+    <!-- update the version number as needed 
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script> -->
+    <!-- include only the Firebase features as you need 
     <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
@@ -20,10 +20,11 @@
     <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <!-- end Firebase Config -->
-    <script defer rel="text/javascript" src="./redirect.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
+    <!-- end Firebase Config --> 
+    <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
     <script src="./Backend/JS/chat-app.js"></script>
+    <script src="./Backend//JS/chat.js"></script>
 </head>
 
 <body>
@@ -116,7 +117,7 @@
                                     <input placeholder="Search here" type="text">
                                 </div>
                             </div>
-                            <div class="list">
+                            <div class="list" id="chat_list">
                                 <div class="friend-drawer friend-drawer--onhover" onclick="myfunctNandan()">
                                     <img class="profile-image" src="" alt="">
 
@@ -151,15 +152,7 @@
                                     </div>
 
                                 </div>
-                                <!-- <hr> -->
-                                <div class="friend-drawer friend-drawer--onhover" onclick="myfunctMann()">
-                                    <img class="profile-image" src="" alt="">
-                                    <div class="text">
-                                        <h4>Mann Shah</h4>
 
-                                    </div>
-
-                                </div>
                             </div>
                             <!-- <hr> -->
                         </div>
@@ -209,9 +202,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="chat-box-tray">
-                                    <i class="fa fa-paperclip"></i>
                                     <input type="text" placeholder="Type your message here...">
-                                    <i class="fa fa-microphone" aria-hidden="true"></i>
                                     <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                                 </div>
                             </div>

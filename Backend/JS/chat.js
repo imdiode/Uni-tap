@@ -32,6 +32,7 @@ firebase.auth().onAuthStateChanged((user) => {
     location.href = "index.html";
   }
 });
+chatlistupdate();
 }
 
 const msgScreen = document.getElementById("mesages"); //the <ul> that displays all the <li> msgs
@@ -41,12 +42,7 @@ const msgBtn = document.getElementById("msg-btn"); //the Send button
 
 const db = firebase.database();
 const msgRef = db.ref("/msgs"); 
-/*
-let name="";
-function init() {
-  name = prompt("Please enter your name");
-}
-*/
+
 document.addEventListener('DOMContentLoaded', init);
 
 
@@ -91,3 +87,22 @@ function sendMessage(e){
   }
 
   msgRef.on('child_added', updateMsgs);
+
+function chatlistupdate(){
+const db2=firebase.firestore();
+chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
+chatlists.get().then((doc) => {
+chatdata=doc.data();
+chatlist=chatdata.chats;
+})
+const listscreen =document.getElementById("chat_list");
+for(let i=0;i<chatlist.length;i++){
+  const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover">
+  <img class="profile-image" src="" alt="">
+  <div class="text">
+      <h4>chatlist[i].emailId</h4>
+  </div>
+</div>` 
+listscreen.innerHTML += chatlistupdate;
+}
+}
