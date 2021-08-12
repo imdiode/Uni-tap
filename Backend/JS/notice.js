@@ -44,13 +44,5 @@ async function initNotices() {
     });
   });
 }
-
-//starts up the listener
-async function forRefresh() {
-  noticesRef.on('child_added', (data)=>{
-    location.reload();
-  })
-}
-
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
