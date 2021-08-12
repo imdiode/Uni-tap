@@ -169,7 +169,7 @@ async function uploadFile(even) {
     var auth = firebase.auth();
     var storage = firebase.storage();
     var notice = rtdb.ref("notices").push();
-    var noticeId = notice.key();
+    var noticeId = notice.key;
     file = even.target.files[0];
     console.log(file);
     noticeStorageRef = storage.ref("notices" + "/" + noticeId +".pdf");
