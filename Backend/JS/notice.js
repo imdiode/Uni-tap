@@ -29,7 +29,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 async function initNotices() {
   let noticesRef = rtdb.ref("notices");
-  noticesRef.get().then((snap)=>{
+  noticesRef.once('value', (snap)=>{
     snap.forEach((childSnap)=>{
       let dat = childSnap.val();
       let card = "<div class=\"notice\"><center>"+ dat.noticeUID +"</center><a href="+ dat.downloadLink +"> Download</a></div>";
