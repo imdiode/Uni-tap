@@ -172,15 +172,16 @@ async function uploadFile(even) {
     var noticeId = notice.key;
     file = even.target.files[0];
     console.log(file);
-    noticeStorageRef = storage.ref("notices" + "/" + file.name +".pdf");
+    noticeStorageRef = storage.ref("notices" + "/" + file.name);
     noticeStorageRef.put(file).then((e) => {
         e.ref.getDownloadURL().then((downloadURL) => {
           notice.set({
             noticeUID: noticeId,
+            fileName: file.name,
             timeStamp: Date(),
             downloadLink: downloadURL,
             uploadedBy: auth.currentUser.uid,
-            file: file,
+            fileType: file.type,
           }).then((re)=>{
             console.log(re);
           })
