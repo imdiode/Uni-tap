@@ -1,5 +1,10 @@
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
+//variables
+var db;
+var auth;
+var profileRef;
+var storage;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -9,6 +14,9 @@ firebase.auth().onAuthStateChanged((user) => {
     //console.log(uid);
     //initializePage();
     // ...
+    db = firebase.firestore();
+    auth = firebase.auth();
+    storage = firebase.storage();
   } else {
     // User is signed out
     // ...

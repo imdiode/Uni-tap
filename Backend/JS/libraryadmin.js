@@ -148,3 +148,47 @@ function updatelog ()
         document.getElementById("sub-4").className += " blur";
     }
 }
+
+/* ______________________________By @Enculandus______________________________ */
+/* __________________________________________________________________________ */
+/* __________________________________________________________________________ */
+
+/*----------------------------------------------------------------------------*/
+//setting up variables
+var fileButton = document.getElementById("noticeFile");
+var file;
+var noticeStorageRef;
+var uploadTask;
+
+//setting up listener
+fileButton.addEventListener('change', uploadFile);
+
+async function uploadFile(even) {
+    var db = firebase.firestore();
+    var rtdb = firebase.database();
+    var auth = firebase.auth();
+    var storage = firebase.storage();
+    var notice = rtdb.ref("notices").push();
+    var noticeId = notice.key();
+    file = even.target.files[0];
+    console.log(file);
+    noticeStorageRef = storage.ref("notices" + "/" + noticeId +".pdf");
+    noticeStorageRef.put(file).then((e) => {
+        e.ref.getDownloadURL().then((downloadURL) => {
+          notice.set({
+            noticeUID: noticeId,
+            timeStamp: Date(),
+            downloadLink: downloadURL,
+            uploadedBy: auth.currentUser.uid,
+          }).then((re)=>{
+            console.log(re);
+          })
+        });
+    });
+}
+/*----------------------------------------------------------------------------*/
+
+
+/* __________________________________________________________________________ */
+/* __________________________________________________________________________ */
+/* __________________________________________________________________________ */
