@@ -30,6 +30,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 //displays notices on page load
 async function initNotices() {
+  noticesRef = rtdb.ref("notices");
   noticesRef.once('value', (snap)=>{
     snap.forEach((childSnap)=>{
       let dat = childSnap.val();
