@@ -6,6 +6,7 @@ var db;
 var rtdb;
 var auth;
 var storage;
+let noticesRef;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -27,8 +28,8 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
+//displays notices on page load
 async function initNotices() {
-  let noticesRef = rtdb.ref("notices");
   noticesRef.once('value', (snap)=>{
     snap.forEach((childSnap)=>{
       let dat = childSnap.val();
@@ -37,11 +38,17 @@ async function initNotices() {
       let card_element = dom.body.firstElementChild;
       document.getElementById('mainNoticeBoard').append(card_element);
     }).then((res)=>{
-      noticesRef.on('child_added', (data)=>{
-        location.reload();
-      })
-    })
+      forRefresh();
+      console.log(res);
+    });
   });
+}
+
+//starts up the listener
+async function forRefresh() {
+  noticesRef.on('child_added', (data)=>{
+    location.reload();
+  })
 }
 
 /* __________________________________________________________________________ */
