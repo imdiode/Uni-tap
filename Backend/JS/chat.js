@@ -21,8 +21,11 @@ const updateMsgs = data =>{
                   </div>
                 </div>
               </div>`
-
-  msgScreen.innerHTML += msg; //add the <li> message to the chat window
+  let dom = new DOMParser().parseFromString(msg,'text/html');
+  let msg_element = dom.body.firstElementChild;
+              //console.log(card_element);
+  document.getElementById('chat-panel').append(msg_element);
+   //add the <li> message to the chat window
 
   //auto scroll to bottom
   document.getElementById("chat-panel").scrollTop = document.getElementById("chat-panel").scrollHeight;
