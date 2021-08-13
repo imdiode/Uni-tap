@@ -1,89 +1,104 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>
-            CCAS | Library
-        </title>
-        <link rel="stylesheet" href="./CSS/library.css">
-        <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
-        <script rel="text/javascript" src="./Backend/JS/library.js"></script>
-    </head>
 
-    <body>
-        <div class="top">
-            <div class="navigation">
-                <ul>
-                    <li><a href="Dashboard.html">Dashboard</a></li>
-                    <li><a href="Notice.html">Notice Board</a></li>
-                    <li><a href="violations.html">My Violations</a></li>
-                    <li><a href="Support_Page.html">CCAS Support</a></li>
-                </ul>
-            </div>
-            <div class="profile">
-                <img src="./Backend/Images/logo_2_dicot_Dark.svg">
-                Hi! Nandan
-            </div>
+<head>
+    <title>
+        Uni-Tap | Library
+    </title>
+    <link rel="stylesheet" href="./CSS/library.css">
+    <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
+    <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <script defer rel="text/javascript" src="./Backend/JS/library.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="navigation">
+            <ul>
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <li><a href="Notice.html">Notice Board</a></li>
+                <li><a href="violations.html">My Violations</a></li>
+                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+            </ul>
         </div>
-        <div class="sidebar">
-            <div class="options" onclick="profile_click()">
-                Profile
-            </div>
-            <div class="options" onclick="griv_click()">
-                Grievance
-            </div>
-            <div class="options" onclick="help_click()">
-                Help desk
-            </div>
-            <div class="options" onclick="aca_click()">
-                Academic record
-            </div>
-            <div class="options" onclick="library_click()">
-                Library
-            </div>
-            <div class="options" onclick="sports_click()">
-                Sports equipment
-            </div>
-            <div class="options" onclick="canteen_click()">
-                Canteen
-            </div>
-            <div class="options bstick">
-                Logout
-            </div>
+        <div class="profile">
+            <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
         </div>
-        <div class="sidebar-main-right">
-            <div class="content-main">
-                <div class="nav-2">
-                    <div class="menu active" id="menu-item-1" onclick="po_click()">
-                        In possesion
-                    </div>
-                    <div class="menu" id="menu-item-2" onclick="oh_click()">
-                        Logs
-                    </div>
-                    <div class="menu" id="menu-item-3" onclick="tm_click()">
-                        Available Books
-                    </div>
+    </div>
+    <div class="sidebar">
+        <div class="options" onclick="profile_click()">
+            Profile
+        </div>
+        <div class="options" onclick="griv_click()">
+            Grievance
+        </div>
+        <div class="options" onclick="help_click()">
+            Help desk
+        </div>
+        <div class="options" onclick="aca_click()">
+            Academic record
+        </div>
+        <div class="options" onclick="library_click()">
+            Library
+        </div>
+        <div class="options" onclick="sports_click()">
+            Sports equipment
+        </div>
+        <div class="options" onclick="canteen_click()">
+            Canteen
+        </div>
+        <div class="options bstick" onclick="firebaseLogout()">
+            Logout
+        </div>
+    </div>
+    <div class="sidebar-main-right">
+        <div class="content-main">
+            <div class="nav-2">
+                <div class="menu active" id="menu-item-1" onclick="po_click()">
+                    In possesion
                 </div>
-                <div class="content-sub active-sub" id="sub-1">
-                    
-                    <h3>These Books Are With You</h3>
-                    <table class="table-pending">
-                        <th>Sr No.</th>
-                        <th>Book Id</th>
-                        <th>Book Name</th>
-                        <th>Issue Date</th>
-                        <th>Return Date</th>
-                        <th>Remaining Days</th>
-                        <tr>
-                            <td>1.</td>
-                            <td>401</td>
-                            <td>Data Structures</td>
-                            <td>16-03-2021</td>
-                            <td>30-03-2021</td>
-                            <td>13</td>
-                        </tr>
-                    </table>
+                <div class="menu" id="menu-item-2" onclick="oh_click()">
+                    Logs
                 </div>
-                <div class="content-sub" id="sub-2">
+                <div class="menu" id="menu-item-3" onclick="tm_click()">
+                    Available Books
+                </div>
+            </div>
+            <div class="content-sub active-sub" id="sub-1">
+
+                <h3>These Books Are With You</h3>
+                <table class="table-pending">
+                    <th>Sr No.</th>
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Issue Date</th>
+                    <th>Return Date</th>
+                    <th>Remaining Days</th>
+                    <tr>
+                        <td>1.</td>
+                        <td>401</td>
+                        <td>Data Structures</td>
+                        <td>16-03-2021</td>
+                        <td>30-03-2021</td>
+                        <td>13</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-sub" id="sub-2">
                 <table class="table-pending">
                     <th>Sr No.</th>
                     <th>Book Name</th>
@@ -107,33 +122,34 @@
                         <td>'14' Rs</td>
                     </tr>
                 </table>
-                </div>
-                <div class="content-sub" id="sub-3">
-                    <table class="table-pending">
-                        <th>Book Name</th>
-                        <th>Branch</th>
-                        <th>Semester</th>
-                        <th>Quantity</th>
-    
-                        <tr>
-                            <td>DBMS</td>
-                            <td>IT</td>
-                            <td>Sem-3</td>
-                            <td>3</td>
-                        </tr>
-    
-                        <tr>
-                            <td>Mechanics Of Solids</td>
-                            <td>CIVIL</td>
-                            <td>Sem-3</td>
-                            <td>9</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
-            <div class="ads">
-                <center>ads go here</center>
+            <div class="content-sub" id="sub-3">
+                <table class="table-pending">
+                    <th>Book Name</th>
+                    <th>Branch</th>
+                    <th>Semester</th>
+                    <th>Quantity</th>
+
+                    <tr>
+                        <td>DBMS</td>
+                        <td>IT</td>
+                        <td>Sem-3</td>
+                        <td>3</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mechanics Of Solids</td>
+                        <td>CIVIL</td>
+                        <td>Sem-3</td>
+                        <td>9</td>
+                    </tr>
+                </table>
             </div>
         </div>
-    </body>
+        <div class="ads">
+            <center>ads go here</center>
+        </div>
+    </div>
+</body>
+
 </html>

@@ -1,35 +1,55 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>CCAS | Academic Records</title>
-	<link rel="stylesheet" href="CSS/Report.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="Backend/JS/loadGraph.js"></script>
+    <meta charset="utf-8">
+    <title>Uni-Tap | Academic Records</title>
+    <link rel="stylesheet" href="CSS/Report.css">
+    <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
+    <script defer type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer type="text/javascript" src="Backend/JS/loadGraph.js"></script>
 </head>
 
 <body onload="drawChart()">
-		<div class="top">
-	<div class="navigation">
-		<ul>
-					<li><a href="Dashboard.html">Dashboard</a></li>
-                    <li><a href="Notice.html">Notice Board</a></li>
-                    <li><a href="violations.html">My Violations</a></li>
-                    <li><a href="Support_Page.html">CCAS Support</a></li>
-		</ul>
-		</div>
-		<div class="profile">
-			<img src="./Backend/Images/logo_2_dicot_Dark.svg">
-             Hi! Nandan
-		</div>
-	</div>
+    <div class="top">
+        <div class="navigation">
+            <ul>
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <li><a href="Notice.html">Notice Board</a></li>
+                <li><a href="violations.html">My Violations</a></li>
+                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+            <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
+        </div>
+    </div>
 
-		<div class="ads1"><center>Ads go here</center></div>
-		<div class="ads2"><center>Ads go here</center></div>
-       
-	
-	<div class="center">
+    <div class="ads1">
+        <center>Ads go here</center>
+    </div>
+    <div class="ads2">
+        <center>Ads go here</center>
+    </div>
+
+
+    <div class="center">
         <div class="chart" id="chart"></div>
     </div>
 </body>
+
 </html>

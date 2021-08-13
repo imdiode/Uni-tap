@@ -2,8 +2,9 @@
 <html>
 
 <head>
-    <title>CCAS | Login to your account</title>
+    <title>Uni-Tap | Login to your account</title>
     <link rel="stylesheet" href="CSS/login.css">
+    <!--  Firebase Config  -->
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -17,13 +18,17 @@
     <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
 </head>
 
 <body>
+    <div class="loader" id="loader">
+        <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ripple" style="background:0 0"><circle cx="50" cy="50" r="4.719" fill="none" stroke="#1d3f72" stroke-width="2"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="-1.5s" repeatCount="indefinite"/><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="-1.5s" repeatCount="indefinite"/></circle><circle cx="50" cy="50" r="27.591" fill="none" stroke="#5699d2" stroke-width="2"><animate attributeName="r" calcMode="spline" values="0;40" keyTimes="0;1" dur="3" keySplines="0 0.2 0.8 1" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" calcMode="spline" values="1;0" keyTimes="0;1" dur="3" keySplines="0.2 0 0.8 1" begin="0s" repeatCount="indefinite"/></circle></svg>
+    </div>
     <div class="login-container">
         <div class="login-box">
             <h2 class="login-title">
-                CCAS Login
+                <img src="./Backend/Images/logo_wobg.svg" alt="" class="logo"> Login
             </h2>
             <div class="login-form-container">
                 <form id="login-form">
@@ -31,7 +36,7 @@
                     <input class="cred-input logon" id="uname" autocomplete="off" placeholder="Username..." autofocus="">
                     <input class="cred-input logon" id="passw" autocomplete="off" type="password" placeholder="Password..." autofocus="">
                     <div>
-                        <div class="login-btn" onclick="red()">Login</div>
+                        <div class="login-btn" id="login-btn" onclick="red()">Login</div>
                         <div class="forgot"><a href="forgot.html">Forgot Password</a></div>
                     </div>
                 </form>
@@ -42,7 +47,7 @@
 
 
 
-    <script rel="text/javascript" src="./Backend/JS/login.js"></script>
+    <script defer rel="text/javascript" src="./Backend/JS/login.js"></script>
 </body>
 
 </html>

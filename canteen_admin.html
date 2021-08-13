@@ -2,10 +2,26 @@
 <html>
 
 <head>
-    <title>CCAS | Canteen</title>
+    <title>Uni-Tap | Canteen</title>
     <link rel="stylesheet" href="./CSS/canteenAdmin.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script rel="text/javascript" src="./Backend/JS/canteen_admin.js"></script>
+
+    <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
+    <script defer rel="text/javascript" src="./Backend/JS/canteen_admin.js"></script>
 </head>
 
 <body>
@@ -15,7 +31,7 @@
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Notice Board</a></li>
                 <li><a href="#">My Violations</a></li>
-                <li><a href="#">CCAS Support</a></li>
+                <li><a href="#">Uni-Tap Support</a></li>
             </ul>
         </div>
         <div class="profile">Hi! Nandan</div>
@@ -28,7 +44,7 @@
         <div class="options">Library</div>
         <div class="options">Sports equipment</div>
         <div class="options">Canteen</div>
-        <div class="options bstick">Logout</div>
+        <div class="options bstick" onclick="firebaseLogout()">Logout</div>
     </div>
     <div class="sidebar-main-right">
         <div class="content-main">
