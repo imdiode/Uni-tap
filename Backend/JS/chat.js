@@ -57,7 +57,7 @@ function chatlistupdate(){
   });
 }
 
-function init() {
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -70,8 +70,8 @@ firebase.auth().onAuthStateChanged((user) => {
     location.href = "index.html";
   }
 });
-}
-document.addEventListener('DOMContentLoaded', init);
+
+
 
 
 
