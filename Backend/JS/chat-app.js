@@ -18,26 +18,3 @@ function chatStarted() {
 
 }
 
-function myfunctNandan() {
-
-    const me = document.querySelector("#profile").innerHTML = "Nandan Shukla";
-}
-
-function myfunctAniket() {
-
-    const me = document.querySelector("#profile").innerHTML = "Aniket Nadkarni"
-}
-
-function myfunctMohit() {
-    const me = document.querySelector("#profile").innerHTML = "Mohit Shah"
-}
-
-function myfunctAryan() {
-
-    const me = document.querySelector("#profile").innerHTML = "Aryan Sheth"
-}
-
-function myfunctMann() {
-
-    const me = document.querySelector("#profile").innerHTML = "Mann Shah"
-}

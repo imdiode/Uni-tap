@@ -23,7 +23,7 @@
     <script src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
     <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
-    <script src="./Backend/JS/chat-app.js"></script>
+ <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
     <script src="./Backend//JS/chat.js"></script>
 </head>
 
@@ -118,7 +118,7 @@
                                 </div>
                             </div>
                             <div class="list" id="chat_list">
-                                <div class="friend-drawer friend-drawer--onhover" onclick="myfunctNandan()">
+                                <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Nandan Shukla')">
                                     <img class="profile-image" src="" alt="">
 
                                     <div class="text">
@@ -128,7 +128,7 @@
 
                                 </div>
                                 <!-- <hr> -->
-                                <div class="friend-drawer friend-drawer--onhover" onclick="myfunctAniket()">
+                                <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Aniket Nadkarni')">
                                     <img class="profile-image" src="" alt="">
                                     <div class="text">
                                         <h4>Aniket Nadkarni</h4>
@@ -181,15 +181,16 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="chat-box-tray">
-                                    <input type="text" placeholder="Type your message here...">
-                                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        <form id="messageForm" autocomplete="off">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="chat-box-tray">
+                                        <input type="text" placeholder="Type your message here..." id="msg-input">
+                                        <button type="submit" class="fa fa-paper-plane-o" aria-hidden="true" id="msg-btn" onclick="sendMessage()"></button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>    
                     </div>
                 </div>
             </div>
