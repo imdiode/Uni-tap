@@ -6,7 +6,7 @@ const msgBtn = document.getElementById("msg-btn"); //the Send button
 const addMessage = firebase.functions().httpsCallable('addMessage');
 
 
-const db = firebase.database();
+const db1 = firebase.database();
 
 const updateMsgs = data =>{
   const {senderid, text, timestamp} = data.val(); //get name and text
@@ -29,16 +29,16 @@ const updateMsgs = data =>{
 }
 
 
-function displaychat(recieveremail, chat_id) {
+async function displaychat(recieveremail, chat_id) {
 
   const me = document.querySelector("#profile").innerHTML = recieveremail;
   ref="/chats/"+chat_id+"/messages";
-  const msgRef = db.ref(ref);
+  const msgRef = db1.ref(ref);
   msgRef.on('child_added', updateMsgs);
 }
 
 
-function chatlistupdate(){
+async function chatlistupdate(){
   const db2=firebase.firestore();
   chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
   chatlists.get().then((doc) => {
@@ -75,7 +75,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 
-function sendMessage(e){
+async function sendMessage(e){
     e.preventDefault();
     const text = string(msgInput.value);
   
