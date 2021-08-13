@@ -1,10 +1,12 @@
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
-//variables
+
+
 var db;
+var rtdb;
 var auth;
-var profileRef;
 var storage;
+let noticesRef;
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -15,8 +17,10 @@ firebase.auth().onAuthStateChanged((user) => {
     //initializePage();
     // ...
     db = firebase.firestore();
+    rtdb = firebase.database();
     auth = firebase.auth();
     storage = firebase.storage();
+    initNotices();
   } else {
     // User is signed out
     // ...
@@ -24,50 +28,21 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-async function firebaseLogout() {
-  firebase.auth().signOut()
-    .then((ret)=>{
-      location.href = "index.html";
-    })
-    .catch((err)=>{
-      console.log(err);
+//displays notices on page load
+async function initNotices() {
+  noticesRef = rtdb.ref("notices/");
+  noticesRef.once('value', (snap)=>{
+    snap.forEach((childSnap)=>{
+      let dat = childSnap.val();
+      let card = "<div class=\"notice\"><center>"+ dat.fileName +"</center><a href="+ dat.downloadLink +"> Download</a></div>";
+      let dom = new DOMParser().parseFromString(card,'text/html');
+      let card_element = dom.body.firstElementChild;
+      document.getElementById('mainNoticeBoard').append(card_element);
+    }).then((res)=>{
+      forRefresh();
+      console.log(res);
     });
+  });
 }
-
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
-
-function profile_click()
-{
-    location.href = "Profile.html";
-}
-
-function library_click()
-{
-    location.href = "library.html";
-}
-
-function help_click()
-{
-    location.href = "help_desk.html";
-}
-
-function griv_click()
-{
-    location.href = "grievance.html";
-}
-
-function aca_click()
-{
-    location.href = "academic_records.html";
-}
-
-function sports_click()
-{
-    location.href = "sports.html";
-}
-
-function canteen_click()
-{
-    location.href = "canteen.html";
-}
