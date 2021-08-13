@@ -1,8 +1,8 @@
 
 const msgScreen = document.getElementById("chat-panel"); //the <ul> that displays all the <li> msgs
-const msgForm = document.getElementById("messageForm"); //the input form
-const msgInput = document.getElementById("msg-input"); //the input element to write messages
-const msgBtn = document.getElementById("msg-btn"); //the Send button
+var msgForm = document.getElementById("messageForm"); //the input form
+var msgInput = document.getElementById("msg-input"); //the input element to write messages
+var msgBtn = document.getElementById("msg-btn"); //the Send button
 const addMessage = firebase.functions().httpsCallable('addMessage');
 
 
@@ -15,10 +15,10 @@ const updateMsgs = data =>{
  // var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
  var msg=""
  if(senderid == uid){
-  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">"+text+timestamp+"</div></div></div>";
+  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">"+text+"</div></div></div>";
  }
  else{
-  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3\"><div class=\"chat-bubble chat-bubble--left\">"+text+timestamp+"</div></div></div>"
+  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3\"><div class=\"chat-bubble chat-bubble--left\">"+text+"</div></div></div>"
  }
   let dom = new DOMParser().parseFromString(msg,'text/html');
   let msg_element = dom.body.firstElementChild;
@@ -37,6 +37,10 @@ async function displaychat(recieveremail, chat_id) {
   ref="/chats/"+chat_id+"/messages";
   const msgRef = db1.ref(ref);
   msgRef.on('child_added', updateMsgs);
+  msgForm = document.getElementById("messageForm"); //the input form
+  msgInput = document.getElementById("msg-input"); //the input element to write messages
+  msgBtn = document.getElementById("msg-btn"); //the Send button
+  msgForm.addEventListener('submit', sendMessage);
 }
 
 
@@ -79,7 +83,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 async function sendMessage(e){
     e.preventDefault();
-    const text = string(msgInput.value);
+    const text = msgInput.value;
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
       addMessage({message:text, chatUID:uid, recepient:" ", timestamp:Date()})
@@ -88,5 +92,3 @@ async function sendMessage(e){
   });
       msgInput.value = "";
   }
-  
-  
