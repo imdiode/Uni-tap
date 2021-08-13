@@ -13,11 +13,12 @@ const updateMsgs = data =>{
   //load messages, display on left if not the user's name. Display on right if it is the user.
 //  var today = new Date();
  // var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+ var msg=""
  if(senderid == uid){
-  const msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">"+text+timestamp+"</div></div></div>";
+  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">"+text+timestamp+"</div></div></div>";
  }
  else{
-  const msg = "<div class=\"row no-gutters\"><div class=\"col-md-3\"><div class=\"chat-bubble chat-bubble--left\">"+text+timestamp+"</div></div></div>"
+  msg = "<div class=\"row no-gutters\"><div class=\"col-md-3\"><div class=\"chat-bubble chat-bubble--left\">"+text+timestamp+"</div></div></div>"
  }
   let dom = new DOMParser().parseFromString(msg,'text/html');
   let msg_element = dom.body.firstElementChild;
