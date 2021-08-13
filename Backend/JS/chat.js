@@ -82,7 +82,7 @@ async function sendMessage(e){
     const text = string(msgInput.value);
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
-      addMessage({message:text, chatUID:uid, recepient:" "})
+      addMessage({message:text, chatUID:uid, recepient:" ", timestamp:Date()})
   .then((result)=>{
     console.log(result.data);
   });
