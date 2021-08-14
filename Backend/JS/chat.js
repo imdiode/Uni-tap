@@ -1,5 +1,5 @@
 
-const msgScreen = document.getElementById("chat-panel"); //the <ul> that displays all the <li> msgs
+var msgScreen = document.getElementById("chat-panel"); //the <ul> that displays all the <li> msgs
 var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
@@ -32,6 +32,7 @@ const updateMsgs = data =>{
 
 
 async function displaychat(recieveremail, chat_id) {
+  msgScreen = document.getElementById("chat-panel");
   msgScreen.innerHTML="";
   const me = document.querySelector("#profile").innerHTML = recieveremail;
   ref="/chats/"+chat_id+"/messages";
