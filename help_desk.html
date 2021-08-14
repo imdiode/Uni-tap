@@ -24,7 +24,7 @@
     <script src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
     <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
- <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
+    <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
     <script src="./Backend//JS/chat.js"></script>
 
 </head>
@@ -123,6 +123,9 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     <input placeholder="Search here" type="text">
                                 </div>
+                                <div class="new-chat">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </div>
                             </div>
                             <div class="list" id="chat_list">
                                 <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Nandan Shukla')">
@@ -189,18 +192,18 @@
                             </div>
                         </div>
                     </div>
-                        <form id = "messageForm" autocomplete="off">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="chat-box-tray">
-                                        
-                                        <input type="text" placeholder="Type your message here..." id="msg-input">
-                                        <button type="submit" class="fa fa-paper-plane-o" aria-hidden="true" id="msg-btn"></button>
-                                        
-                                    </div>
+                    <form id="messageForm" autocomplete="off">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="chat-box-tray">
+
+                                    <input type="text" placeholder="Type your message here..." id="msg-input">
+                                    <button type="submit" class="fa fa-paper-plane-o" aria-hidden="true" id="msg-btn"></button>
+
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
