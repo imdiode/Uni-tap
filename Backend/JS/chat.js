@@ -63,7 +63,7 @@ async function chatlistupdate(){
   });
 }
 
-
+var uid="";
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
