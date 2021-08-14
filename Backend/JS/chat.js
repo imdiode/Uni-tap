@@ -32,7 +32,7 @@ const updateMsgs = data =>{
 
 
 async function displaychat(recieveremail, chat_id) {
-
+  msgScreen.innerHTML="";
   const me = document.querySelector("#profile").innerHTML = recieveremail;
   ref="/chats/"+chat_id+"/messages";
   const msgRef = db1.ref(ref);
