@@ -83,7 +83,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 async function sendMessage(e){
     e.preventDefault();
-    const text = msgInput.value;
+    const text = String(msgInput.value);
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
       addMessage({message:text, chatUID:uid, recepient:" ", timestamp:Date()})
