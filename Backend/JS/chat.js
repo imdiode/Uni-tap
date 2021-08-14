@@ -4,7 +4,7 @@ var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
 const addMessage = firebase.functions().httpsCallable('addMessage');
-
+var chatuidd= "";
 
 const db1 = firebase.database();
 
@@ -41,6 +41,7 @@ async function displaychat(recieveremail, chat_id) {
   msgInput = document.getElementById("msg-input"); //the input element to write messages
   msgBtn = document.getElementById("msg-btn"); //the Send button
   msgForm.addEventListener('submit', sendMessage);
+  chatuidd = chat_id;
 }
 
 
@@ -86,7 +87,7 @@ async function sendMessage(e){
     const text = String(msgInput.value);
   
       if(!text.trim()) return alert('Please type a message'); //no msg submitted
-      addMessage({message:text, chatUID:uid, recepient:" ", timestamp:Date()})
+      addMessage({message:text, chatUID:chatuidd, recepient:" ", timestamp:Date()})
   .then((result)=>{
     console.log(result.data);
   });
