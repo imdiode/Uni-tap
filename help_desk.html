@@ -108,9 +108,14 @@
     </div> -->
     <div class="sidebar-main-right">
         <div class="add-button">
-            <button class="add" onclick="add_new_user()">
-                New Chat
-            </button>
+            <div class="button-handler">
+                <button class="add" onclick="open_page()">
+                    New Chat
+                </button>
+                <button class="add close" onclick="close_page()">
+                    Close
+                </button>
+            </div>
             <ul class="list-users " id="new_user_list">
                 <div>
                     <li>name-1</li>

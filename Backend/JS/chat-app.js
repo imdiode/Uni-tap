@@ -1,15 +1,15 @@
 console.log("Hi")
 const button_toadd = document.getElementsByClassName("add");
 
-function add_new_user() {
-    // const list_of_users = document.getElementsByClassName("list-users");
+function open_page() {
     const lst_users = document.getElementById("new_user_list");
+    lst_users.classList.add("show")
 
-    if (lst_users.classList.contains("show") == true) {
-        lst_users.classList.remove("show")
-    } else {
-        lst_users.classList.add("show")
-    }
+}
+
+function close_page() {
+    const lst_users = document.getElementById("new_user_list");
+    lst_users.classList.remove("show")
 }
 // $('.friend-drawer--onhover').on('click', function() {
 

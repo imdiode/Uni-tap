@@ -186,6 +186,10 @@ body {
     /* display: inline-block; */
 }
 
+.button-handler {
+    display: flex;
+}
+
 .list-users.show {
     list-style: none;
     position: fixed;
@@ -302,16 +306,14 @@ input:focus {
 
 .add-button {
     text-align: center;
-    /* position: relative;
-    display: inline-block; */
 }
 
 .add {
-    width: 50%;
+    width: 30%;
     padding: 5px;
     margin: 5px;
-    /* position: fixed; */
     left: 30%;
+    flex: 0.5;
 }
 
 .list-users {
