@@ -25,7 +25,7 @@
     <!-- end Firebase Config -->
     <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
     <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
-    <script src="./Backend//JS/chat.js"></script>
+    <script src="./Backend/JS/chat.js"></script>
 
 </head>
 
@@ -107,6 +107,23 @@
         </form>
     </div> -->
     <div class="sidebar-main-right">
+        <div class="add-button">
+            <button class="add" onclick="add_new_user()">
+                New Chat
+            </button>
+            <ul class="list-users " id="new_user_list">
+                <div>
+                    <li>name-1</li>
+                    <hr>
+                    <li>name-2</li>
+                    <hr>
+                    <li>name-3</li>
+                    <hr>
+                    <li>name-4</li>
+                </div>
+            </ul>
+        </div>
+
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-4 border-right">
@@ -123,9 +140,9 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     <input placeholder="Search here" type="text">
                                 </div>
-                                <div class="new-chat">
+                                <!-- <div class="new-chat">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="list" id="chat_list">
                                 <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Nandan Shukla')">
@@ -208,8 +225,7 @@
             </div>
         </div>
     </div>
-
-
+    <script src="./Backend/JS/chat-app.js"></script>
 </body>
 
 </html>

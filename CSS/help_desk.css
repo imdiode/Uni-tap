@@ -90,7 +90,7 @@ body {
     height: Calc(100vh - 120px);
     position: absolute;
     display: inline-block;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 
@@ -179,6 +179,21 @@ body {
     padding: 0;
     border-radius: 7px;
     border: 1px solid rgb(115, 179, 223);
+    /* position: absolute; */
+    top: 15%;
+    width: 100%;
+    border-right: none;
+    /* display: inline-block; */
+}
+
+.list-users.show {
+    list-style: none;
+    position: fixed;
+    display: block;
+    background-color: #fff;
+    width: 50%;
+    border: 1px solid rgb(14, 14, 117);
+    border-radius: 10px;
 }
 
 .profile-image {
@@ -285,6 +300,30 @@ input:focus {
     overflow-y: scroll;
 }
 
+.add-button {
+    text-align: center;
+    /* position: relative;
+    display: inline-block; */
+}
+
+.add {
+    width: 50%;
+    padding: 5px;
+    margin: 5px;
+    /* position: fixed; */
+    left: 30%;
+}
+
+.list-users {
+    list-style: none;
+    display: none;
+}
+
+.list-users.show div li {
+    padding: 4px 5px;
+    text-align: left;
+}
+
 .friend-drawer {
     padding: 10px 15px;
     display: -webkit-box;
@@ -321,6 +360,10 @@ input:focus {
 .friend-drawer--onhover:hover {
     background: #74b9ff;
     cursor: pointer;
+}
+
+.chat-panel {
+    overflow-y: scroll;
 }
 
 .friend-drawer--onhover:hover p,
