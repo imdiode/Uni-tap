@@ -3,7 +3,7 @@ var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
 const addMessage = firebase.functions().httpsCallable('addMessage');
-
+var new_user_list_screen = document.getElementById("new_user_list");
 
 
 var chatuidd = "";
@@ -90,4 +90,10 @@ async function sendMessage(e) {
             console.log(result.data);
         });
     msgInput.value = "";
+}
+
+async function shownewchatlist(){
+    ref2 = "/users";
+    userref = db1.ref(ref2);
+    new_user_list_screen = document.getElementById("new_user_list");
 }
