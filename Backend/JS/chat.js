@@ -49,11 +49,6 @@ document.addEventListener('DOMContentLoaded', init);
 
 const updateMsgs = data => {
     const {from, text, timeStamp} = data.val();
-
-     //get name and text
-    //load messages, display on left if not the user's name. Display on right if it is the user.
-    //  var today = new Date();
-    // var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var msg = ""
     if (from == currentuseruid) {
         msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">" + text + "</div></div></div>";
@@ -62,9 +57,7 @@ const updateMsgs = data => {
     }
     let dom = new DOMParser().parseFromString(msg, 'text/html');
     let msg_element = dom.body.firstElementChild;
-    //console.log(card_element);
     document.getElementById('chat-panel').append(msg_element);
-    //add the <li> message to the chat window
 
     //auto scroll to bottom
     document.getElementById("chat-panel").scrollTop = document.getElementById("chat-panel").scrollHeight;
@@ -98,7 +91,7 @@ async function sendMessage(e) {
 }
 
 async function shownewchatlist(){
-    document.getElementById("new_user_list").innerHTML+="";
+    document.getElementById("new_user_list").innerHTML="";
     ref2 = "/users";
     userref = db1.ref(ref2);
     userref.on('child_added', (snapshot, prevChildKey) => {
@@ -117,4 +110,5 @@ async function addnewchat(recieveremail){
 	console.log(result);
 })
     close_page();
+    chatlistupdate();
 }
