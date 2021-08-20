@@ -96,4 +96,14 @@ async function shownewchatlist(){
     ref2 = "/users";
     userref = db1.ref(ref2);
     new_user_list_screen = document.getElementById("new_user_list");
+    var userlist="";
+    userref.on('value', (userlist) => {
+        for(let i=0;i<userlist.length;i++){
+            var userlistupdate = `<li>${userlist.emailId}</li>
+            <hr>`
+            new_user_list_screen.innerHTML += userlistupdate;
+        }
+      }, (errorObject) => {
+        console.log('The read failed: ' + errorObject.name);
+      }); 
 }
