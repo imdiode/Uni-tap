@@ -116,4 +116,5 @@ async function addnewchat(recieveremail){
     .then((result)=>{
 	console.log(result);
 })
+    close_page();
 }
