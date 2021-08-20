@@ -3,20 +3,59 @@ var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
 const addMessage = firebase.functions().httpsCallable('addMessage');
+const newChat = firebase.functions().httpsCallable('createChat');
 var new_user_list_screen = document.getElementById("new_user_list");
-
+var currentuseruid="";
+var currentuseremail="";
 
 var chatuidd = "";
 
 const db1 = firebase.database();
 
+async function chatlistupdate() {
+    const db2 = firebase.firestore();
+    chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
+    chatlists.get().then((doc) => {
+        chatdata = doc.data();
+        chatlist = chatdata.chats;
+        const listscreen = document.getElementById("chat_list");
+        for (let i = 0; i < chatlist.length; i++) {
+            const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover" onclick="displaychat('${chatlist[i].emailId}', '${chatlist[i].chatID}')">
+                                    <img class="profile-image" src="" alt="">
+                                    <div class="text">
+                                    <h4>${chatlist[i].emailId}</h4>
+                                    </div>
+                                    </div>`
+            listscreen.innerHTML += chatlistupdate;
+        }
+    });
+}
+
+async function init() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+        // User is signed in, see docs for a list of available properties
+            currentuseruid = user.uid;
+            currentuseremail = user.email;
+            chatlistupdate();
+        } else {
+            // User is signed out
+            // ...
+            location.href = "index.html";
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', init);
+
 const updateMsgs = data => {
-    const { senderid, text, timestamp } = data.val(); //get name and text
+    const {from, text, timeStamp} = data.val();
+
+     //get name and text
     //load messages, display on left if not the user's name. Display on right if it is the user.
     //  var today = new Date();
     // var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var msg = ""
-    if (senderid == uid) {
+    if (from == currentuseruid) {
         msg = "<div class=\"row no-gutters\"><div class=\"col-md-3 offset-md-9\"><div class=\"chat-bubble chat-bubble--right\">" + text + "</div></div></div>";
     } else {
         msg = "<div class=\"row no-gutters\"><div class=\"col-md-3\"><div class=\"chat-bubble chat-bubble--left\">" + text + "</div></div></div>"
@@ -46,40 +85,6 @@ async function displaychat(recieveremail, chat_id) {
     chatuidd = chat_id;
 }
 
-
-async function chatlistupdate() {
-    const db2 = firebase.firestore();
-    chatlists = db2.collection('users').doc(firebase.auth().currentUser.uid).collection('chats').doc('IndividualChats');
-    chatlists.get().then((doc) => {
-        chatdata = doc.data();
-        chatlist = chatdata.chats;
-        const listscreen = document.getElementById("chat_list");
-        for (let i = 0; i < chatlist.length; i++) {
-            const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover" onclick="displaychat('${chatlist[i].emailId}', '${chatlist[i].chatID}')">
-    <img class="profile-image" src="" alt="">
-    <div class="text">
-        <h4>${chatlist[i].emailId}</h4>
-    </div>
-  </div>`
-            listscreen.innerHTML += chatlistupdate;
-        }
-    });
-}
-
-var uid = "";
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        uid = user.uid;
-        email = user.email;
-        chatlistupdate();
-    } else {
-        // User is signed out
-        // ...
-        location.href = "index.html";
-    }
-});
-
 async function sendMessage(e) {
     e.preventDefault();
     const text = String(msgInput.value);
@@ -95,25 +100,19 @@ async function sendMessage(e) {
 async function shownewchatlist(){
     ref2 = "/users";
     userref = db1.ref(ref2);
-/*    userref.on('value', (userlist) => {
-       for(let i=0;i<userlist.length;i++){
-            var userlistupdate = `<li>${userlist.emailId}</li>
-            <hr>`
-            new_user_list_screen.innerHTML += userlistupdate;
-        }
-      }, (errorObject) => {
-        console.log('The read failed: ' + errorObject.name);
-      }); 
-      */
-  userref.on('child_added', (snapshot, prevChildKey) => {
-    const newPost = snapshot.val();
-    var newuser = "<li>"+newPost.emailId+"</li>"+"<hr>";
-    let dom = new DOMParser().parseFromString(newuser, 'text/html');
-    let newuserelement = dom.body.firstElementChild;
+    userref.on('child_added', (snapshot, prevChildKey) => {
+        const newPost = snapshot.val();
+        var newuser = "<li  onclick=\"addnewchat('"+newPost.emailId+"')\">"+newPost.emailId+"</li>"+"<hr>";
+        let dom = new DOMParser().parseFromString(newuser, 'text/html');
+        let newuserelement = dom.body.firstElementChild;
     //console.log(newuserelement);
-    document.getElementById("new_user_list").append(newuserelement);
+        document.getElementById("new_user_list").append(newuserelement);
+    });
+}
 
-    console.log('uid: ' + newPost.emailId);
-    console.log('Previous Post ID: ' + prevChildKey);
-  });
+async function addnewchat(recieveremail){
+    newChat({senderName:"", senderUID:currentuseruid, senderEmailId : currentuseremail, recipientEmailId:recieveremail})
+    .then((result)=>{
+	console.log(result);
+})
 }
