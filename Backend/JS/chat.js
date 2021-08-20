@@ -98,6 +98,7 @@ async function sendMessage(e) {
 }
 
 async function shownewchatlist(){
+    document.getElementById("new_user_list").innerHTML+="";
     ref2 = "/users";
     userref = db1.ref(ref2);
     userref.on('child_added', (snapshot, prevChildKey) => {
