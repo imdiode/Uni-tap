@@ -95,10 +95,8 @@ async function sendMessage(e) {
 async function shownewchatlist(){
     ref2 = "/users";
     userref = db1.ref(ref2);
-    new_user_list_screen = document.getElementById("new_user_list");
-    var userlist="";
-    userref.on('value', (userlist) => {
-        for(let i=0;i<userlist.length;i++){
+/*    userref.on('value', (userlist) => {
+       for(let i=0;i<userlist.length;i++){
             var userlistupdate = `<li>${userlist.emailId}</li>
             <hr>`
             new_user_list_screen.innerHTML += userlistupdate;
@@ -106,4 +104,16 @@ async function shownewchatlist(){
       }, (errorObject) => {
         console.log('The read failed: ' + errorObject.name);
       }); 
+      */
+  userref.on('child_added', (snapshot, prevChildKey) => {
+    const newPost = snapshot.val();
+    var newuser = "<li>"+newPost.emailId+"</li>"+"<hr>";
+    let dom = new DOMParser().parseFromString(newuser, 'text/html');
+    let newuserelement = dom.body.firstElementChild;
+    //console.log(newuserelement);
+    document.getElementById("new_user_list").append(newuserelement);
+
+    console.log('uid: ' + newPost.emailId);
+    console.log('Previous Post ID: ' + prevChildKey);
+  });
 }

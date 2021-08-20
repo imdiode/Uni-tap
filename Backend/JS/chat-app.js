@@ -1,10 +1,10 @@
-console.log("Hi")
+
 const button_toadd = document.getElementsByClassName("add");
 
 function open_page() {
     const lst_users = document.getElementById("new_user_list");
     lst_users.classList.add("show")
-
+    shownewchatlist();
 }
 
 function close_page() {
