@@ -6,22 +6,27 @@
         Uni-Tap | Help Desk
     </title>
     <link rel="stylesheet" href="./CSS/help_desk.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <!--  Firebase Config  -->
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
-    <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
+    <script src="./Backend/JS/chat.js"></script>
+
 </head>
 
 <body>
@@ -36,6 +41,7 @@
         </div>
         <div class="profile">
             <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
+
         </div>
     </div>
     <div class="sidebar">
@@ -60,17 +66,21 @@
         <div class="options" onclick="canteen_click()">
             Canteen
         </div>
+
+
         <div class="options bstick" onclick="firebaseLogout()">
             Logout
         </div>
     </div>
 
-    <div class="sidebar-main-right">
+    <!-- <div class="sidebar-main-right">
+
         <div class="container">
             <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
             <p>Hello. How are you today?</p>
             <span class="time-right">11:00</span>
         </div>
+
 
         <div class="container darker">
             <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
@@ -95,7 +105,129 @@
             <input class="textbox" type="text" name="comment" size="50">
             <input class="send" type="submit" value="Send">
         </form>
+    </div> -->
+    <div class="sidebar-main-right">
+        <div class="add-button">
+            <div class="button-handler">
+                <button class="add" onclick="open_page()">
+                    New Chat
+                </button>
+                <button class="add close" onclick="close_page()">
+                    Close
+                </button>
+            </div>
+            <ul class="list-users " id="new_user_list">
+                    <li>name-1</li>
+                    <hr>
+                    <li>name-2</li>
+                    <hr>
+                    <li>name-3</li>
+            
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-4 border-right">
+                    <!-- <div class="settings-tray">
+                        <img class="profile-image" id="logo" src="./Backend/Images/logo.jpg" alt="Profile img">
+                        <span class="settings-tray--right">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+              </span>
+                    </div> -->
+                    <div class="profile-list">
+                        <div class="profile-container">
+                            <div class="search-box">
+                                <div class="input-wrapper">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <input placeholder="Search here" type="text">
+                                </div>
+                                <!-- <div class="new-chat">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </div> -->
+                            </div>
+                            <div class="list" id="chat_list">
+                                <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Nandan Shukla')">
+                                    <img class="profile-image" src="" alt="">
+
+                                    <div class="text">
+                                        <h4>Nandan Shukla</h4>
+
+                                    </div>
+
+                                </div>
+                                <!-- <hr> -->
+                                <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Aniket Nadkarni')">
+                                    <img class="profile-image" src="" alt="">
+                                    <div class="text">
+                                        <h4>Aniket Nadkarni</h4>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- <hr> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="settings-tray">
+                        <div class="friend-drawer no-gutters friend-drawer--grey">
+                            <img class="profile-image" src="" alt="">
+                            <div class="text">
+                                <h4 id="profile">Nandan Shukla</h4>
+                            </div>
+                            <span class="settings-tray--right"></span>
+                        </div>
+                    </div>
+                    <div class="chat-panel" id="chat-panel">
+                        <div class="row no-gutters">
+                            <div class="col-md-3 offset-md-9">
+                                <div class="chat-bubble chat-bubble--right">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-md-3 offset-md-9">
+                                <div class="chat-bubble chat-bubble--right">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <div class="chat-bubble chat-bubble--left">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <div class="chat-bubble chat-bubble--left">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="messageForm" autocomplete="off">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="chat-box-tray">
+
+                                    <input type="text" placeholder="Type your message here..." id="msg-input">
+                                    <button type="submit" class="fa fa-paper-plane-o" aria-hidden="true" id="msg-btn"></button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="./Backend/JS/chat-app.js"></script>
 </body>
 
 </html>
