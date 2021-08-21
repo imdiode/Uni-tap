@@ -98,12 +98,10 @@ body {
     background: #fff;
     padding: 0;
     border-radius: 7px;
-    /* border: 1px solid rgb(115, 179, 223); */
-    /* position: absolute; */
     top: 15%;
     width: 100%;
+    height: 100%;
     border-right: none;
-    /* display: inline-block; */
 }
 
 .button-handler {
@@ -116,7 +114,8 @@ body {
     position: fixed;
     display: block;
     background-color: #fff;
-    width: 50%;
+    width: 35%;
+    left: 25%;
     /* border: 1px solid rgb(14, 14, 117); */
     border-radius: 10px;
 }
@@ -157,6 +156,7 @@ body {
 
 .settings-tray--right {
     float: right;
+    display: block;
 }
 
 .settings-tray--right i {
@@ -175,16 +175,9 @@ body {
 
 .search-box {
     background: rgb(243, 241, 241);
+    display: flex;
     padding: 10px 13px;
     align-items: center;
-}
-
-.new-chat {
-    margin-left: 7px;
-    padding: 2px 5px;
-    padding-top: 4px;
-    border: 1px solid black;
-    background-color: #fff;
 }
 
 .search-box .input-wrapper {
@@ -253,6 +246,21 @@ input:focus {
     background-color: rgb(40, 40, 116);
     color: #fff;
     font-weight: 200;
+}
+
+.close {
+    margin: 15px;
+    width: 50px;
+    margin-left: 80%;
+}
+
+.addbtn {
+    margin-left: 7px;
+    color: #fff;
+    font-weight: 400;
+    /* padding: 8px; */
+    background-color: rgb(42, 59, 212);
+    border-radius: 50%;
 }
 
 #open-useradd:hover,
@@ -446,9 +454,9 @@ input:focus {
     height: 50%;
 }
 
-.iconify {
+.send {
     color: #fff;
-    background-color: rgb(3, 3, 65);
+    background-color: rgb(42, 59, 212);
     border-radius: 50%;
     padding: 4px;
     margin: 0 7px;
