@@ -26,6 +26,7 @@ function chatStarted() {
 function open_page_add() {
     const lst_users = document.getElementById("new_user_list");
     lst_users.classList.add("show")
+    shownewchatlist();
 }
 
 function close_page_add() {
