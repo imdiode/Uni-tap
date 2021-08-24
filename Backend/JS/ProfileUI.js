@@ -149,7 +149,11 @@ async function changePhNo() {
     try {
         user_firestore_data.mobileNumber = document.getElementById("nphone").value;
         profileRef.set(user_firestore_data).then(() => {
+          firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(()=>{
             document.getElementById("phNoClose").click();
+          }).catch((err)=>{
+            console.log(err);
+          });
         });
     } catch (err) {
         console.log(err.message);
@@ -207,7 +211,14 @@ async function uploadPicture(even) {
         e.ref.getDownloadURL().then((downloadURL) => {
             user_firestore_data.profilePicture = downloadURL;
             profileRef.set(user_firestore_data).then(() => {
+              firebase.auth().currentUser.updateProfile({
+                displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+                photoURL: downloadURL,
+              }).then(()=>{
                 loadProfile();
+              }).catch((err)=>{
+                console.log(err);
+              })
                 //console.log('File available at', downloadURL);
             });
         });
