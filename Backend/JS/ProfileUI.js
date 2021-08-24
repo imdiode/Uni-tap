@@ -207,7 +207,14 @@ async function uploadPicture(even) {
         e.ref.getDownloadURL().then((downloadURL) => {
             user_firestore_data.profilePicture = downloadURL;
             profileRef.set(user_firestore_data).then(() => {
+              firebase.auth().currentUser.updateProfile({
+                displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+                photoURL: downloadURL,
+              }).then(()=>{
                 loadProfile();
+              }).catch((err)=>{
+                console.log(err);
+              })
                 //console.log('File available at', downloadURL);
             });
         });
