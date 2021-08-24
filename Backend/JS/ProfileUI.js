@@ -210,6 +210,7 @@ async function uploadPicture(even) {
               firebase.auth().currentUser.updateProfile({
                 displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
                 photoURL: downloadURL,
+                phoneNumber: user_firestore_data.mobileNumber,
               }).then(()=>{
                 loadProfile();
               }).catch((err)=>{
