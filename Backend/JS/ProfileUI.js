@@ -149,7 +149,11 @@ async function changePhNo() {
     try {
         user_firestore_data.mobileNumber = document.getElementById("nphone").value;
         profileRef.set(user_firestore_data).then(() => {
+          firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(()=>{
             document.getElementById("phNoClose").click();
+          }).catch((err)=>{
+            console.log(err);
+          });
         });
     } catch (err) {
         console.log(err.message);
@@ -210,7 +214,6 @@ async function uploadPicture(even) {
               firebase.auth().currentUser.updateProfile({
                 displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
                 photoURL: downloadURL,
-                phoneNumber: user_firestore_data.mobileNumber,
               }).then(()=>{
                 loadProfile();
               }).catch((err)=>{
