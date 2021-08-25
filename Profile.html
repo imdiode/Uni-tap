@@ -19,16 +19,22 @@
     <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
     <script defer src="/__/firebase/init.js"></script>
     <!-- end Firebase Config -->
+        <!--For Icons-->
+        <script src="https://kit.fontawesome.com/3af0ac8797.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="top">
         <div class="navigation">
             <ul>
+                <i class="fas fa-home"></i>&nbsp;
                 <li><a href="Dashboard.html">Dashboard</a></li>
+                <i class="far fa-window-maximize"></i>&nbsp
                 <li><a href="Notice.html">Notice Board</a></li>
+                <i class="fas fa-ban"></i>&nbsp
                 <li><a href="violations.html">My Violations</a></li>
-                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+                <i class="fas fa-phone-square-alt"></i>&nbsp
+                <li><a href="#">Uni-Tap Support</a></li>
             </ul>
         </div>
         <div class="profile">
@@ -38,67 +44,75 @@
     </div>
     <div class="sidebar">
         <div class="options" onclick="profile_click()">
+            <i class="fas fa-user"></i>&nbsp;
             Profile
         </div>
         <div class="options" onclick="griv_click()">
+            <i class="fas fa-bullhorn"></i>&nbsp;
             Grievance
         </div>
         <div class="options" onclick="help_click()">
+            <i class="fas fa-hands-helping"></i>&nbsp;
             Help desk
         </div>
         <div class="options" onclick="aca_click()">
+            <i class="fas fa-book-open"></i>&nbsp;
             Academic record
         </div>
         <div class="options" onclick="library_click()">
+            <i class="fas fa-book-reader"></i>&nbsp;
             Library
         </div>
         <div class="options" onclick="sports_click()">
+            <i class="fas fa-baseball-ball"></i>&nbsp;
             Sports equipment
         </div>
         <div class="options" onclick="canteen_click()">
+            <i class="fas fa-utensils"></i>&nbsp;
             Canteen
         </div>
         <div class="options bstick" onclick="firebaseLogout()">
+            <i class="fas fa-sign-out-alt"></i>&nbsp;
             Logout
         </div>
     </div>
 
     <div class="sidebar-main-right">
         <div class="content-main">
-            <h1>Your Profile</h1>
+            <h1><i class="fas fa-user"></i>Your Profile</h1>
             <h2 id="fullName"></h2>
             <div>
                 <div class="info">
                     <table>
                         <th colspan="3">Basic Information</th>
                         <tr>
-                            <td class="fields">Semester:</td>
+                            <td class="fields"><i class="fas fa-book-open"></i>&nbsp;Semester:</td>
                             <td id="semester"></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="fields">Login Id:</td>
+                            <td class="fields"> <i class="fas fa-id-card"></i>&nbsp;Login Id:</td>
                             <td id="emailId"></td>
                             <!--<td><a href="#" data-modal-target="#email">change</a></td>-->
                         </tr>
                         <tr>
-                            <td class="fields">Contact Email:</td>
+                            <td class="fields"><i class="fas fa-envelope-square"></i>&nbsp; Contact Email:</td>
                             <td id="contactEmailId"></td>
                             <td><a href="#" data-modal-target="#email">change</a></td>
                         </tr>
                         <tr>
-                            <td class="fields">Mobile:</td>
+                            <td class="fields"><i class="fas fa-mobile-alt"></i>&nbsp;Mobile:</td>
                             <td id="mobileNumber"></td>
                             <td><a href="#" data-modal-target="#phone">change</a></td>
                         </tr>
                         <tr>
-                            <td class="fields">Address:</td>
+                            <td class="fields"><i class="fas fa-address-card"></i>&nbsp; Address:</td>
                             <td id="address"><br/></td>
                             <td><a href="#" id="readMore"> read more...</a></td>
                             <td><a href="#" data-modal-target="#addr">change</a></td>
                         </tr>
                         <tr>
-                            <td class="fields">Enrollment No.:</td>
+                            <td class="fields"><i class="fas fa-id-badge"></i>&nbsp;Enrollment No.:</td>
                             <td id="studentUID"></td>
                         </tr>
                     </table>
