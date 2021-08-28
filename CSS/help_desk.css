@@ -114,10 +114,11 @@ body {
     position: fixed;
     display: block;
     background-color: #fff;
-    width: 35%;
+    width: 45%;
     left: 25%;
     /* border: 1px solid rgb(14, 14, 117); */
     border-radius: 10px;
+    opacity: 1 !important;
 }
 
 .profile-image {
@@ -272,11 +273,13 @@ input:focus {
 .list-users {
     list-style: none;
     display: none;
+    opacity: 1 !important;
 }
 
 .list-users.show div li {
     padding: 4px 5px;
     text-align: left;
+    opacity: 1 !important;
 }
 
 .friend-drawer {
