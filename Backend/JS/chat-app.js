@@ -29,9 +29,13 @@ function open_page_add() {
     const chat_panel = document.getElementById("chat-panel")
 
     lst_users.classList.add("show")
+<<<<<<< HEAD
     chat_list.style.opacity = "0.1"
     chat_panel.style.opacity = "0.3"
         // lst_users.style.filter = "blur(0px) !important"
+=======
+    shownewchatlist();
+>>>>>>> 62d9853f818bbbae71cc52379ee7a8c354c8cf65
 }
 
 function close_page_add() {
