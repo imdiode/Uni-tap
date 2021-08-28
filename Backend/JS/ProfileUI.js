@@ -212,7 +212,6 @@ async function uploadPicture(even) {
             user_firestore_data.profilePicture = downloadURL;
             profileRef.set(user_firestore_data).then(() => {
               firebase.auth().currentUser.updateProfile({
-                displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
                 photoURL: downloadURL,
               }).then(()=>{
                 loadProfile();
