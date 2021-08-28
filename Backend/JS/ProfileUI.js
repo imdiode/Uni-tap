@@ -176,7 +176,7 @@ async function changeAddr() {
             document.getElementById("addrClose").click();
         });
     } catch (err) {
-        console.log(err.message);
+        //console.log(err);
         //and open error window telling user about error, Try to log error on rtdb
     }
     loadProfile();
