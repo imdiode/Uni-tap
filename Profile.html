@@ -108,7 +108,14 @@
                         <tr>
                             <td class="fields"><i class="fas fa-address-card"></i>&nbsp; Address:</td>
                             <td id="address"><br/></td>
-                            <td><a href="#" id="readMore"> read more...</a></td>
+                              
+                            <p>                      
+                               <span id="dots"></span>
+                               <span id="content"></span>
+                            </p>
+                              
+                             <td><button onclick="readMoreFunction()" id="buttonReadMore">Read more</button></td>
+                            
                             <td><a href="#" data-modal-target="#addr">change</a></td>
                         </tr>
                         <tr>
@@ -168,11 +175,17 @@
         </div>
         <div class="modal-content">
             <span class="modal-fields">New Address:</span>
+            <br>
             <span class="modal-fields">Line 1:</span><input class="modal-input" type="text" placeholder="Address Line 1..." id="naddrL1">
+            <br>
             <span class="modal-fields">Line 2:</span><input class="modal-input" type="text" placeholder="Address Line 2..." id="naddrL2">
+            <br>
             <span class="modal-fields">District:</span><input class="modal-input" type="text" placeholder="District" id="naddrDistrict">
+            <br>
             <span class="modal-fields">Pin Code:</span><input class="modal-input" type="number" placeholder="Pin Code" id="naddrPin">
+            <br>
             <span class="modal-fields">City:</span><input class="modal-input" type="text" placeholder="City" id="naddrCity">
+            <br>
             <div class="modal-save-btn" id="addr-change">
                 Save
             </div>
