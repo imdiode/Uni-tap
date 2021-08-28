@@ -19,6 +19,7 @@ async function chatlistupdate() {
         chatdata = doc.data();
         chatlist = chatdata.chats;
         const listscreen = document.getElementById("chat_list");
+        listscreen.innerHTML=" ";
         for (let i = 0; i < chatlist.length; i++) {
             const chatlistupdate = `<div class="friend-drawer friend-drawer--onhover" onclick="displaychat('${chatlist[i].emailId}', '${chatlist[i].chatID}')">
                                     <img class="profile-image" src="" alt="">
@@ -91,7 +92,7 @@ async function sendMessage(e) {
 }
 
 async function shownewchatlist(){
-    document.getElementById("new_user_list").innerHTML="";
+    document.getElementById("userlist").innerHTML=" ";
     ref2 = "/users";
     userref = db1.ref(ref2);
     userref.on('child_added', (snapshot, prevChildKey) => {
@@ -100,7 +101,7 @@ async function shownewchatlist(){
         let dom = new DOMParser().parseFromString(newuser, 'text/html');
         let newuserelement = dom.body.firstElementChild;
     //console.log(newuserelement);
-        document.getElementById("new_user_list").append(newuserelement);
+        document.getElementById("userlist").append(newuserelement);
     });
 }
 
@@ -109,6 +110,6 @@ async function addnewchat(recieveremail){
     .then((result)=>{
 	console.log(result);
 })
-    close_page();
+    close_page_add();
     chatlistupdate();
 }

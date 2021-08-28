@@ -1,21 +1,15 @@
-
 const button_toadd = document.getElementsByClassName("add");
 
-function open_page() {
-    const lst_users = document.getElementById("new_user_list");
-    lst_users.classList.add("show")
-    shownewchatlist();
-}
+// function open_page() {
+//     const lst_users = document.getElementById("new_user_list");
+//     lst_users.classList.add("show")
+//     shownewchatlist();
+// }
 
-function close_page() {
-    const lst_users = document.getElementById("new_user_list");
-    lst_users.classList.remove("show")
-}
-// $('.friend-drawer--onhover').on('click', function() {
-
-//     $('.chat-bubble').hide('slow').show('slow');
-
-// });
+// function close_page() {
+//     const lst_users = document.getElementById("new_user_list");
+//     lst_users.classList.remove("show")
+// }
 
 function chatStarted() {
     const chatList = document.querySelector("#chatList");
@@ -24,4 +18,32 @@ function chatStarted() {
     if (chatList.classList.contains('clicked') == false) {
         chatList.className += "clicked";
     }
+}
+
+
+
+
+function open_page_add() {
+    const lst_users = document.getElementById("new_user_list");
+    const chat_list = document.getElementById("chat_list")
+    const chat_panel = document.getElementById("chat-panel")
+
+    lst_users.classList.add("show")
+<<<<<<< HEAD
+    chat_list.style.opacity = "0.1"
+    chat_panel.style.opacity = "0.3"
+        // lst_users.style.filter = "blur(0px) !important"
+=======
+    shownewchatlist();
+>>>>>>> 62d9853f818bbbae71cc52379ee7a8c354c8cf65
+}
+
+function close_page_add() {
+    const lst_users = document.getElementById("new_user_list");
+    const chat_list = document.getElementById("chat_list")
+    const chat_panel = document.getElementById("chat-panel")
+
+    lst_users.classList.remove("show")
+    chat_list.style.opacity = "1"
+    chat_panel.style.opacity = "1"
 }
