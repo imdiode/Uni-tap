@@ -62,7 +62,7 @@ firebase.auth().onAuthStateChanged((user) => {
 const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
-const readMoreBtn = document.getElementById("readMore");
+//const readMoreBtn = document.getElementById("buttonReadMore");
 const profilePic = document.getElementById("changeAvatar");
 
 var user_firestore_data;
@@ -78,8 +78,8 @@ try {
     addrChangeBtn.addEventListener("click", changeAddr);
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
-    readMoreBtn.addEventListener("click", readMore);
-    //profilePic.addEventListener("click", changeProfilePic);
+    //readMoreBtn.addEventListener("click", readMore);
+    profilePic.addEventListener("click", changeProfilePic);
     fileButton.addEventListener('change', uploadPicture);
 
 } catch (err) {
