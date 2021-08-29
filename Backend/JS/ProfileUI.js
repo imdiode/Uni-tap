@@ -63,7 +63,7 @@ const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
 //const readMoreBtn = document.getElementById("buttonReadMore");
-const profilePic = document.getElementById("changeAvatar");
+const profilePic = document.getElementById("w-link");
 
 var user_firestore_data;
 
