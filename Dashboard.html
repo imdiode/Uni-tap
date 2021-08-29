@@ -22,48 +22,62 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
     <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <!--For Icons-->
+    <script src="https://kit.fontawesome.com/3af0ac8797.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="top">
         <div class="navigation">
             <ul>
-                <li><a href="#">Dashboard</a></li>
+                <i class="fas fa-home"></i>&nbsp;
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <i class="far fa-window-maximize"></i>&nbsp
                 <li><a href="Notice.html">Notice Board</a></li>
+                <i class="fas fa-ban"></i>&nbsp
                 <li><a href="violations.html">My Violations</a></li>
-                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+                <i class="fas fa-phone-square-alt"></i>&nbsp
+                <li><a href="#">Uni-Tap Support</a></li>
             </ul>
         </div>
         <div class="profile">
             <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
         </div>
     </div>
-    <div class="sidebar">
-        <div class="options" onclick="profile_click()">
-            Profile
+        <div class="sidebar">
+            <div class="options" onclick="profile_click()">
+                <i class="fas fa-user"></i>&nbsp;
+                Profile
+            </div>
+            <div class="options" onclick="griv_click()">
+                <i class="fas fa-bullhorn"></i>&nbsp;
+                Grievance
+            </div>
+            <div class="options" onclick="help_click()">
+                <i class="fas fa-hands-helping"></i>&nbsp;
+                Help desk
+            </div>
+            <div class="options" onclick="aca_click()">
+                <i class="fas fa-book-open"></i>&nbsp;
+                Academic record
+            </div>
+            <div class="options" onclick="library_click()">
+                <i class="fas fa-book-reader"></i>&nbsp;
+                Library
+            </div>
+            <div class="options" onclick="sports_click()">
+                <i class="fas fa-baseball-ball"></i>&nbsp;
+                Sports equipment
+            </div>
+            <div class="options" onclick="canteen_click()">
+                <i class="fas fa-utensils"></i>&nbsp;
+                Canteen
+            </div>
+            <div class="options bstick" onclick="firebaseLogout()">
+                <i class="fas fa-sign-out-alt"></i>&nbsp;
+                Logout
+            </div>
         </div>
-        <div class="options" onclick="griv_click()">
-            Grievance
-        </div>
-        <div class="options" onclick="help_click()">
-            Help desk
-        </div>
-        <div class="options" onclick="aca_click()">
-            Academic record
-        </div>
-        <div class="options" onclick="library_click()">
-            Library
-        </div>
-        <div class="options" onclick="sports_click()">
-            Sports equipment
-        </div>
-        <div class="options" onclick="canteen_click()">
-            Canteen
-        </div>
-        <div class="options bstick" onclick="firebaseLogout()">
-            Logout
-        </div>
-    </div>
     <div class="sidebar-main-right">
         <div class="content-main">
             <h1>

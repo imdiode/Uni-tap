@@ -24,6 +24,9 @@
     <script src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
     <script rel="text/javascript" src="./Backend/JS/redirect.js"></script>
+    <!--For Icons-->
+    <script src="https://kit.fontawesome.com/3af0ac8797.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <!--   <script src="./Backend/JS/chat-app.js"></script>  -->
     <script src="./Backend/JS/chat.js"></script>
 
@@ -33,10 +36,14 @@
     <div class="top">
         <div class="navigation">
             <ul>
+                <i class="fas fa-home"></i>&nbsp;
                 <li><a href="Dashboard.html">Dashboard</a></li>
+                <i class="far fa-window-maximize"></i>&nbsp
                 <li><a href="Notice.html">Notice Board</a></li>
+                <i class="fas fa-ban"></i>&nbsp
                 <li><a href="violations.html">My Violations</a></li>
-                <li><a href="Support_Page.html">Uni-Tap Support</a></li>
+                <i class="fas fa-phone-square-alt"></i>&nbsp
+                <li><a href="#">Uni-Tap Support</a></li>
             </ul>
         </div>
         <div class="profile">
@@ -46,95 +53,88 @@
     </div>
     <div class="sidebar">
         <div class="options" onclick="profile_click()">
-            Profile
+            <i class="fas fa-user"></i>&nbsp; Profile
         </div>
         <div class="options" onclick="griv_click()">
-            Grievance
+            <i class="fas fa-bullhorn"></i>&nbsp; Grievance
         </div>
         <div class="options" onclick="help_click()">
-            Chat
+            Help Desk
         </div>
         <div class="options" onclick="aca_click()">
-            Academic record
+            <i class="fas fa-book-open"></i>&nbsp; Academic record
         </div>
         <div class="options" onclick="library_click()">
-            Library
+            <i class="fas fa-book-reader"></i>&nbsp; Library
         </div>
         <div class="options" onclick="sports_click()">
-            Sports equipment
+            <i class="fas fa-baseball-ball"></i>&nbsp; Sports equipment
         </div>
         <div class="options" onclick="canteen_click()">
-            Canteen
+            <i class="fas fa-utensils"></i>&nbsp; Canteen
         </div>
 
 
         <div class="options bstick" onclick="firebaseLogout()">
-            Logout
+            <i class="fas fa-sign-out-alt"></i>&nbsp; Logout
         </div>
     </div>
-
-    <!-- <div class="sidebar-main-right">
-
-        <div class="container">
-            <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
-            <p>Hello. How are you today?</p>
-            <span class="time-right">11:00</span>
-        </div>
+    <!-- <div class="sidebar-main-right"> -->
+    <!-- <div class="container">
+        <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
+        <p>Hello. How are you today?</p>
+        <span class="time-right">11:00</span>
+    </div>
 
 
-        <div class="container darker">
-            <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
-            <p>Hey! I'm fine. Thanks for asking!</p>
-            <span class="time-left">11:01</span>
-        </div>
+    <div class="container darker">
+        <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
+        <p>Hey! I'm fine. Thanks for asking!</p>
+        <span class="time-left">11:01</span>
+    </div>
 
-        <div class="container">
-            <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
-            <p>Sweet! So, what do you wanna do today?</p>
-            <span class="time-right">11:02</span>
-        </div>
+    <div class="container">
+        <img src="C:\Users\Princy Sheth\Desktop\download.jpg" alt="Avatar" style="width:5%;">
+        <p>Sweet! So, what do you wanna do today?</p>
+        <span class="time-right">11:02</span>
+    </div>
 
-        <div class="container darker">
-            <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
-            <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-            <span class="time-left">11:05</span>
-        </div>
+    <div class="container darker">
+        <img src="C:\Users\Princy Sheth\Desktop\spider.jpg" alt="Avatar" class="right" style="width:5%;">
+        <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+        <span class="time-left">11:05</span>
+    </div>
 
-        <br>
-        <form>
-            <input class="textbox" type="text" name="comment" size="50">
-            <input class="send" type="submit" value="Send">
-        </form>
+    <br>
+    <form>
+        <input class="textbox" type="text" name="comment" size="50">
+        <input class="send" type="submit" value="Send">
+    </form>
     </div> -->
     <div class="sidebar-main-right">
         <div class="add-button">
             <div class="button-handler">
-                <button class="add" onclick="open_page()">
+                <!-- <button class="add" onclick="open_page()" id="open-useradd">
                     New Chat
-                </button>
-                <button class="add close" onclick="close_page()">
+                </button> -->
+                <!-- <button class="add close" onclick="close_page()" id=close-useradd>
                     Close
-                </button>
+                </button> -->
             </div>
-            <ul class="list-users " id="new_user_list">
+            <!-- <ul class="list-users " id="new_user_list">
+
                 <li>name-1</li>
                 <hr>
                 <li>name-2</li>
                 <hr>
                 <li>name-3</li>
 
-            </ul>
+            </ul> -->
         </div>
 
-        <div class="container">
+        <div class="container" id="container">
             <div class="row no-gutters">
                 <div class="col-md-4 border-right">
-                    <!-- <div class="settings-tray">
-                        <img class="profile-image" id="logo" src="./Backend/Images/logo.jpg" alt="Profile img">
-                        <span class="settings-tray--right">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-              </span>
-                    </div> -->
                     <div class="profile-list">
                         <div class="profile-container">
                             <div class="search-box">
@@ -142,25 +142,40 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                     <input placeholder="Search here" type="text">
                                 </div>
-                                <!-- <div class="new-chat">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div> -->
+                                <div class="">
+                                    <span class="iconify addbtn add" onclick="open_page_add()" id="open-useradd" data-width="25" data-height="25" data-icon="carbon:add"></span>
+                                    <ul class="list-users " id="new_user_list">
+
+                                        <li><button class="add close" onclick="close_page_add()" id="close-useradd"> Close </button></li>
+                                        <div id="userlist">
+                                            <li>name-1</li>
+                                            <hr>
+                                            <li>name-2</li>
+                                            <hr>
+                                            <li>name-3</li>
+                                        </div>
+                                    </ul>
+
+                                </div>
                             </div>
                             <div class="list" id="chat_list">
                                 <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Nandan Shukla')">
-                                    <img class="profile-image" src="" alt="">
+                                    <img class="profile-image" src="https://th.bing.com/th/id/R.41530cd940d1f1135ea526933356bc7d?rik=I7%2fN3yOkkg14RQ&riu=http%3a%2f%2fwww.osmpic.com%2fwp-content%2fuploads%2f2019%2f03%2fPicsArt_03-21-10.30.59-901x1024.jpg&ehk=t%2fuckxWrHExUtdz%2fsyyjct3FB4pETe7Mh%2fGSvxy3H14%3d&risl=&pid=ImgRaw&r=0"
+                                        alt="">
 
                                     <div class="text">
                                         <h4>Nandan Shukla</h4>
-
+                                        <h5>FOUNDER</h5>
                                     </div>
 
                                 </div>
                                 <!-- <hr> -->
                                 <div class="friend-drawer friend-drawer--onhover" onclick="displaychat('Aniket Nadkarni')">
-                                    <img class="profile-image" src="" alt="">
+                                    <img class="profile-image" src="https://th.bing.com/th/id/R.41530cd940d1f1135ea526933356bc7d?rik=I7%2fN3yOkkg14RQ&riu=http%3a%2f%2fwww.osmpic.com%2fwp-content%2fuploads%2f2019%2f03%2fPicsArt_03-21-10.30.59-901x1024.jpg&ehk=t%2fuckxWrHExUtdz%2fsyyjct3FB4pETe7Mh%2fGSvxy3H14%3d&risl=&pid=ImgRaw&r=0"
+                                        alt="">
                                     <div class="text">
                                         <h4>Aniket Nadkarni</h4>
+                                        <h5>CTO</h5>
                                     </div>
 
                                 </div>
@@ -170,12 +185,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" id="col-md-8">
                     <div class="settings-tray">
                         <div class="friend-drawer no-gutters friend-drawer--grey">
-                            <img class="profile-image" src="" alt="">
-                            <div class="text">
-                                <h4 id="profile">Nandan Shukla</h4>
+                            <div class="clicked-user">
+                                <img class="profile-image selected" src="https://th.bing.com/th/id/R.41530cd940d1f1135ea526933356bc7d?rik=I7%2fN3yOkkg14RQ&riu=http%3a%2f%2fwww.osmpic.com%2fwp-content%2fuploads%2f2019%2f03%2fPicsArt_03-21-10.30.59-901x1024.jpg&ehk=t%2fuckxWrHExUtdz%2fsyyjct3FB4pETe7Mh%2fGSvxy3H14%3d&risl=&pid=ImgRaw&r=0"
+                                    alt="">
+                                <div class="text">
+                                    <h2 id="profile">Nandan Shukla</h2>
+                                </div>
                             </div>
                             <span class="settings-tray--right"></span>
                         </div>
@@ -211,13 +229,14 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <form id="messageForm" autocomplete="off">
                         <div class="row">
                             <div class="col-12">
                                 <div class="chat-box-tray">
-
                                     <input type="text" placeholder="Type your message here..." id="msg-input">
-                                    <button type="submit" class="fa fa-paper-plane-o" aria-hidden="true" id="msg-btn"></button>
+
+                                    <span class="iconify send" data-icon="fluent:send-16-filled"></span>
 
                                 </div>
                             </div>

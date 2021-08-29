@@ -88,7 +88,20 @@ body {
 
 .content-main {
     margin-left: 5%;
-    color: #0097e3;
+    color: #023c7e;
+}
+
+.ProfileInfo {
+    display: flex;
+    align-items: center;
+}
+
+.fa-edit {
+    padding: 0 15px;
+}
+
+.fa-edit:hover {
+    color: #06acff;
 }
 
 .info {
@@ -110,6 +123,12 @@ body {
 .info a {
     color: #0097e3;
     text-decoration: none;
+}
+
+#buttonReadMore {
+    border: none;
+    background: none;
+    color: #0097e3
 }
 
 .profilepic {
