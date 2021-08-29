@@ -334,7 +334,6 @@ input:focus {
 
 .chat-panel {
     overflow-y: scroll;
-    height: 51vh !important;
 }
 
 .friend-drawer--onhover:hover p,
