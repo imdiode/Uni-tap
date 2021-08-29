@@ -149,11 +149,11 @@ async function changePhNo() {
     try {
         user_firestore_data.mobileNumber = document.getElementById("nphone").value;
         profileRef.set(user_firestore_data).then(() => {
-          firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(()=>{
-            document.getElementById("phNoClose").click();
-          }).catch((err)=>{
-            console.log(err);
-          });
+            firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(() => {
+                document.getElementById("phNoClose").click();
+            }).catch((err) => {
+                console.log(err);
+            });
         });
     } catch (err) {
         console.log(err.message);
@@ -188,6 +188,22 @@ async function changeAddr() {
 async function readMore() {
     document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
 }
+
+function readMoreFunction() {
+    var dots = document.getElementById("dots");
+    var contentText = document.getElementById("content");
+    var btnText = document.getElementById("buttonReadMore");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        contentText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read Less";
+        contentText.style.display = "inline";
+    }
+}
 /*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
@@ -211,14 +227,15 @@ async function uploadPicture(even) {
         e.ref.getDownloadURL().then((downloadURL) => {
             user_firestore_data.profilePicture = downloadURL;
             profileRef.set(user_firestore_data).then(() => {
-              firebase.auth().currentUser.updateProfile({
-                photoURL: downloadURL,
-              }).then(()=>{
-                loadProfile();
-              }).catch((err)=>{
-                console.log(err);
-              })
-                //console.log('File available at', downloadURL);
+                firebase.auth().currentUser.updateProfile({
+                        //displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+                        photoURL: downloadURL,
+                    }).then(() => {
+                        loadProfile();
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                    //console.log('File available at', downloadURL);
             });
         });
     });
