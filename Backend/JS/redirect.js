@@ -17,6 +17,9 @@ firebase.auth().onAuthStateChanged((user) => {
     db = firebase.firestore();
     auth = firebase.auth();
     storage = firebase.storage();
+
+    let name = user.displayName.split(" ");
+    document.getElementById("navFirstName").innerHTML = name[0];
   } else {
     // User is signed out
     // ...
