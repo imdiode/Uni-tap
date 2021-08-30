@@ -188,20 +188,24 @@ async function changeAddr() {
 async function readMore() {
     document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "<br>" + user_firestore_data.address.line2 + "<br>" + user_firestore_data.address.district + "<br>" + user_firestore_data.address.city + "<br>" + user_firestore_data.address.pincode + "<br>" + "</td>";
 }
+async function readLess() {
+    document.getElementById("address").innerHTML = "<td>" + user_firestore_data.address.line1 + "</td>";
+}
 
 function readMoreFunction() {
     var dots = document.getElementById("dots");
     var contentText = document.getElementById("content");
     var btnText = document.getElementById("buttonReadMore");
-
     if (dots.style.display === "none") {
         dots.style.display = "inline";
         btnText.innerHTML = "Read more";
         contentText.style.display = "none";
+        readLess();
     } else {
         dots.style.display = "none";
         btnText.innerHTML = "Read Less";
         contentText.style.display = "inline";
+        readMore();
     }
 }
 /*----------------------------------------------------------------------------*/
