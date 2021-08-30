@@ -124,7 +124,7 @@ async function loadProfile() {
         document.getElementById("emailId").innerHTML = profileData.emailId;
         document.getElementById("contactEmailId").innerHTML = profileData.contactEmailId;
         document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
-        document.getElementById("address").innerHTML = "<td>" + profileData.address.line1||"" + "<br>" + "</td>";
+        document.getElementById("address").innerHTML = "<td>" + (profileData.address.line1)||" " + "<br>" + "</td>";
         document.getElementById("studentUID").innerHTML = profileData.studentUID;
         document.getElementById("profilePictureNav").src = profileData.profilePicture;
         document.getElementById("profilePictureLarge").src = profileData.profilePicture;
@@ -144,12 +144,12 @@ async function changeName() {
         user_firestore_data.lastName = document.getElementById("lename").value;
         profileRef.set(user_firestore_data).then(() => {
             ceditName();
+            loadProfile();
         });
     } catch (err) {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -160,12 +160,12 @@ async function changeEmail() {
         user_firestore_data.contactEmailId = document.getElementById("nmail").value;
         profileRef.set(user_firestore_data).then(() => {
             document.getElementById("emailClose").click();
+            loadProfile();
         });
     } catch (err) {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -178,6 +178,7 @@ async function changePhNo() {
         profileRef.set(user_firestore_data).then(() => {
             firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(() => {
                 document.getElementById("phNoClose").click();
+                loadProfile();
             }).catch((err) => {
                 console.log(err);
             });
@@ -186,7 +187,6 @@ async function changePhNo() {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -201,12 +201,12 @@ async function changeAddr() {
         user_firestore_data.address.city = document.getElementById("naddrCity").value;
         profileRef.set(user_firestore_data).then(() => {
             document.getElementById("addrClose").click();
+            loadProfile();
         });
     } catch (err) {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
