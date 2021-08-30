@@ -143,8 +143,12 @@ async function changeName() {
         user_firestore_data.middleName = document.getElementById("mename").value;
         user_firestore_data.lastName = document.getElementById("lename").value;
         profileRef.set(user_firestore_data).then(() => {
+          firebase.auth().currentUser.updateProfile({
+            displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+          }).then(() => {
             ceditName();
             loadProfile();
+          })
         });
     } catch (err) {
         console.log(err.message);
