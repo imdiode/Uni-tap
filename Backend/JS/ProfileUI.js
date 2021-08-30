@@ -62,8 +62,8 @@ firebase.auth().onAuthStateChanged((user) => {
 const addrChangeBtn = document.getElementById("addr-change");
 const phNumberChangeBtn = document.getElementById("phone-change");
 const emailChangeBtn = document.getElementById("email-change");
-const readMoreBtn = document.getElementById("readMore");
-const profilePic = document.getElementById("changeAvatar");
+const readMoreBtn = document.getElementById("buttonReadMore");
+const profilePic = document.getElementById("w-link");
 
 var user_firestore_data;
 
@@ -78,7 +78,7 @@ try {
     addrChangeBtn.addEventListener("click", changeAddr);
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
-    readMoreBtn.addEventListener("click", readMore);
+    //readMoreBtn.addEventListener("click", readMore);
     profilePic.addEventListener("click", changeProfilePic);
     fileButton.addEventListener('change', uploadPicture);
 
@@ -176,7 +176,7 @@ async function changeAddr() {
             document.getElementById("addrClose").click();
         });
     } catch (err) {
-        console.log(err.message);
+        //console.log(err);
         //and open error window telling user about error, Try to log error on rtdb
     }
     loadProfile();
@@ -232,7 +232,7 @@ async function uploadPicture(even) {
             user_firestore_data.profilePicture = downloadURL;
             profileRef.set(user_firestore_data).then(() => {
                 firebase.auth().currentUser.updateProfile({
-                        displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+                        //displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
                         photoURL: downloadURL,
                     }).then(() => {
                         loadProfile();
