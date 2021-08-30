@@ -473,3 +473,8 @@ input:focus {
     padding-left: 23px;
     margin-top: 0;
 }
+
+#userlist li{
+    border-bottom: 2px;
+    border-color: rgb(129,129,129);
+}
