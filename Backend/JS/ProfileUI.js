@@ -194,11 +194,13 @@ async function changePhNo() {
 /*----------------------------------------------------------------------------*/
 async function changeAddr() {
     try {
-        user_firestore_data.address.line1 = document.getElementById("naddrL1").value;
-        user_firestore_data.address.line2 = document.getElementById("naddrL2").value;
-        user_firestore_data.address.district = document.getElementById("naddrDistrict").value;
-        user_firestore_data.address.pincode = document.getElementById("naddrPin").value;
-        user_firestore_data.address.city = document.getElementById("naddrCity").value;
+        user_firestore_data.address = {
+          line1: document.getElementById("naddrL1").value,
+          line2: document.getElementById("naddrL2").value,
+          district: document.getElementById("naddrDistrict").value,
+          pincode: document.getElementById("naddrPin").value,
+          city: document.getElementById("naddrCity").value,
+        }
         profileRef.set(user_firestore_data).then(() => {
             document.getElementById("addrClose").click();
             loadProfile();
