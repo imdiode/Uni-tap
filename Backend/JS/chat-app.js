@@ -17,6 +17,7 @@ function open_page_add() {
 
     lst_users.classList.add("show");
     // lst_users.style.filter = "blur(0px) !important"
+    shownewchatlist();
 }
 
 function close_page_add() {
