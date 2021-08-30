@@ -26,12 +26,12 @@ function closeModal(modal) {
     modal.classList.remove('active');
 }
 
-const buttonPhoto = document.getElementById('w-link');
-const inputPhoto = document.getElementById('fileButton');
-
-buttonPhoto.onclick = () => {
-    inputPhoto.click();
-}
+// const buttonPhoto = document.getElementById('w-link');
+// const inputPhoto = document.getElementById('fileButton');
+//
+// buttonPhoto.onclick = () => {
+//     inputPhoto.click();
+// }
 
 function edit_name() {
     document.getElementById("cname").style.display = "block";
@@ -89,7 +89,7 @@ try {
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
     //readMoreBtn.addEventListener("click", readMore);
-    profilePic.addEventListener("click", changeProfilePic);
+    //profilePic.addEventListener("click", changeProfilePic);
     fileButton.addEventListener('change', uploadPicture);
 
 } catch (err) {
@@ -203,7 +203,7 @@ async function changeAddr() {
             document.getElementById("addrClose").click();
         });
     } catch (err) {
-        //console.log(err);
+        console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
     loadProfile();
