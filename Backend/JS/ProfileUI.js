@@ -33,6 +33,16 @@ buttonPhoto.onclick = () => {
     inputPhoto.click();
 }
 
+function edit_name() {
+    document.getElementById("cname").style.display = "block";
+}
+
+function ceditName() {
+    document.getElementById("cname").style.display = "none";
+    document.getElementById("fename").innerHTML = "";
+    document.getElementById("lename").innerHTML = "";
+}
+
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
 //Constants

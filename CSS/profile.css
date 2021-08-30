@@ -104,6 +104,65 @@ body {
     color: #06acff;
 }
 
+.cname {
+    border: 1px solid;
+    width: 30%;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    display: none;
+}
+
+.cname ul {
+    list-style-type: none;
+}
+
+.cname li {
+    padding-top: 5px;
+}
+
+.cname input {
+    border: none;
+    border-bottom: 1px solid;
+    transition: all .7s ease-out;
+    outline: none;
+}
+
+.cname input:focus {
+    border-bottom: 1px solid #ff6600;
+}
+
+.cname button {
+    border: none;
+    background-color: #002d61;
+    color: #0097e3;
+    margin-left: 40%;
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 5px 7px;
+    border-radius: 15px;
+}
+
+.cname button:hover {
+    color: #ffffff;
+    background-color: #0097e3;
+    transition: all .7s ease-out;
+}
+
+#nameClose {
+    background-color: #ffffff;
+    color: #002d61;
+    width: auto;
+    border: 1px solid;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
 .info {
     display: inline-block;
     min-height: 300px;
@@ -134,8 +193,8 @@ body {
 .profilepic {
     display: inline-block;
     position: absolute;
-    margin-top: -100px;
-    margin-left: 10%;
+    margin-top: -80px;
+    margin-left: 15%;
 }
 
 .profilepic img {
