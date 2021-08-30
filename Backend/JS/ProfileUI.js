@@ -89,7 +89,7 @@ try {
     phNumberChangeBtn.addEventListener("click", changePhNo);
     emailChangeBtn.addEventListener("click", changeEmail);
     //readMoreBtn.addEventListener("click", readMore);
-    //profilePic.addEventListener("click", changeProfilePic);
+    profilePic.addEventListener("click", changeProfilePic);
     fileButton.addEventListener('change', uploadPicture);
 
 } catch (err) {
