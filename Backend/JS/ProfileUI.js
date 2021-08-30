@@ -135,6 +135,23 @@ async function loadProfile() {
 }
 /*----------------------------------------------------------------------------*/
 
+/*----------------------------------------------------------------------------*/
+//change name function
+async function changeName() {
+    try {
+        user_firestore_data.firstName = document.getElementById("fename").value;
+        user_firestore_data.middleName = document.getElementById("mename").value;
+        user_firestore_data.lastName = document.getElementById("lename").value;
+        profileRef.set(user_firestore_data).then(() => {
+            ceditName();
+        });
+    } catch (err) {
+        console.log(err.message);
+        //and open error window telling user about error, Try to log error on rtdb
+    }
+    loadProfile();
+}
+/*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
 //change email function
