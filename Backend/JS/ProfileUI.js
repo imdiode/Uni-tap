@@ -108,16 +108,18 @@ async function loadProfile() {
     profileRef.get().then((doc) => {
         let profileData = doc.data();
         user_firestore_data = profileData;
-        document.getElementById("navFirstName").innerHTML = profileData.firstName;
-        document.getElementById("fullName").innerHTML = profileData.firstName + " " + profileData.lastName;
-        document.getElementById("semester").innerHTML = profileData.semester;
-        document.getElementById("emailId").innerHTML = profileData.emailId;
-        document.getElementById("contactEmailId").innerHTML = profileData.contactEmailId;
-        document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
-        document.getElementById("address").innerHTML = "<td>" + profileData.address.line1 + "<br>" + "</td>";
-        document.getElementById("studentUID").innerHTML = profileData.studentUID;
-        document.getElementById("profilePictureNav").src = profileData.profilePicture;
-        document.getElementById("profilePictureLarge").src = profileData.profilePicture;
+        try {
+          document.getElementById("navFirstName").innerHTML = profileData.firstName;
+          document.getElementById("fullName").innerHTML = profileData.firstName + " " + profileData.lastName;
+          document.getElementById("semester").innerHTML = profileData.semester;
+          document.getElementById("emailId").innerHTML = profileData.emailId;
+          document.getElementById("contactEmailId").innerHTML = profileData.contactEmailId;
+          document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
+          document.getElementById("address").innerHTML = "<td>" + profileData.address.line1 + "<br>" + "</td>";
+          document.getElementById("studentUID").innerHTML = profileData.studentUID;
+          document.getElementById("profilePictureNav").src = profileData.profilePicture;
+          document.getElementById("profilePictureLarge").src = profileData.profilePicture;
+        }
     }).catch((err) => {
         console.log(err);
         //and open error window telling user about error, Try to log error on rtdb
