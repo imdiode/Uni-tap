@@ -119,9 +119,10 @@ async function loadProfile() {
           document.getElementById("studentUID").innerHTML = profileData.studentUID;
           document.getElementById("profilePictureNav").src = profileData.profilePicture;
           document.getElementById("profilePictureLarge").src = profileData.profilePicture;
-        } catch((err)=>{
+        }
+        catch(err){
           console.log(err);
-        })
+        }
     }).catch((err) => {
         console.log(err);
         //and open error window telling user about error, Try to log error on rtdb
