@@ -77,10 +77,7 @@ function ProcessExcel(data) {
 
             excelRows.forEach((item, i) => {
               console.log(item.username);
-              firebase.auth().createUserWithEmailAndPassword(item.username, item.password)
-                .then((userCredential) => {
-                  continue;
-                })
+              await firebase.auth().createUserWithEmailAndPassword(item.username, item.password);
             });
 
 
