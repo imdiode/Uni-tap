@@ -279,6 +279,8 @@ input:focus {
     display: none;
     opacity: 1 !important;
     border: 1px solid;
+    height: 40vh;
+    overflow-y: scroll;
 }
 
 .show div {
@@ -297,6 +299,7 @@ input:focus {
     width: 50%;
     border-bottom: 2px solid #555555;
     cursor: pointer;
+    overflow-x: hidden;
 }
 
 #userlist li:hover {
