@@ -182,6 +182,6 @@ body {
     margin-left: auto;
     height: 60vh;
     width: 10%;
-    border: 2px dotted black;
+    //border: 2px dotted black;
     position: absolute;
 }

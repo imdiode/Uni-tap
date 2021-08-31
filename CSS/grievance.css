@@ -98,7 +98,7 @@ body {
     position: absolute;
     height: 60vh;
     width: 20%;
-    border: 2px dotted black;
+    //border: 2px dotted black;
 }
 
 .submit-btn {

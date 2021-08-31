@@ -5,6 +5,7 @@ var db;
 var auth;
 var profileRef;
 var storage;
+var ctrlVariable = 0;
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -17,7 +18,7 @@ firebase.auth().onAuthStateChanged((user) => {
         db = firebase.firestore();
         auth = firebase.auth();
         storage = firebase.storage();
-
+        showName();
     } else {
         // User is signed out
         // ...
@@ -25,11 +26,18 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
+//document.addEventListener('DOMContentLoaded', nameControl);
+
+async function nameControl(){
+  ctrlVariable = 1;
+}
+
 async function showName() {
     let name = auth.currentUser.displayName.split(" ");
     document.getElementById("navFirstName").innerHTML = name[0];
+    document.getElementById("navBarPic").src = auth.currentUser.photoURL;
 }
-showName();
+//showName();
 
 async function firebaseLogout() {
     firebase.auth().signOut()

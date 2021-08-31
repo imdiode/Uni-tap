@@ -125,7 +125,7 @@ async function loadProfile() {
         document.getElementById("contactEmailId").innerHTML = profileData.contactEmailId;
         document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
         document.getElementById("studentUID").innerHTML = profileData.studentUID;
-        document.getElementById("profilePictureNav").src = profileData.profilePicture;
+        document.getElementById("navBarPic").src = profileData.profilePicture;
         document.getElementById("profilePictureLarge").src = profileData.profilePicture;
         document.getElementById("address").innerHTML = "<td>" + (profileData.address.line1)||" " + "<br>" + "</td>";
     }).catch((err) => {

@@ -20,6 +20,7 @@
     <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- end Firebase Config -->
+    <script defer rel="text/javascript" src="./Backend/JS/redirect.js"></script>
     <script defer rel="text/javascript" src="./Backend/JS/notice.js"></script>
      <!--For Icons-->
      <script src="https://kit.fontawesome.com/3af0ac8797.js" crossorigin="anonymous"></script>
@@ -40,15 +41,16 @@
             </ul>
         </div>
         <div class="profile">
-            <img src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi! Nandan
+            <img id="navBarPic" src="./Backend/Images/logo_2_dicot_Dark.svg"> Hi!
+            <holder id="navFirstName"></holder>
         </div>
     </div>
 
     <div class="ads1">
-        <center>Ads go here</center>
+        <!--<center>Ads go here</center>-->
     </div>
     <div class="ads2">
-        <center>Ads go here</center>
+        <!--<center>Ads go here</center>-->
     </div>
 
     <div class="NoticeBoardBG" id="mainNoticeBoard">
