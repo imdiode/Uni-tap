@@ -78,7 +78,7 @@ body {
     margin-left: 2%;
     height: 70vh;
     width: 10%;
-    border: 2px dotted black;
+    //border: 2px dotted black;
 	margin-top: 2%;
 }
 
@@ -87,6 +87,6 @@ body {
     margin-left: 3.5%;
     height: 20vh;
     width: 20%;
-    border: 2px dotted black;
+    //border: 2px dotted black;
 	margin-top: 2%;
 }
