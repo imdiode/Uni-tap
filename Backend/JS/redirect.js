@@ -70,4 +70,6 @@ function sports_click() {
 function canteen_click() {
     location.href = "canteen.html";
 }
-showName();
+
+document.addEventListener("DOMContentLoaded", showName());
+// showName();
