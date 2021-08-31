@@ -17,7 +17,8 @@ firebase.auth().onAuthStateChanged((user) => {
         db = firebase.firestore();
         auth = firebase.auth();
         storage = firebase.storage();
-
+        let name = auth.currentUser.displayName.split(" ");
+        document.getElementById("navFirstName").innerHTML = name[0];
     } else {
         // User is signed out
         // ...
@@ -71,8 +72,8 @@ function canteen_click() {
     location.href = "canteen.html";
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
-    let name = auth.currentUser.displayName.split(" ");
-    document.getElementById("navFirstName").innerHTML = name[0];
-});
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     let name = auth.currentUser.displayName.split(" ");
+//     document.getElementById("navFirstName").innerHTML = name[0];
+// });
 // showName();
