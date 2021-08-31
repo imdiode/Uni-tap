@@ -130,7 +130,7 @@ async function loadProfile() {
         document.getElementById("address").innerHTML = "<td>" + (profileData.address.line1)||" " + "<br>" + "</td>";
     }).catch((err) => {
         console.log(err);
-        //and open error window telling user about error, Try to log error on rtdb
+        //and open error window telling user about error, Try to log error on rtd
     })
 }
 /*----------------------------------------------------------------------------*/
