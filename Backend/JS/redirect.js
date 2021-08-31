@@ -71,7 +71,7 @@ function canteen_click() {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    setTimeout(2000);
+    setTimeout(10000);
     let name = auth.currentUser.displayName.split(" ");
     document.getElementById("navFirstName").innerHTML = name[0];
 });
