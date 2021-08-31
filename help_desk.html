@@ -144,14 +144,14 @@
                                 </div>
                                 <div class="">
                                     <span class="iconify addbtn add" onclick="open_page_add()" id="open-useradd" data-width="25" data-height="25" data-icon="carbon:add"></span>
-                                    <ul class="list-users " id="new_user_list">
 
-                                        <li><button class="add close" onclick="close_page_add()" id="close-useradd"> Close </button></li>
+                                    <ul class="list-users " id="new_user_list">
+                                        <button class="add close" onclick="close_page_add()" id="close-useradd">
+                                            Close
+                                        </button>
                                         <div id="userlist">
                                             <li>name-1</li>
-                                            <hr>
                                             <li>name-2</li>
-                                            <hr>
                                             <li>name-3</li>
                                         </div>
                                     </ul>
@@ -213,6 +213,22 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row no-gutters">
+                            <div class="col-md-3 offset-md-9">
+                                <div class="chat-bubble chat-bubble--right">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-md-3 offset-md-9">
+                                <div class="chat-bubble chat-bubble--right">
+                                    Hello dude!
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row no-gutters">
                             <div class="col-md-3">
                                 <div class="chat-bubble chat-bubble--left">
@@ -236,7 +252,8 @@
                                 <div class="chat-box-tray">
                                     <input type="text" placeholder="Type your message here..." id="msg-input">
 
-                                    <span class="iconify send" data-icon="fluent:send-16-filled"></span>
+                                    <span class="iconify send" data-icon="fluent:send-16-filled"> <button type="submit"
+                                            id="msg-btn">Send</button> </span>
 
                                 </div>
                             </div>

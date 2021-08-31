@@ -114,9 +114,8 @@ body {
     position: fixed;
     display: block;
     background-color: #fff;
-    width: 45%;
+    width: 25%;
     left: 25%;
-    /* border: 1px solid rgb(14, 14, 117); */
     border-radius: 10px;
     opacity: 1 !important;
 }
@@ -230,7 +229,7 @@ input:focus {
 .list {
     overflow-y: scroll;
     width: 100%;
-    height: 400px;
+    height: calc(65vh - 30px);
     background: rgb(243, 241, 241);
 }
 
@@ -246,13 +245,18 @@ input:focus {
     height: 5%;
     background-color: rgb(40, 40, 116);
     color: #fff;
-    font-weight: 200;
+    font-weight: 500;
+}
+
+.add:hover {
+    border: 1px #002d61 solid;
+    transition: all .7s ease-out;
 }
 
 .close {
-    margin: 15px;
     width: 50px;
     margin-left: 80%;
+    border: none;
 }
 
 .addbtn {
@@ -274,12 +278,29 @@ input:focus {
     list-style: none;
     display: none;
     opacity: 1 !important;
+    border: 1px solid;
 }
 
-.list-users.show div li {
+.show div {
     padding: 4px 5px;
     text-align: left;
     opacity: 1 !important;
+}
+
+#userlist {
+    margin-top: -40px;
+}
+
+#userlist li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50%;
+    border-bottom: 2px solid #555555;
+}
+
+#userlist li:hover {
+    background-color: #eee;
+    transition: all .7s ease-out;
 }
 
 .friend-drawer {
@@ -334,6 +355,7 @@ input:focus {
 
 .chat-panel {
     overflow-y: scroll;
+    height: 51vh !important;
 }
 
 .friend-drawer--onhover:hover p,
@@ -443,6 +465,11 @@ input:focus {
 .profile-list {
     width: 30%;
     float: left;
+    height: 70vh;
+}
+
+.profile-container {
+    height: 65vh;
 }
 
 #profile {

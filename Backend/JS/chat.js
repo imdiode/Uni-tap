@@ -109,7 +109,7 @@ async function addnewchat(recieveremail){
     newChat({senderName:"", senderUID:currentuseruid, senderEmailId : currentuseremail, recipientEmailId:recieveremail})
     .then((result)=>{
 	console.log(result);
-})
     close_page_add();
     chatlistupdate();
+})
 }
