@@ -15,7 +15,15 @@ window.addEventListener('load', function() {
     input.addEventListener("change", function() {
         file = this.files[0];
         dropArea.classList.add("active");
-        showFile();
+        var reader = new FileReader();
+                //For Browsers other than IE.
+                if (reader.readAsBinaryString) {
+                    reader.onload = function (e) {
+                        ProcessExcel(e.target.result);
+                    };
+                    reader.readAsBinaryString(file);
+                }
+        //showFile();
     });
 
 
@@ -33,7 +41,7 @@ window.addEventListener('load', function() {
     dropArea.addEventListener("drop", (event) => {
         event.preventDefault();
         file = event.dataTransfer.files[0];
-        showFile();
+        //showFile();
     });
 
     function showFile() {
@@ -50,3 +58,37 @@ window.addEventListener('load', function() {
         }
     }
 });
+
+/* ______________________________By @Enculandus______________________________ */
+/* __________________________________________________________________________ */
+function ProcessExcel(data) {
+            //Read the Excel File data.
+            var workbook = XLSX.read(data, {
+                type: 'binary'
+            });
+
+            //Fetch the name of First Sheet.
+            var firstSheet = workbook.SheetNames[0];
+
+            //Read all rows from First Sheet into an JSON array.
+            var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+
+            console.log(excelRows);
+
+            excelRows.forEach((item, i) => {
+              console.log(item.username);
+              firebase.auth().createUserWithEmailAndPassword(item.username, item.password)
+                .then((userCredential) => {
+                  continue;
+                })
+            });
+
+
+            // for (row in excelRows.data) {
+            //   //console.log(row);
+            //   console.log(excelRows[row].username, excelRows[row].password);
+            //   console.log("done")
+            // }
+        };
+/* __________________________________________________________________________ */
+/* __________________________________________________________________________ */
