@@ -61,7 +61,7 @@ window.addEventListener('load', function() {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
-function ProcessExcel(data) {
+async function ProcessExcel(data) {
             //Read the Excel File data.
             var workbook = XLSX.read(data, {
                 type: 'binary'
@@ -79,7 +79,8 @@ function ProcessExcel(data) {
               console.log(item.username);
               firebase.auth().createUserWithEmailAndPassword(item.username, item.password)
                 .then((userCredential) => {
-                  continue;
+                  console.log(i);
+                  console.log(userCredential.uid);
                 })
             });
 
