@@ -2,6 +2,7 @@ var msgScreen = document.getElementById("chat-panel"); //the <ul> that displays 
 var msgForm = document.getElementById("messageForm"); //the input form
 var msgInput = document.getElementById("msg-input"); //the input element to write messages
 var msgBtn = document.getElementById("msg-btn"); //the Send button
+var msgRef;
 const addMessage = firebase.functions().httpsCallable('addMessage');
 const newChat = firebase.functions().httpsCallable('createChat');
 var new_user_list_screen = document.getElementById("new_user_list");
@@ -66,11 +67,14 @@ const updateMsgs = data => {
 
 
 async function displaychat(recieveremail, chat_id) {
+    if (msgRef){
+        msgRef.off();
+    }
     msgScreen = document.getElementById("chat-panel");
     msgScreen.innerHTML = "";
     const me = document.querySelector("#profile").innerHTML = recieveremail;
     ref = "/chats/" + chat_id + "/messages";
-    const msgRef = db1.ref(ref);
+    msgRef = db1.ref(ref);
     msgRef.on('child_added', updateMsgs);
     msgForm = document.getElementById("messageForm"); //the input form
     msgInput = document.getElementById("msg-input"); //the input element to write messages
