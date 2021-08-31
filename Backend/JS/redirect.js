@@ -17,6 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
         db = firebase.firestore();
         auth = firebase.auth();
         storage = firebase.storage();
+        setTimeout(2000, showName())
     } else {
         // User is signed out
         // ...
@@ -24,10 +25,10 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-// async function showName() {
-//     let name = auth.currentUser.displayName.split(" ");
-//     document.getElementById("navFirstName").innerHTML = name[0];
-// }
+async function showName() {
+    let name = auth.currentUser.displayName.split(" ");
+    document.getElementById("navFirstName").innerHTML = name[0];
+}
 
 async function firebaseLogout() {
     firebase.auth().signOut()
@@ -69,9 +70,3 @@ function sports_click() {
 function canteen_click() {
     location.href = "canteen.html";
 }
-
-document.addEventListener("DOMContentLoaded", (event) => {
-    setTimeout(10000);
-    let name = auth.currentUser.displayName.split(" ");
-    document.getElementById("navFirstName").innerHTML = name[0];
-});
