@@ -257,6 +257,7 @@ input:focus {
     width: 50px;
     margin-left: 80%;
     border: none;
+    height: 30px;
 }
 
 .addbtn {
@@ -281,6 +282,7 @@ input:focus {
     border: 1px solid;
     height: 40vh;
     overflow-y: scroll;
+    z-index: 1000;
 }
 
 .show div {
