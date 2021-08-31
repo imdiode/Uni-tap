@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged((user) => {
         db = firebase.firestore();
         auth = firebase.auth();
         storage = firebase.storage();
-        setTimeout(showName, 2000);
+        showName();
     } else {
         // User is signed out
         // ...
