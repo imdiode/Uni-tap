@@ -29,7 +29,6 @@ async function showName() {
     let name = auth.currentUser.displayName.split(" ");
     document.getElementById("navFirstName").innerHTML = name[0];
 }
-showName();
 
 async function firebaseLogout() {
     firebase.auth().signOut()
@@ -40,6 +39,7 @@ async function firebaseLogout() {
             console.log(err);
         });
 }
+
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
 
@@ -70,3 +70,4 @@ function sports_click() {
 function canteen_click() {
     location.href = "canteen.html";
 }
+showName();
