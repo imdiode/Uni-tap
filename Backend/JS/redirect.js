@@ -25,10 +25,10 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-async function showName() {
-    let name = auth.currentUser.displayName.split(" ");
-    document.getElementById("navFirstName").innerHTML = name[0];
-}
+// async function showName() {
+//     let name = auth.currentUser.displayName.split(" ");
+//     document.getElementById("navFirstName").innerHTML = name[0];
+// }
 
 async function firebaseLogout() {
     firebase.auth().signOut()
@@ -71,5 +71,8 @@ function canteen_click() {
     location.href = "canteen.html";
 }
 
-document.addEventListener("DOMContentLoaded", (event) => showName());
+document.addEventListener("DOMContentLoaded", (event) => {
+    let name = auth.currentUser.displayName.split(" ");
+    document.getElementById("navFirstName").innerHTML = name[0];
+});
 // showName();
