@@ -71,5 +71,5 @@ function canteen_click() {
     location.href = "canteen.html";
 }
 
-document.addEventListener("DOMContentLoaded", showName());
+document.addEventListener("DOMContentLoaded", (event) => showName());
 // showName();
