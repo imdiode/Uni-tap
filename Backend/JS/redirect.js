@@ -18,12 +18,7 @@ firebase.auth().onAuthStateChanged((user) => {
         db = firebase.firestore();
         auth = firebase.auth();
         storage = firebase.storage();
-
-        if(ctrlVariable){
-          showName();
-        } else {
-          setTimeout(showName, 2000);
-        }
+        setTimeout(showName, 2000);
     } else {
         // User is signed out
         // ...
@@ -31,17 +26,15 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', nameControl);
+//document.addEventListener('DOMContentLoaded', nameControl);
 
 async function nameControl(){
   ctrlVariable = 1;
 }
 
 async function showName() {
-     auth.currentUser.displayName.then((res)=>{
-       let name = res.split(" ");
-       document.getElementById("navFirstName").innerHTML = name[0];
-    });
+    let name = auth.currentUser.displayName.split(" ");
+    document.getElementById("navFirstName").innerHTML = name[0];
 }
 //showName();
 
