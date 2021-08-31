@@ -180,12 +180,8 @@ async function changePhNo() {
     try {
         user_firestore_data.mobileNumber = document.getElementById("nphone").value;
         profileRef.set(user_firestore_data).then(() => {
-            firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(() => {
                 document.getElementById("phNoClose").click();
                 loadProfile();
-            }).catch((err) => {
-                console.log(err);
-            });
         });
     } catch (err) {
         console.log(err.message);
