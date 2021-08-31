@@ -26,12 +26,12 @@ function closeModal(modal) {
     modal.classList.remove('active');
 }
 
-const buttonPhoto = document.getElementById('w-link');
-const inputPhoto = document.getElementById('fileButton');
-
-buttonPhoto.onclick = () => {
-    inputPhoto.click();
-}
+// const buttonPhoto = document.getElementById('w-link');
+// const inputPhoto = document.getElementById('fileButton');
+//
+// buttonPhoto.onclick = () => {
+//     inputPhoto.click();
+// }
 
 function edit_name() {
     document.getElementById("cname").style.display = "block";
@@ -124,10 +124,10 @@ async function loadProfile() {
         document.getElementById("emailId").innerHTML = profileData.emailId;
         document.getElementById("contactEmailId").innerHTML = profileData.contactEmailId;
         document.getElementById("mobileNumber").innerHTML = profileData.mobileNumber;
-        document.getElementById("address").innerHTML = "<td>" + profileData.address.line1 + "<br>" + "</td>";
         document.getElementById("studentUID").innerHTML = profileData.studentUID;
         document.getElementById("profilePictureNav").src = profileData.profilePicture;
         document.getElementById("profilePictureLarge").src = profileData.profilePicture;
+        document.getElementById("address").innerHTML = "<td>" + (profileData.address.line1)||" " + "<br>" + "</td>";
     }).catch((err) => {
         console.log(err);
         //and open error window telling user about error, Try to log error on rtdb
@@ -135,6 +135,27 @@ async function loadProfile() {
 }
 /*----------------------------------------------------------------------------*/
 
+/*----------------------------------------------------------------------------*/
+//change name function
+async function changeName() {
+    try {
+        user_firestore_data.firstName = document.getElementById("fename").value;
+        user_firestore_data.middleName = document.getElementById("mename").value;
+        user_firestore_data.lastName = document.getElementById("lename").value;
+        profileRef.set(user_firestore_data).then(() => {
+          firebase.auth().currentUser.updateProfile({
+            displayName: user_firestore_data.firstName + " " + user_firestore_data.lastName,
+          }).then(() => {
+            ceditName();
+            loadProfile();
+          })
+        });
+    } catch (err) {
+        console.log(err.message);
+        //and open error window telling user about error, Try to log error on rtdb
+    }
+}
+/*----------------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------------*/
 //change email function
@@ -143,12 +164,12 @@ async function changeEmail() {
         user_firestore_data.contactEmailId = document.getElementById("nmail").value;
         profileRef.set(user_firestore_data).then(() => {
             document.getElementById("emailClose").click();
+            loadProfile();
         });
     } catch (err) {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -161,6 +182,7 @@ async function changePhNo() {
         profileRef.set(user_firestore_data).then(() => {
             firebase.auth().currentUser.updatePhoneNumber(user_firestore_data.mobileNumber).then(() => {
                 document.getElementById("phNoClose").click();
+                loadProfile();
             }).catch((err) => {
                 console.log(err);
             });
@@ -169,7 +191,6 @@ async function changePhNo() {
         console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 
@@ -177,19 +198,21 @@ async function changePhNo() {
 /*----------------------------------------------------------------------------*/
 async function changeAddr() {
     try {
-        user_firestore_data.address.line1 = document.getElementById("naddrL1").value;
-        user_firestore_data.address.line2 = document.getElementById("naddrL2").value;
-        user_firestore_data.address.district = document.getElementById("naddrDistrict").value;
-        user_firestore_data.address.pincode = document.getElementById("naddrPin").value;
-        user_firestore_data.address.city = document.getElementById("naddrCity").value;
+        user_firestore_data.address = {
+          line1: document.getElementById("naddrL1").value,
+          line2: document.getElementById("naddrL2").value,
+          district: document.getElementById("naddrDistrict").value,
+          pincode: document.getElementById("naddrPin").value,
+          city: document.getElementById("naddrCity").value,
+        }
         profileRef.set(user_firestore_data).then(() => {
             document.getElementById("addrClose").click();
+            loadProfile();
         });
     } catch (err) {
-        //console.log(err);
+        console.log(err.message);
         //and open error window telling user about error, Try to log error on rtdb
     }
-    loadProfile();
 }
 /*----------------------------------------------------------------------------*/
 

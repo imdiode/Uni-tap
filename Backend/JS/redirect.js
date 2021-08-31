@@ -17,12 +17,18 @@ firebase.auth().onAuthStateChanged((user) => {
     db = firebase.firestore();
     auth = firebase.auth();
     storage = firebase.storage();
+  
   } else {
     // User is signed out
     // ...
     location.href = "index.html";
   }
 });
+
+async function showName() {
+  let name = auth.currentUser.displayName.split(" ");
+  document.getElementById("navFirstName").innerHTML = name[0];
+}
 
 async function firebaseLogout() {
   firebase.auth().signOut()
