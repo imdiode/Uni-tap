@@ -38,8 +38,10 @@ async function nameControl(){
 }
 
 async function showName() {
-    let name = auth.currentUser.displayName.split(" ");
-    document.getElementById("navFirstName").innerHTML = name[0];
+     auth.currentUser.displayName.then((res)=>{
+       let name = res.split(" ");
+       document.getElementById("navFirstName").innerHTML = name[0];
+    });
 }
 //showName();
 
