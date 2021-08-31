@@ -35,6 +35,7 @@ async function nameControl(){
 async function showName() {
     let name = auth.currentUser.displayName.split(" ");
     document.getElementById("navFirstName").innerHTML = name[0];
+    document.getElementById("navBarPic").src = auth.currentUser.photoURL;
 }
 //showName();
 
