@@ -61,6 +61,11 @@ window.addEventListener('load', function() {
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function ProcessExcel(data) {
             //Read the Excel File data.
             var workbook = XLSX.read(data, {
@@ -76,11 +81,19 @@ async function ProcessExcel(data) {
             console.log(excelRows);
 
             excelRows.forEach((item, i) => {
+
               console.log(item.username);
+              console.log(item.password);
               firebase.auth().createUserWithEmailAndPassword(item.username, item.password)
                 .then((userCredential) => {
                   console.log(i);
                   console.log(userCredential.uid);
+                  sleep(2000).then(()=>{
+                    console.log("Created")
+                  })
+                })
+                .catch((err)=>{
+                  console.log(err);
                 })
             });
 
